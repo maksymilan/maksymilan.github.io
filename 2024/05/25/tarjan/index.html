@@ -17,16 +17,18 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>备忘录 - Maksymilan's Notebook</title>
+  <title>tarjan - Maksymilan's Notebook</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Maksymilan&#39;s Notebook">
-<meta property="og:url" content="https://maksymilan.github.io/notes/index.html">
+    <meta name="description" content="tarjan算法用来求解一个有向图的强连通分量 算法要求我们  有$dfn$数组记录每一个节点在深度优先搜索中的访问次序 $visited$数组作为全局变量，记录某一个节点是否被访问过 $Stack$作为栈，储存在一次深度优先搜索中访问到的节点,$top$为栈顶指针，初始值为$-1$,$inStack$数组记录该节点是否在栈中 $low$数组记录每一个节点能回溯到的最早访问到的节点 $index$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tarjan">
+<meta property="og:url" content="https://maksymilan.github.io/2024/05/25/tarjan/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="tarjan算法用来求解一个有向图的强连通分量 算法要求我们  有$dfn$数组记录每一个节点在深度优先搜索中的访问次序 $visited$数组作为全局变量，记录某一个节点是否被访问过 $Stack$作为栈，储存在一次深度优先搜索中访问到的节点,$top$为栈顶指针，初始值为$-1$,$inStack$数组记录该节点是否在栈中 $low$数组记录每一个节点能回溯到的最早访问到的节点 $index$">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-27T14:18:57.102Z">
-<meta property="article:modified_time" content="2024-04-27T14:18:57.102Z">
+<meta property="article:published_time" content="2024-05-25T09:41:39.000Z">
+<meta property="article:modified_time" content="2024-05-25T10:02:45.272Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -47,23 +49,18 @@
 </head>
 <body>
 
-<div class="l_cover wiki"><article class="cover-wrap md-text"><div class="cover-title"><span>备忘录</span></div><div class="start-wrap"><a class="button start gradient" href="#start">开始使用</a></div></article></div><hr>
-
-<div class="l_body s:aa content tech" id="start" layout="page" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2779789.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/notes/index.html"><div class="main" ff="title">备忘录</div></a></div></header>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
 
 <div class="nav-area">
-<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="在 备忘录 中搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
 
 <nav class="menu dis-select"></nav>
 </div>
 <div class="widgets">
-
-
-
 
 
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/05/24/pytorch/"><span class="title">pytorch</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/05/25/tarjan/"><span class="title">tarjan</span></a><a class="item title" href="/2024/05/23/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F%E5%A4%A7%E5%85%A8/"><span class="title">热力学基础</span></a><a class="item title" href="/2024/05/23/%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA%E5%85%AC%E5%BC%8F%E5%A4%A7%E5%85%A8/"><span class="title">气体动理论公式大全</span></a><a class="item title" href="/2024/05/23/%E5%9B%BE/"><span class="title">图</span></a><a class="item title" href="/2024/04/21/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"><span class="title">离散数学</span></a><a class="item title" href="/2024/05/11/%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/"><span class="title">多重积分</span></a><a class="item title" href="/2024/05/12/%E5%A4%9A%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/"><span class="title">多源最短路径算法</span></a><a class="item title" href="/2024/04/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="title">数据结构基础与算法</span></a></div></widget>
@@ -74,7 +71,53 @@
 
 
 
-<article class="md-text content"></article>
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-25T09:41:39.000Z">2024-05-25</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-25T10:02:45.272Z">2024-05-25</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>tarjan</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>tarjan算法用来求解一个有向图的强连通分量</p>
+<p>算法要求我们</p>
+<ul>
+<li>有$dfn$数组记录每一个节点在深度优先搜索中的访问次序</li>
+<li>$visited$数组作为全局变量，记录某一个节点是否被访问过</li>
+<li>$Stack$作为栈，储存在一次深度优先搜索中访问到的节点,$top$为栈顶指针，初始值为$-1$,$inStack$数组记录该节点是否在栈中</li>
+<li>$low$数组记录每一个节点能回溯到的最早访问到的节点</li>
+<li>$index$记录访问次序，初始值为0或者1</li>
+</ul>
+<p><strong>算法流程</strong></p>
+<p>对图中每一个节点进行访问，首先判断节点是否被访问过，也就是判断</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(visited[v])</span><br></pre></td></tr></table></figure>
+<p>如果该节点访问过就跳过该节点，否则就从这个节点开始深度优先搜索</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">DFS</span><span class="params">(<span class="type">int</span> vertex,Gragh G)</span></span><br></pre></td></tr></table></figure>
+<p>进入深度优先搜索函数后，我们先进行以下赋值</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">visited[vertex]=<span class="number">1</span>;</span><br><span class="line">dfn[vertex]=low[vertex]=index++;</span><br><span class="line">Stack[++top]=vertex;</span><br><span class="line">inStack[vertex]=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>然后我们对该节点的所有相邻节点进行深度优先访问</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">PtrToV p;<span class="comment">//p是一个顶点指针</span></span><br><span class="line"><span class="keyword">for</span>(p=G-&gt;VertexArr[vertex];p!=<span class="literal">NULL</span>;p=p-&gt;next)&#123;</span><br><span class="line">    <span class="keyword">if</span>(！visited[p-&gt;vert])&#123;</span><br><span class="line">        DFS(p-&gt;vert,G);</span><br><span class="line">        low[vertex] = min(low[vertex],low[p-&gt;vert])</span><br><span class="line">    &#125;<span class="comment">//判断p对应的顶点是否访问过</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(inStack[p-&gt;vert])&#123;</span><br><span class="line">        low[vertex]=min(low[vertex],dfn[p-&gt;vert])</span><br><span class="line">    &#125;<span class="comment">//如果该节点在栈中，那么说明这个节点到vertex节点之间存在一条路径，并且vertex到这个节点也存在一条路径，也就是说这两个节点之间存在一条回路，我们将其中访问次序靠前的视作树根，更新vertex能回溯到的最早访问的顶点</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(dfn[vertex]==low[vertex])&#123;</span><br><span class="line">    <span class="keyword">while</span>(Stack[top]！=vertex)&#123;</span><br><span class="line">        v=Stack[top--];</span><br><span class="line">        print(v);</span><br><span class="line">    &#125;<span class="comment">//按照出栈顺序打印顶点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>完整代码如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">DFS</span><span class="params">(<span class="type">int</span> vertex,Graph G,<span class="type">void</span>(*visit)(Vertex V))</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">min</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>;</span><br><span class="line"><span class="type">int</span> dfn[<span class="number">2</span>*MaxVertices],low[<span class="number">2</span>*MaxVertices],visited[<span class="number">2</span>*MaxVertices],Stack[<span class="number">2</span>*MaxVertices],top=<span class="number">-1</span>,index=<span class="number">0</span>,inStack[<span class="number">2</span>*MaxVertices];</span><br><span class="line"><span class="type">int</span> <span class="title function_">min</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a&lt;b)?a:b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">StronglyConnectedComponents</span><span class="params">( Graph G, <span class="type">void</span> (*visit)(Vertex V) )</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;G-&gt;NumOfVertices;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(visited[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            DFS(i,G,visit);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">DFS</span><span class="params">(<span class="type">int</span> vertex,Graph G,<span class="type">void</span>(*visit)(Vertex V))</span>&#123;</span><br><span class="line">    visited[vertex]=inStack[vertex]=<span class="number">1</span>;</span><br><span class="line">    dfn[vertex]=low[vertex]=index++;<span class="comment">//记录访问次序</span></span><br><span class="line">    Stack[++top]=vertex;</span><br><span class="line">    PtrToVNode p;</span><br><span class="line">    <span class="keyword">for</span>(p = G-&gt;Array[vertex];p != <span class="literal">NULL</span>;p=p-&gt;Next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!visited[p-&gt;Vert])&#123;</span><br><span class="line">            DFS(p-&gt;Vert,G,visit);</span><br><span class="line">            low[vertex]=min(low[vertex],low[p-&gt;Vert]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(inStack[p-&gt;Vert])&#123;</span><br><span class="line">                low[vertex] = min(low[vertex],dfn[p-&gt;Vert]);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dfn[vertex]==low[vertex])&#123;</span><br><span class="line">        <span class="keyword">while</span> (Stack[top]!=vertex)</span><br><span class="line">        &#123;</span><br><span class="line">            visit(Stack[top]);</span><br><span class="line">            inStack[Stack[top]]=<span class="number">0</span>;</span><br><span class="line">            top--;</span><br><span class="line">        &#125;</span><br><span class="line">        visit(Stack[top]);</span><br><span class="line">        inStack[Stack[top]]=<span class="number">0</span>;</span><br><span class="line">        top--;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/05/24/pytorch/">pytorch</a></div></section></div>
+
 
 
 
