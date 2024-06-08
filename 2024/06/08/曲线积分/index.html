@@ -17,20 +17,20 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>图的邻接表实现 - Maksymilan's Notebook</title>
+  <title>曲线积分 - Maksymilan's Notebook</title>
 
   
-    <meta name="description" content="图的邻接表实现在处理稀疏图时比矩阵实现具有更高的效率，以下为图邻接表实现的c语言版本 声明和引用头文件部分：我们定义两个结构体类型，一个是节点 AdjListNode ,另一个就是图  GraphAdjList ，节点由下标 node 和邻接节点的指针 next 组成，图由图中储存的节点数目 size 和 储存节点信息的 List  123456789101112131415#include &amp;l">
+    <meta name="description" content="曲线积分，顾名思义，沿着曲线对曲线上每一点对应的函数值进行积分，分为第一类曲线积分和第二类曲线积分。 第一类曲线积分，每一点对应的函数值是一个标量数值，第二类曲线积分，每一点对应的函数值是一个向量。也就是说，第一类曲线积分是沿着曲线对数值进行积分，第二类曲线积分是沿着曲线对向量进行积分。对向量进行积分指的是对该点的被积分向量沿着该点切线方向投影进行积分，典型的例子是求变力沿曲线做功。 第一类曲线积">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图的邻接表实现">
-<meta property="og:url" content="https://maksymilan.github.io/2024/05/03/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:title" content="曲线积分">
+<meta property="og:url" content="https://maksymilan.github.io/2024/06/08/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
-<meta property="og:description" content="图的邻接表实现在处理稀疏图时比矩阵实现具有更高的效率，以下为图邻接表实现的c语言版本 声明和引用头文件部分：我们定义两个结构体类型，一个是节点 AdjListNode ,另一个就是图  GraphAdjList ，节点由下标 node 和邻接节点的指针 next 组成，图由图中储存的节点数目 size 和 储存节点信息的 List  123456789101112131415#include &amp;l">
+<meta property="og:description" content="曲线积分，顾名思义，沿着曲线对曲线上每一点对应的函数值进行积分，分为第一类曲线积分和第二类曲线积分。 第一类曲线积分，每一点对应的函数值是一个标量数值，第二类曲线积分，每一点对应的函数值是一个向量。也就是说，第一类曲线积分是沿着曲线对数值进行积分，第二类曲线积分是沿着曲线对向量进行积分。对向量进行积分指的是对该点的被积分向量沿着该点切线方向投影进行积分，典型的例子是求变力沿曲线做功。 第一类曲线积">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-03T03:37:33.000Z">
-<meta property="article:modified_time" content="2024-05-03T09:22:30.651Z">
+<meta property="article:published_time" content="2024-06-08T02:43:11.000Z">
+<meta property="article:modified_time" content="2024-06-08T05:46:12.579Z">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
   
   
   
@@ -75,31 +75,111 @@
 <div class="article banner top">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E7%AE%97%E6%B3%95/c/">c</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-03T03:37:33.000Z">2024-05-03</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-03T09:22:30.651Z">2024-05-03</time></span></div></div></div>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-06-08T02:43:11.000Z">2024-06-08</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-06-08T05:46:12.579Z">2024-06-08</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>图的邻接表实现</span></h1>
+        <h1 class="text title"><span>曲线积分</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><p>图的邻接表实现在处理稀疏图时比矩阵实现具有更高的效率，以下为图邻接表实现的c语言版本</p>
-<p>声明和引用头文件部分：我们定义两个结构体类型，一个是节点 <em>AdjListNode</em> ,另一个就是图  <em>GraphAdjList</em> ，节点由下标 <em>node</em> 和邻接节点的指针 <em>next</em> 组成，图由图中储存的节点数目 <em>size</em> 和 储存节点信息的 <em>List</em> </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">//用邻接表实现图</span></span><br><span class="line"><span class="comment">/*节点结构体*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize 20</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">AdjListNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> node;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">AdjListNode</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;AdjListNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">GraphAdjList</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    AdjListNode* List[Maxsize];</span><br><span class="line">&#125;GraphAdjList;</span><br></pre></td></tr></table></figure>
-<p>初始化函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*初始化图*/</span></span><br><span class="line">GraphAdjList* <span class="title function_">GraphInit</span><span class="params">()</span>&#123;</span><br><span class="line">    GraphAdjList* graph = (GraphAdjList*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(GraphAdjList));</span><br><span class="line">    graph-&gt;size=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;Maxsize;++i)&#123;</span><br><span class="line">        graph-&gt;List[i] = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> graph;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*创建顶点*/</span></span><br><span class="line">AdjListNode* <span class="title function_">CreateNode</span><span class="params">(<span class="type">int</span> node)</span>&#123;</span><br><span class="line">    AdjListNode* ListNode = (AdjListNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(AdjListNode));</span><br><span class="line">    ListNode-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    ListNode-&gt;node = node;</span><br><span class="line">    <span class="keyword">return</span> ListNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>添加顶点</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*添加顶点*/</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">addNode</span><span class="params">(GraphAdjList* graph,AdjListNode* newNode)</span>&#123;</span><br><span class="line">    graph-&gt;List[graph-&gt;size++] = newNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>连接图（最重要的步骤）：代码中重点强调的这一行很重要，每次连接两个节点（以V1连接V2为例），实际上是创建一个新的和V2一样的节点，然后将这个节点连接到V1之后，而不是直接引用V2,如果对V2直接引用就会造成在 <em>V1-&gt;V2, V1-&gt;V3</em> 这个操作时，V2也会和V3建立连接</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*连接有向图，V1 -&gt; V2*/</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Connect</span><span class="params">(AdjListNode* V1,AdjListNode* V2)</span>&#123;</span><br><span class="line">    AdjListNode* pointer = V1;</span><br><span class="line">    <span class="keyword">while</span>(pointer-&gt;next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        pointer = pointer-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    AdjListNode* new ;</span><br><span class="line">    new = CreateNode(V2-&gt;node);<span class="comment">//！！！</span></span><br><span class="line">    new-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    pointer-&gt;next = new;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>打印函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*按顺序打印图中的所有顶点*/</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printgraph</span><span class="params">(GraphAdjList* graph)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;graph-&gt;size;++i)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d - &quot;</span>,graph-&gt;List[i]-&gt;node);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*打印图中所有顶点的连接关系*/</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printAVertex</span><span class="params">(AdjListNode* node)</span>&#123;</span><br><span class="line">    AdjListNode* pointer = node-&gt;next;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,node-&gt;node);</span><br><span class="line">    <span class="keyword">while</span> (pointer != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;-&gt;%d&quot;</span>,pointer-&gt;node);</span><br><span class="line">        pointer = pointer-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">printVertex</span><span class="params">(GraphAdjList* graph)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;graph-&gt;size;++i)&#123;</span><br><span class="line">          printAVertex(graph-&gt;List[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>主函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    GraphAdjList* graph = GraphInit();</span><br><span class="line">    AdjListNode** List = graph-&gt;List;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;Maxsize;++i)&#123;</span><br><span class="line">        addNode(graph,CreateNode(i));</span><br><span class="line">    &#125;</span><br><span class="line">    Connect(List[<span class="number">1</span>],List[<span class="number">2</span>]);</span><br><span class="line">    Connect(List[<span class="number">1</span>],List[<span class="number">3</span>]);</span><br><span class="line">    Connect(List[<span class="number">3</span>],List[<span class="number">2</span>]);</span><br><span class="line">    printVertex(graph);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div><article class="md-text content"><p>曲线积分，顾名思义，沿着曲线对曲线上每一点对应的函数值进行积分，分为第一类曲线积分和第二类曲线积分。</p>
+<p>第一类曲线积分，每一点对应的函数值是一个标量数值，第二类曲线积分，每一点对应的函数值是一个向量。也就是说，第一类曲线积分是沿着曲线对数值进行积分，第二类曲线积分是沿着曲线对向量进行积分。对向量进行积分指的是对该点的被积分向量沿着该点切线方向投影进行积分，典型的例子是求变力沿曲线做功。</p>
+<h1 id="第一类曲线积分"><a href="#第一类曲线积分" class="headerlink" title="第一类曲线积分"></a>第一类曲线积分</h1><p>典型的例子是求一个密度不均匀分布的绳子的质量。</p>
+<p>表达式为：</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}f(P)ds</script><p>我们将弧微分转化为可计算的微分形式</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}f(x,y,z)ds=\int_{\alpha}^{\beta}f(x(t),y(t),z(t))\sqrt{x'^2(t)+y'^2(t)+z'^2(t)}dt</script><p>若$\Gamma$的方程是(对于x,情况类似)</p>
+<script type="math/tex; mode=display">
+y=\psi(x),x\in[a,b]</script><p>那么</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}f(x,y,z)ds=\int_a^bf(x,y(x))\sqrt{1+y'^2(x)}dx</script><p>若</p>
+<script type="math/tex; mode=display">
+r=r(\theta),\theta\in[\alpha,\beta]</script><p>那么</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}f(x,y)ds=\int_{\alpha}^{\beta}f(r\cos{\theta},r\sin{\theta})\sqrt{r^2(\theta)+r'^2(\theta)}d\theta</script><p>第三个极坐标公式的推导，我们利用</p>
+<script type="math/tex; mode=display">
+(ds)^2=(dx)^2+(dy)^2</script><p>其中</p>
+<script type="math/tex; mode=display">
+dx=r\cos\theta\\dx=r\sin{\theta}</script><p>$r$是一个关于$\theta$的函数，通过微分计算可以得到</p>
+<script type="math/tex; mode=display">
+(ds)^2=(r^2(\theta)+r'^2(\theta))(d\theta)^2</script><p>我们可以通过上面的公式看出，第一类曲线积分的解决方法是将多元函数统一变量，将曲线化曲为直，最终转换成一个普通的一元函数积分问题.最后，当被积元素是1时，我们实际上曲线积分得到的就是曲线的长度</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}ds=S</script><h1 id="第二类曲线积分"><a href="#第二类曲线积分" class="headerlink" title="第二类曲线积分"></a>第二类曲线积分</h1><h2 id="第二类曲线积分的计算公式"><a href="#第二类曲线积分的计算公式" class="headerlink" title="第二类曲线积分的计算公式"></a>第二类曲线积分的计算公式</h2><p>第二类曲线积分是取一段弧微分，然后取该弧微分上一点的向量，将该弧微分的方向向量与该向量点乘，然后求和，当弧微分取得足够小时，可以将弧看作直线</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}\vec{A}·d\vec{s}=\int_{\Gamma}\vec{A}·\vec{e}ds</script><p>若</p>
+<script type="math/tex; mode=display">
+\vec{A}=(P(x,y,z),Q(x,y,z),R(x,y,z))</script><p>则</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}\vec{A}·d\vec{s}=\int_{\Gamma}(P\cos{\alpha}+Q\cos\beta+R\cos{\gamma})ds</script><p>$\alpha,\beta,\gamma$,分别是$x,y,z$三个方向上的方向角，所以也可以写成下面这种形式</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}\vec{A}·d\vec{s}=\int_{\Gamma}Pdx+Qdy+Rdz</script><p>如果</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x=x(t)\\
+y=y(t)\\
+z=z(t)
+\end{cases}</script><p>那么，上式也可以表示为</p>
+<script type="math/tex; mode=display">
+\int_{\Gamma}\vec{A}·d\vec{s}=\int_{\Gamma}P(x(t),y(t),z(t))x'(t)dt+Q(x(t),y(t),z(t))y'(t)dt+R(x(t),y(t),z(t))z'(t)dt</script><h2 id="格林公式"><a href="#格林公式" class="headerlink" title="格林公式"></a>格林公式</h2><p>格林公式是将闭合曲线的第二类曲线积分转换为该曲线所围成的区域上的一个二重积分，格林公式适用于单连通区域，即内部没有洞的区域，对于复连通区域，需要对每个内部边界也应用格林公式。</p>
+<script type="math/tex; mode=display">
+\iint_D(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})dxdy=\oint_{\Gamma}Pdx+Qdy</script><p>行列式表示</p>
+<script type="math/tex; mode=display">
+\iint_D
+\begin{vmatrix}
+\frac{\partial}{\partial x}&\frac{\partial}{\partial y}\\
+P&Q
+\end{vmatrix}dxdy=\oint_{\Gamma} Pdx+Qdy</script><p>利用格林公式的几个做题方法：</p>
+<ol>
+<li>补全曲线，将第二类曲线积分转化为环积分减去一个第二类曲线积分，再转化成二重积分减去一个第二类曲线积分</li>
+<li>利用$\oint-ydx+xdy=\iint_Ddxdy$计算面积</li>
+</ol>
+<h2 id="平面曲线积分与路径无关性"><a href="#平面曲线积分与路径无关性" class="headerlink" title="平面曲线积分与路径无关性"></a>平面曲线积分与路径无关性</h2><p>如果一个平面区域$D$是单连通的，若函数$P,Q$在区域$D$上连续，且有一阶连续偏导数,那么以下四个条件等价</p>
+<ol>
+<li><p>沿$D$中任意按段光滑的闭合曲线$L$,有</p>
+<script type="math/tex; mode=display">
+\oint Pdx+Qdy=0</script></li>
+<li><p>对$D$中任一按段光滑的曲线$L$,曲线积分与路径无关，只与$L$的起点和终点有关。</p>
+</li>
+<li><p>$Pdx+Qdy$是$D$内某一函数的全微分，即在$D$内存在一个函数$u(x,y)$满足</p>
+<script type="math/tex; mode=display">
+u(x,y)=\int_LPdx+Qdy</script></li>
+<li><p>在$D$内每一点处都有</p>
+<script type="math/tex; mode=display">
+\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}</script></li>
+</ol>
+<p>我们可以利用平面曲线积分与路径无关性大大简化计算，不过在这里我们要明确知道，只有在平面是单连通的前提下，并且被积函数满足$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$,我们才能得到路径无关性，这两个条件之间并没有必然联系。</p>
+<p>利用路径无关性的做题方法：</p>
+<ol>
+<li><p>简化积分运算</p>
+<script type="math/tex; mode=display">
+\int_{A(x_0,y_0)}^{B(x_1,y_1)}P(x,y)dx+Q(x,y)dy=\int_{x_0}^{x_1}P(x,y_0)dx+\int_{y_0}^{y_1}Q(x_1,y)dy</script><p>同时我们还有曲线积分的牛顿-莱布尼兹公式</p>
+<script type="math/tex; mode=display">
+\int_{A(x_0,y_0)}^{B(x_1,y_1)}P(x,y)dx+Q(x,y)dy=u(x,y)|_{A(x_0,y_0)}^{B(x_1,y_1)}=u(x_1,y_1)-u(x_0,y_0)</script></li>
+<li><p>利用曲线积分求原函数</p>
+<p>这类题一般给定$Pdx+Qdy$的形式，并且$P,Q$满足路径无关性的条件，我们只需计算</p>
+<script type="math/tex; mode=display">
+\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}+C</script><p>即可，但是要注意的是，最后要加上常数$C$.</p>
+</li>
+<li><p>已知路径无关性，求原函数</p>
+<p>这种题给定两条带参数的路径，对于任意参数这两条路径积分值相同。我们可以将两种路径的积分都计算出来，最后得到一个只含参数的原函数形式，最后两边关于参数求导，即可得到原函数的参数表达式，将参数用函数变元替换即可得到答案。</p>
+</li>
+</ol>
+<h2 id="复连通区域的研究"><a href="#复连通区域的研究" class="headerlink" title="复连通区域的研究"></a>复连通区域的研究</h2><p>设在复连通区域$D$内，$P,Q$具有连续的偏导数且$\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$,我们对曲线积分</p>
+<script type="math/tex; mode=display">
+\oint_L Pdx+Qdy</script><p>的性质进行研究</p>
+<ol>
+<li><p>如果闭曲线$L$内部没有洞，那么我们可以利用格林公式，得到积分值为0</p>
+</li>
+<li><p>如果$L$内部有洞，那么我们不能直接使用格林公式，但是有如下定理：</p>
+<p>设在复连通区域$D$内，$P,Q$具有连续的偏导数且$\frac{\partial Q}{\partial x}\equiv \frac{\partial P}{\partial y}$,那么环绕同一些洞的任何两条闭曲线（取同一方向）上的曲线积分都相等</p>
+</li>
+</ol>
 
 <div class="article-footer fs14">
     <section id="license">
@@ -109,7 +189,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/05/09/%E9%AB%98%E7%BA%A7%E8%AE%A1%E6%95%B0%E6%8A%80%E5%B7%A7/">高级计数技巧</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/04/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构基础与算法</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/06/06/CS61A/">CS61A</a></div></section></div>
 
 
 
@@ -119,7 +199,14 @@
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F"><span class="toc-text">第二类曲线积分的计算公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F"><span class="toc-text">格林公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E4%B8%8E%E8%B7%AF%E5%BE%84%E6%97%A0%E5%85%B3%E6%80%A7"><span class="toc-text">平面曲线积分与路径无关性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E8%BF%9E%E9%80%9A%E5%8C%BA%E5%9F%9F%E7%9A%84%E7%A0%94%E7%A9%B6"><span class="toc-text">复连通区域的研究</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
