@@ -17,14 +17,18 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>Maksymilan's Notebook</title>
+  <title>救生艇 - Maksymilan's Notebook</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Maksymilan&#39;s Notebook">
-<meta property="og:url" content="https://maksymilan.github.io/wiki/index.html">
+    <meta name="description" content="给定数组 people 。people[i]表示第 i 个人的体重 ，船的数量不限，每艘船可以承载的最大重量为 limit。 每艘船最多可同时载两人，但条件是这些人的重量之和最多为 limit。 返回 承载所有人所需的最小船数 。 示例 1： 123输入：people &#x3D; [1,2], limit &#x3D; 3输出：1解释：1 艘船载 (1, 2) 示例 2： 123输入：people &#x3D; [3,2,2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="救生艇">
+<meta property="og:url" content="https://maksymilan.github.io/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="给定数组 people 。people[i]表示第 i 个人的体重 ，船的数量不限，每艘船可以承载的最大重量为 limit。 每艘船最多可同时载两人，但条件是这些人的重量之和最多为 limit。 返回 承载所有人所需的最小船数 。 示例 1： 123输入：people &#x3D; [1,2], limit &#x3D; 3输出：1解释：1 艘船载 (1, 2) 示例 2： 123输入：people &#x3D; [3,2,2">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-10T01:48:54.000Z">
+<meta property="article:modified_time" content="2024-06-10T02:06:45.042Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -47,7 +51,7 @@
 </head>
 <body>
 
-<div class="l_body s:aa index tech" id="start" layout="index_wiki" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
@@ -61,20 +65,57 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/wiki/stellar/index.html"><span class="title"><strong>Stellar</strong><span class="dot"></span>这是分页标题</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/06/09/%E7%A6%BB%E6%95%A3%E8%AF%BE%E6%9C%AC%E8%AE%B0%E5%8D%95%E8%AF%8D/"><span class="title">离散课本记单词</span></a><a class="item title" href="/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/"><span class="title">微积分（II）期末题型总结</span></a><a class="item title" href="/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/"><span class="title">救生艇</span></a><a class="item title" href="/2024/06/09/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"><span class="title">二叉树的垂序遍历</span></a><a class="item title" href="/2024/06/09/%E6%88%B3%E6%B0%94%E7%90%83/"><span class="title">戳气球</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/"><span class="title">曲面积分</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86/"><span class="title">曲线积分</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/06/06/CS61A/"><span class="title">CS61A</span></a><a class="item title" href="/2024/06/02/%E5%85%B3%E7%B3%BB%E2%80%94%E2%80%94relation/"><span class="title">关系——relation</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
 
 
 
 
-<div class="navbar top"><nav class="wiki"><a class="active" href="/wiki">所有项目</a></a><a href="/wiki/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/index.html">博客主题</a></a></nav></div>
-<div class="post-list wiki"><a class="post-card wiki" href="/wiki/stellar/index.html">
-<article class="md-text"><div class="preview"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/wiki/stellar/icon.svg"/></div><div class="excerpt"><div class="caps"><span class="cap breadcrumb">博客主题</span></div><h2 class="post-title">Stellar - 每个人的独立博客</h2><p>Stellar 是一个内置文档系统的简约商务风 Hexo 主题，支持丰富的标签和动态数据组件。</p></div></article>
-</a></div>
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-06-10T01:48:54.000Z">2024-06-10</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-06-10T02:06:45.042Z">2024-06-10</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>救生艇</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>给定数组 <code>people</code> 。<code>people[i]</code>表示第 <code>i</code> 个人的体重 ，<strong>船的数量不限</strong>，每艘船可以承载的最大重量为 <code>limit</code>。</p>
+<p>每艘船最多可同时载两人，但条件是这些人的重量之和最多为 <code>limit</code>。</p>
+<p>返回 <em>承载所有人所需的最小船数</em> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：people = [1,2], limit = 3</span><br><span class="line">输出：1</span><br><span class="line">解释：1 艘船载 (1, 2)</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：people = [3,2,2,1], limit = 3</span><br><span class="line">输出：3</span><br><span class="line">解释：3 艘船分别载 (1, 2), (2) 和 (3)</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：people = [3,5,3,4], limit = 5</span><br><span class="line">输出：4</span><br><span class="line">解释：4 艘船分别载 (3), (3), (4), (5)</span><br></pre></td></tr></table></figure>
+<p> 我们初步进行思考，要找到船数最少的方案，那么每一艘船所承载的人都尽可能大，已知每一个人都不会超过船的承载范围，那么我们首先选一个重量最大的人，然后再选limit-people，新选择的人的质量是小于最大限度减去这个人的质量的所有人中的最大值，我们使用的是贪心策略。但是本题中有一个限制——<strong>每艘船最多承载两人</strong>，我们这种贪心的策略是解决这个问题方法的超集，我们应该进一步特殊化。如果每一次都进行最大最小值的查找，那么多次重复的查找无疑是一种可以优化的过程，我们将输入的数组排序，用双指针指向数组首尾两个元素，这样保证了每一次选择两个，同时判断左边和右边人的质量和和limit的大小，如果超了，说明最大质量的人只能一个和人乘一艘船，这时$p_1-=1$,如果没超，那么这两个人都上船，左右指针都移动一位</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numRescueBoats</span>(<span class="params">self,people:<span class="type">List</span>[<span class="built_in">int</span>],limit:<span class="built_in">int</span></span>)-&gt;<span class="built_in">int</span>:</span><br><span class="line">        people.sort()</span><br><span class="line">        p_0,p_1=<span class="number">0</span>,<span class="built_in">len</span>(people)-<span class="number">1</span></span><br><span class="line">        numOfboat = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> p_0 &lt;= p_1:</span><br><span class="line">            <span class="keyword">if</span> people[p_0] + people[p_1] &lt;= limit:</span><br><span class="line">                p_0 += <span class="number">1</span></span><br><span class="line">                p_1 -= <span class="number">1</span></span><br><span class="line">                numOfboat += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                p_1 -= <span class="number">1</span></span><br><span class="line">                numOfboat += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> numOfboat</span><br></pre></td></tr></table></figure>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/">微积分（II）期末题型总结</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/06/09/%E7%A6%BB%E6%95%A3%E8%AF%BE%E6%9C%AC%E8%AE%B0%E5%8D%95%E8%AF%8D/">离散课本记单词</a></div></section></div>
+
+
+
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">

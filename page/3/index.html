@@ -34,6 +34,8 @@
 
   <!-- feed -->
   
+    <link rel="alternate" href="/rss2.xml" title="Maksymilan's Notebook" type="application/rss+xml">
+  
 
   <link rel="stylesheet" href="/css/main.css?v=1.28.0">
 
@@ -62,7 +64,7 @@
 <div class="linklist center" style="grid-template-columns:repeat(1,1fr);">
 <a class="link" title="我的github主页" target="_blank" rel="noopener" href="https://github.com/maksymilan"><div class="flex"><span>我的github主页</span></div></a></div></div></widget>
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/06/09/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"><span class="title">二叉树的垂序遍历</span></a><a class="item title" href="/2024/06/09/%E6%88%B3%E6%B0%94%E7%90%83/"><span class="title">戳气球</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/"><span class="title">曲面积分</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86/"><span class="title">曲线积分</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/06/06/CS61A/"><span class="title">CS61A</span></a><a class="item title" href="/2024/06/02/%E5%85%B3%E7%B3%BB%E2%80%94%E2%80%94relation/"><span class="title">关系——relation</span></a><a class="item title" href="/2024/05/09/%E9%AB%98%E7%BA%A7%E8%AE%A1%E6%95%B0%E6%8A%80%E5%B7%A7/"><span class="title">高级计数技巧</span></a><a class="item title" href="/2024/05/11/%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/"><span class="title">多重积分</span></a><a class="item title" href="/2024/05/26/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/"><span class="title">安卓开发</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/06/09/%E7%A6%BB%E6%95%A3%E8%AF%BE%E6%9C%AC%E8%AE%B0%E5%8D%95%E8%AF%8D/"><span class="title">离散课本记单词</span></a><a class="item title" href="/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/"><span class="title">微积分（II）期末题型总结</span></a><a class="item title" href="/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/"><span class="title">救生艇</span></a><a class="item title" href="/2024/06/09/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"><span class="title">二叉树的垂序遍历</span></a><a class="item title" href="/2024/06/09/%E6%88%B3%E6%B0%94%E7%90%83/"><span class="title">戳气球</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/"><span class="title">曲面积分</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86/"><span class="title">曲线积分</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/06/06/CS61A/"><span class="title">CS61A</span></a><a class="item title" href="/2024/06/02/%E5%85%B3%E7%B3%BB%E2%80%94%E2%80%94relation/"><span class="title">关系——relation</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -73,7 +75,28 @@
 
 
 <div class="navbar top"><nav class="post"><a class="active" href="/">近期发布</a><a href="/categories">分类</a><a href="/topic">专栏</a><a href="/archives">归档</a></nav></div>
-<div class="post-list post"><a class="post-card post" href="/2024/05/09/%E9%AB%98%E7%BA%A7%E8%AE%A1%E6%95%B0%E6%8A%80%E5%B7%A7/">
+<div class="post-list post"><a class="post-card post" href="/2024/05/11/%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/">
+<article class="md-text"><h2 class="post-title">多重积分</h2><div class="excerpt"><p>多重积分的计算和一些性质的证明算是微积分下册里面我觉得对我来说比较有难度的地方，在这里一边做作业一边对作业题做一些总结
+多重积分性质的证明
+例题一
+证明
+
+[\int_a^b{f(x)}dx]^2\leq (b-a)\int_a^bf^2(x)dx解...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-11T08:36:40.000Z">2024-05-11</time></span></div></article>
+</a><a class="post-card post" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">
+<article class="md-text"><h2 class="post-title">Typora数学公式</h2><div class="excerpt"><p>分数的表示
+\frac{1}{2}
+\frac {x^2+x+e^x}{\ln x+\sin x}根号的表示
+\sqrt {x+1}
+\sqrt[6] {6x+4}
+\sqrt[n] {8x-9}偏导数符号\partial{}
+
+\frac{\par...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-10T02:34:39.000Z">2024-05-10</time></span></div></article>
+</a><a class="post-card post" href="/2024/05/10/%E7%9B%B8%E5%AF%B9%E8%AE%BA/">
+<article class="md-text"><div class="post-cover"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://photographyofchina.com/content/v1/51e2f86de4b0180cf3be09fe/1376324591278-DJF61KTVCW80DH67IP10/FHN1motherandchild.JPG?undefined&w=380&thumb=1"/></div><h2 class="post-title">相对论</h2><div class="excerpt"><p>大物马上又要小测了，相对论这一章还没怎么搞懂，在这里简单地做一点知识理解和题型归纳。
+在这里我们主要介绍的是狭义相对论的基本原理，时空观以及力学定律的形式，对广义相对论只做简单了解。
+牛顿力学的时空观伽利略相对性原理
+对于力学规律来说，一切惯性系都是...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-10T01:53:42.000Z">2024-05-10</time></span></div></article>
+</a><a class="post-card post" href="/2024/05/09/%E9%AB%98%E7%BA%A7%E8%AE%A1%E6%95%B0%E6%8A%80%E5%B7%A7/">
 <article class="md-text"><h2 class="post-title">高级计数技巧</h2><div class="excerpt"><p>最后一次小测要来了，从计数技巧的基础重新复习这两个单元计数和高级计数方法
 Chapter6.计数基础的计数方法设计的重点有
 

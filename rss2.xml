@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Maksymilan&#39;s Notebook</title>
+    <link>https://maksymilan.github.io/</link>
+    
+    <atom:link href="https://maksymilan.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Mon, 10 Jun 2024 04:27:42 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>微积分（II）期末题型总结</title>
+      <link>https://maksymilan.github.io/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/</link>
+      <guid>https://maksymilan.github.io/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/</guid>
+      <pubDate>Mon, 10 Jun 2024 02:27:35 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;求一定点到空间曲线上一定点切线的距离&quot;&gt;&lt;a href=&quot;#求一定点到空间曲线上一定点切线的距离&quot; class=&quot;headerlink&quot; title=&quot;求一定点到空间曲线上一定点切线的距离&quot;&gt;&lt;/a&gt;求一定点到空间曲线上一定点切线的距离&lt;/h2&gt;&lt;p&gt;核心问题：如</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="求一定点到空间曲线上一定点切线的距离"><a href="#求一定点到空间曲线上一定点切线的距离" class="headerlink" title="求一定点到空间曲线上一定点切线的距离"></a>求一定点到空间曲线上一定点切线的距离</h2><p>核心问题：如何求一已知的空间曲线上一定点的切线</p><p>涉及到的知识是<strong>多元函数微分学</strong>中的<strong>偏导数在几何上的应用</strong></p><p>如果空间曲线是由参数方程的形式表达</p><script type="math/tex; mode=display">\begin{cases}x=x(t)\\y=y(t)\\z=z(t)\end{cases}</script><p>那么某一点处的切向量就是</p><script type="math/tex; mode=display">\vec{a}=(x'(t_0),y'(t_0),z'(t_0))</script><p>该切向量也就是过该点，垂直于该直线的平面的法向量</p><p>我们知道对于给定的曲面方程$F$，我们可以得到该曲面方程上一点的切平面方程</p><script type="math/tex; mode=display">F(x,y,z)=0,\\\frac{x-x_0}{F'_x(x_0,y_0,z_0)}=\frac{y-y_0}{F'_y(x_0,y_0,z_0)}=\frac{z-z_0}{F'_z(x_0,y_0,z_0)}</script><p>当曲线给出的形式是以两个曲平面的的交线给出的，如下</p><script type="math/tex; mode=display">\begin{cases}F(x,y,z)=0\\G(x,y,z)=0\end{cases}</script><p>那么我们就可以根据两个曲面的交线上一点的切线是两个曲面上过该点的切平面的交线这一性质得到曲线的切线</p><script type="math/tex; mode=display">\begin{cases}F'_x(P_0)(x-x_0)+F'_y(P_0)(y-y_0)+F'_z(P_0)(z-z_0)=0\\G'_x(P_0)(x-x_0)+G'_y(P_0)(y-y_0)+G'_z(P_0)(z-z_0)=0\end{cases}</script><p>如果我们对$F,G$进行移项处理，得到$z=z(x,y)$的形式，那么切线也可以表示为</p><script type="math/tex; mode=display">\begin{cases}f'_x(P_0)(x-x_0)+f'_y(P_0)(y-y_0)-(z-z_0)=0\\g'_x(P_0)(x-x_0)+g'_y(P_0)(y-y_0)-(z-z_0)=0\end{cases}</script><p>根据上述几个公式，我们可以求出一般的曲线方程在某一点的切线，接下来的问题是——<strong>如何求空间内已知直线到一点的最短距离呢</strong>，我们记切线的方向向量为$\vec{S}$,已知点到切点的向量为$\vec{OP_0}$,我们根据叉乘的知识知道，这两个向量叉乘得到的向量模长等于这两个向量所构成的平行四边形的面积，那么已知点到切线的最短距离就是这个平行四边形的高，也就是用叉乘后得到的模长除以切线向量的模长</p><script type="math/tex; mode=display">d=\frac{|\vec{S}\times\vec{OP_0}|}{|\vec{S}|}</script><p><strong>例题</strong>；</p><p>求原点到空间曲线</p><script type="math/tex; mode=display">\begin{cases}xy+z=0\\x^2+y^2+z^2=9\end{cases}</script><p>上点$P_0(2,1,-2)$处切线的距离</p><h2 id="求空间曲线在一般位置上的平面的投影"><a href="#求空间曲线在一般位置上的平面的投影" class="headerlink" title="求空间曲线在一般位置上的平面的投影"></a>求空间曲线在一般位置上的平面的投影</h2><p>空间曲线在平面上的投影，可以看作是一个经过空间曲线的柱面与平面的交线，问题的关键是如何表示这个柱面。我们已知空间曲线和投影平面的方程，只需要求出投影柱面的方程即可的得到答案。</p><p>我们可以想到，投影柱面的准线方向和投影平面的法向量是方向相同的，我们用$\vec{n}=(x_1,y_1,z_1)$表示法向量，由于我们要表示的是投影柱面，所以我们找柱面上任意一点$P(x,y,z)$那么一定存在一点$P_0(x_0,y_0,z_0)$存在于空间曲线上，满足</p><script type="math/tex; mode=display">\vec{PP_0}\parallel\vec{n}</script><p>那么根据平行向量对应坐标比值相等</p><script type="math/tex; mode=display">\frac{x-x_0}{x_1}=\frac{y-y_0}{y_1}=\frac{z-z_0}{z_1}</script><p>我们可以得到$x_0,y_0,z_0$的关于$x,y,z$的表达式(注意，这里要根据空间曲线得到的$x_0,y_0,z_0$的关系，将$x_0,y_0,z_0$换成只关于$x,y,z$的等式)，再将这些表达式带入原有的曲线方程，我们就可以得到投影柱面的方程</p><p><strong>例题</strong></p><p>求空间曲线</p><script type="math/tex; mode=display">\begin{cases}x+y+z=0\\x^2+2y^2+3z^2=1\end{cases}</script><p>在平面$x-2y+2z=10$上的投影曲线方程</p><h2 id="梯度的计算"><a href="#梯度的计算" class="headerlink" title="梯度的计算"></a>梯度的计算</h2><p>梯度是描述一个场内某一点处函数值增长速度最快的方向的一个向量，表示为</p><script type="math/tex; mode=display">\mathcal{}\frac{\partial u}{\partial x}\vec{i}+\frac{\partial u}{\partial y}\vec{j}+\frac{\partial u}{\partial z}\vec{k}</script><p>一个点的方向导数就等于这个点的梯度在这个方向上的投影。</p><p>梯度运算和导数运算具有相似的性质</p><p>在了解了梯度的概念后，计算过程就是如何求偏导的过程</p><p><strong>如何求隐函数的偏导</strong></p><p>我们根据隐函数存在定理可以求出</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://maksymilan.github.io/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>救生艇</title>
+      <link>https://maksymilan.github.io/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/</link>
+      <guid>https://maksymilan.github.io/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/</guid>
+      <pubDate>Mon, 10 Jun 2024 01:48:54 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;给定数组 &lt;code&gt;people&lt;/code&gt; 。&lt;code&gt;people[i]&lt;/code&gt;表示第 &lt;code&gt;i&lt;/code&gt; 个人的体重 ，&lt;strong&gt;船的数量不限&lt;/strong&gt;，每艘船可以承载的最大重量为 &lt;code&gt;limit&lt;/code&gt;。&lt;/p&gt;
+&lt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>给定数组 <code>people</code> 。<code>people[i]</code>表示第 <code>i</code> 个人的体重 ，<strong>船的数量不限</strong>，每艘船可以承载的最大重量为 <code>limit</code>。</p><p>每艘船最多可同时载两人，但条件是这些人的重量之和最多为 <code>limit</code>。</p><p>返回 <em>承载所有人所需的最小船数</em> 。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：people = [1,2], limit = 3</span><br><span class="line">输出：1</span><br><span class="line">解释：1 艘船载 (1, 2)</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：people = [3,2,2,1], limit = 3</span><br><span class="line">输出：3</span><br><span class="line">解释：3 艘船分别载 (1, 2), (2) 和 (3)</span><br></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：people = [3,5,3,4], limit = 5</span><br><span class="line">输出：4</span><br><span class="line">解释：4 艘船分别载 (3), (3), (4), (5)</span><br></pre></td></tr></table></figure><p> 我们初步进行思考，要找到船数最少的方案，那么每一艘船所承载的人都尽可能大，已知每一个人都不会超过船的承载范围，那么我们首先选一个重量最大的人，然后再选limit-people，新选择的人的质量是小于最大限度减去这个人的质量的所有人中的最大值，我们使用的是贪心策略。但是本题中有一个限制——<strong>每艘船最多承载两人</strong>，我们这种贪心的策略是解决这个问题方法的超集，我们应该进一步特殊化。如果每一次都进行最大最小值的查找，那么多次重复的查找无疑是一种可以优化的过程，我们将输入的数组排序，用双指针指向数组首尾两个元素，这样保证了每一次选择两个，同时判断左边和右边人的质量和和limit的大小，如果超了，说明最大质量的人只能一个和人乘一艘船，这时$p_1-=1$,如果没超，那么这两个人都上船，左右指针都移动一位</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">numRescueBoats</span>(<span class="params">self,people:<span class="type">List</span>[<span class="built_in">int</span>],limit:<span class="built_in">int</span></span>)-&gt;<span class="built_in">int</span>:</span><br><span class="line">        people.sort()</span><br><span class="line">        p_0,p_1=<span class="number">0</span>,<span class="built_in">len</span>(people)-<span class="number">1</span></span><br><span class="line">        numOfboat = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> p_0 &lt;= p_1:</span><br><span class="line">            <span class="keyword">if</span> people[p_0] + people[p_1] &lt;= limit:</span><br><span class="line">                p_0 += <span class="number">1</span></span><br><span class="line">                p_1 -= <span class="number">1</span></span><br><span class="line">                numOfboat += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                p_1 -= <span class="number">1</span></span><br><span class="line">                numOfboat += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> numOfboat</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://maksymilan.github.io/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>离散课本记单词</title>
+      <link>https://maksymilan.github.io/2024/06/09/%E7%A6%BB%E6%95%A3%E8%AF%BE%E6%9C%AC%E8%AE%B0%E5%8D%95%E8%AF%8D/</link>
+      <guid>https://maksymilan.github.io/2024/06/09/%E7%A6%BB%E6%95%A3%E8%AF%BE%E6%9C%AC%E8%AE%B0%E5%8D%95%E8%AF%8D/</guid>
+      <pubDate>Sun, 09 Jun 2024 11:47:48 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;&lt;code&gt;paradigm&lt;/code&gt;:范例&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;overlap&lt;/code&gt;:重叠&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;piligrim&lt;/code&gt;:朝圣者&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;stool&lt;/code&gt;:凳子&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;precis</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p><code>paradigm</code>:范例</p><p><code>overlap</code>:重叠</p><p><code>piligrim</code>:朝圣者</p><p><code>stool</code>:凳子</p><p><code>precisely</code>:恰恰</p><p><code>archaic</code>:古老</p><p><code>hostile</code>:敌对的</p><p><code>pejorative</code>:贬义的</p><p><code>compatible</code>:兼容的</p><p><code>aptitude</code>:资质</p><p><code>be appointed to</code>:被任命为</p><p><code>oath</code>:誓言</p><p><code>allegiance</code>:忠诚</p><p><code>postgraduate</code>:研究生</p><p><code>tumor</code>:肿瘤</p><p><code>complication</code>:并发症</p><p><code>equitable</code>:公平</p><p><code>multiplicity</code>:重复度</p><p><code>not identically zero</code>:不全为零</p><p><code>subtract</code>:减去</p><p><code>educated guess</code>:有根据的猜测</p><p><code>convergence</code>:收敛</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://maksymilan.github.io/2024/06/09/%E7%A6%BB%E6%95%A3%E8%AF%BE%E6%9C%AC%E8%AE%B0%E5%8D%95%E8%AF%8D/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>二叉树的垂序遍历</title>
+      <link>https://maksymilan.github.io/2024/06/09/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <guid>https://maksymilan.github.io/2024/06/09/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <pubDate>Sun, 09 Jun 2024 11:24:08 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;给你二叉树的根结点 &lt;code&gt;root&lt;/code&gt; ，请你设计算法计算二叉树的 &lt;strong&gt;垂序遍历&lt;/strong&gt; 序列。&lt;/p&gt;
+&lt;p&gt;对位于 &lt;code&gt;(row, col)&lt;/code&gt; 的每个结点而言，其左右子结点分别位于 &lt;code&gt;(row + 1,</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>给你二叉树的根结点 <code>root</code> ，请你设计算法计算二叉树的 <strong>垂序遍历</strong> 序列。</p><p>对位于 <code>(row, col)</code> 的每个结点而言，其左右子结点分别位于 <code>(row + 1, col - 1)</code> 和 <code>(row + 1, col + 1)</code> 。树的根结点位于 <code>(0, 0)</code> 。</p><p>二叉树的 <strong>垂序遍历</strong> 从最左边的列开始直到最右边的列结束，按列索引每一列上的所有结点，形成一个按出现位置从上到下排序的有序列表。如果同行同列上有多个结点，则按结点的值从小到大进行排序。</p><p>返回二叉树的 <strong>垂序遍历</strong> 序列。</p><p><strong>示例1</strong></p><p><img src="D:\各种ppt作业\md文件\md图片\vtree1.jpg" alt=""></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [3,9,20,null,null,15,7]</span><br><span class="line">输出：[[9],[3,15],[20],[7]]</span><br><span class="line">解释：</span><br><span class="line">列 -1 ：只有结点 9 在此列中。</span><br><span class="line">列  0 ：只有结点 3 和 15 在此列中，按从上到下顺序。</span><br><span class="line">列  1 ：只有结点 20 在此列中。</span><br><span class="line">列  2 ：只有结点 7 在此列中。</span><br></pre></td></tr></table></figure><p><strong>示例2</strong></p><p><img src="D:\各种ppt作业\md文件\md图片\vtree2.jpg" alt=""></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [1,2,3,4,5,6,7]</span><br><span class="line">输出：[[4],[2],[1,5,6],[3],[7]]</span><br><span class="line">解释：</span><br><span class="line">列 -2 ：只有结点 4 在此列中。</span><br><span class="line">列 -1 ：只有结点 2 在此列中。</span><br><span class="line">列  0 ：结点 1 、5 和 6 都在此列中。</span><br><span class="line">          1 在上面，所以它出现在前面。</span><br><span class="line">          5 和 6 位置都是 (2, 0) ，所以按值从小到大排序，5 在 6 的前面。</span><br><span class="line">列  1 ：只有结点 3 在此列中。</span><br><span class="line">列  2 ：只有结点 7 在此列中</span><br></pre></td></tr></table></figure><p><strong>示例3</strong></p><p><img src="D:\各种ppt作业\md文件\md图片\vtree3.jpg" alt=""></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [1,2,3,4,6,5,7]</span><br><span class="line">输出：[[4],[2],[1,5,6],[3],[7]]</span><br><span class="line">解释：</span><br><span class="line">这个示例实际上与示例 2 完全相同，只是结点 5 和 6 在树中的位置发生了交换。</span><br><span class="line">因为 5 和 6 的位置仍然相同，所以答案保持不变，仍然按值从小到大排序。</span><br></pre></td></tr></table></figure><p>实际上每一个顶点都是一个三元组(col,row,val),我们要将具有相同的col的节点归为一类，然后对col排序，然后在每一类里面再根据val排序。我们用一个以列表为默认值的defaultdict接受值，以col为字典的键。接受所有值后，对字典按键排序，在输出正确结果前，再对字典里每一个键对应的列表里的所有元组先按row排序，row相同的再按val排序。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">verticalTraversal</span>(<span class="params">self, root: <span class="type">Optional</span>[TreeNode]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        groups = defaultdict(<span class="built_in">list</span>)</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">root,col,row</span>):</span><br><span class="line">            <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            groups[col].append((row,root.val))<span class="comment">#每一个列号下添加每一行中该列元素的元组</span></span><br><span class="line">            dfs(root.left,col-<span class="number">1</span>,row+<span class="number">1</span>)</span><br><span class="line">            dfs(root.right,col+<span class="number">1</span>,row+<span class="number">1</span>)</span><br><span class="line">        dfs(root,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> _,g <span class="keyword">in</span> <span class="built_in">sorted</span>(groups.items()):</span><br><span class="line">            g.sort()</span><br><span class="line">            ans.append([val <span class="keyword">for</span> _,val <span class="keyword">in</span> g])</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://maksymilan.github.io/2024/06/09/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>戳气球</title>
+      <link>https://maksymilan.github.io/2024/06/09/%E6%88%B3%E6%B0%94%E7%90%83/</link>
+      <guid>https://maksymilan.github.io/2024/06/09/%E6%88%B3%E6%B0%94%E7%90%83/</guid>
+      <pubDate>Sun, 09 Jun 2024 06:30:43 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;有 &lt;code&gt;n&lt;/code&gt; 个气球，编号为&lt;code&gt;0&lt;/code&gt; 到 &lt;code&gt;n - 1&lt;/code&gt;，每个气球上都标有一个数字，这些数字存在数组 &lt;code&gt;nums&lt;/code&gt; 中。&lt;/p&gt;
+&lt;p&gt;现在要求你戳破所有的气球。戳破第 &lt;code&gt;i&lt;/c</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>有 <code>n</code> 个气球，编号为<code>0</code> 到 <code>n - 1</code>，每个气球上都标有一个数字，这些数字存在数组 <code>nums</code> 中。</p><p>现在要求你戳破所有的气球。戳破第 <code>i</code> 个气球，你可以获得 <code>nums[i - 1] * nums[i] * nums[i + 1]</code> 枚硬币。 这里的 <code>i - 1</code> 和 <code>i + 1</code> 代表和 <code>i</code> 相邻的两个气球的序号。如果 <code>i - 1</code>或 <code>i + 1</code> 超出了数组的边界，那么就当它是一个数字为 <code>1</code> 的气球。</p><p>求所能获得硬币的最大数量。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,1,5,8]</span><br><span class="line">输出：167</span><br><span class="line">解释：</span><br><span class="line">nums = [3,1,5,8] --&gt; [3,5,8] --&gt; [3,8] --&gt; [8] --&gt; []</span><br><span class="line">coins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,5]</span><br><span class="line">输出：10</span><br></pre></td></tr></table></figure><p>用动态规划解决这道题，假设我们添加两个边缘的球值为1，我们每一次只戳这两个球的中间部分的球，最后戳一个球我们就能得到答案，我们将左边缘记作i，右边缘记作j，最后这个球记作k，那么我们得到的答案就是i到k之间戳掉的球加上k到j之间戳掉的球加上$num[i]<em>nums[k]</em>nums[j]$,对于一个长度为n的输入，我们不断循环，第一次求所有长度为的子数组的答案，第二次求所有长度为3的子数组答案（可以利用长度为2的子数组求出的答案），依次递推，直到求得长度为n的子数组得到的答案</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxCoins</span>(<span class="params">self,nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>)-&gt;<span class="built_in">int</span>:</span><br><span class="line">        nums.insert(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">        nums.insert(<span class="built_in">len</span>(nums),<span class="number">1</span>)</span><br><span class="line">        store = [[<span class="number">0</span>]*<span class="built_in">len</span>(nums) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums))]</span><br><span class="line"><span class="meta">        @cache</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">i,j</span>):<span class="comment">#计算i，j之间的最大值</span></span><br><span class="line">            m = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,j):</span><br><span class="line">                left = store[i][k]</span><br><span class="line">                right = store[k][j]</span><br><span class="line">                a = left + nums[i]*nums[k]*nums[j]+right</span><br><span class="line">                <span class="keyword">if</span> a &gt; m:</span><br><span class="line">                    m = a</span><br><span class="line">            store[i][j] = m</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(nums)-n):</span><br><span class="line">                helper(i,i+n)</span><br><span class="line">        <span class="keyword">return</span> store[<span class="number">0</span>][<span class="built_in">len</span>(nums)-<span class="number">1</span>]</span><br></pre></td></tr></table></figure><p>由于一开始的插入操作，使得最小的数组长度为3(只输入一个数字的情况)，其他输入情况也是这样，输入n个数字，实际上我们是对n+2个数字进行处理。</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://maksymilan.github.io/2024/06/09/%E6%88%B3%E6%B0%94%E7%90%83/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>

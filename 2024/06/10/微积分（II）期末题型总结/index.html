@@ -17,14 +17,18 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>Maksymilan's Notebook</title>
+  <title>微积分（II）期末题型总结 - Maksymilan's Notebook</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Maksymilan&#39;s Notebook">
-<meta property="og:url" content="https://maksymilan.github.io/wiki/index.html">
+    <meta name="description" content="求一定点到空间曲线上一定点切线的距离核心问题：如何求一已知的空间曲线上一定点的切线 涉及到的知识是多元函数微分学中的偏导数在几何上的应用 如果空间曲线是由参数方程的形式表达  \begin{cases} x&#x3D;x(t)\\ y&#x3D;y(t)\\ z&#x3D;z(t) \end{cases}那么某一点处的切向量就是  \vec{a}&#x3D;(x&#39;(t_0),y&#39;(t_0),z&#39;(t_0))该切向量也就是过该点，垂直于该">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分（II）期末题型总结">
+<meta property="og:url" content="https://maksymilan.github.io/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="求一定点到空间曲线上一定点切线的距离核心问题：如何求一已知的空间曲线上一定点的切线 涉及到的知识是多元函数微分学中的偏导数在几何上的应用 如果空间曲线是由参数方程的形式表达  \begin{cases} x&#x3D;x(t)\\ y&#x3D;y(t)\\ z&#x3D;z(t) \end{cases}那么某一点处的切向量就是  \vec{a}&#x3D;(x&#39;(t_0),y&#39;(t_0),z&#39;(t_0))该切向量也就是过该点，垂直于该">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-10T02:27:35.000Z">
+<meta property="article:modified_time" content="2024-06-10T04:27:42.227Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -47,7 +51,7 @@
 </head>
 <body>
 
-<div class="l_body s:aa index tech" id="start" layout="index_wiki" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
@@ -61,24 +65,115 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/wiki/stellar/index.html"><span class="title"><strong>Stellar</strong><span class="dot"></span>这是分页标题</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/06/09/%E7%A6%BB%E6%95%A3%E8%AF%BE%E6%9C%AC%E8%AE%B0%E5%8D%95%E8%AF%8D/"><span class="title">离散课本记单词</span></a><a class="item title" href="/2024/06/10/%E5%BE%AE%E7%A7%AF%E5%88%86%EF%BC%88II%EF%BC%89%E6%9C%9F%E6%9C%AB%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/"><span class="title">微积分（II）期末题型总结</span></a><a class="item title" href="/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/"><span class="title">救生艇</span></a><a class="item title" href="/2024/06/09/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/"><span class="title">二叉树的垂序遍历</span></a><a class="item title" href="/2024/06/09/%E6%88%B3%E6%B0%94%E7%90%83/"><span class="title">戳气球</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/"><span class="title">曲面积分</span></a><a class="item title" href="/2024/06/08/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86/"><span class="title">曲线积分</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/06/06/CS61A/"><span class="title">CS61A</span></a><a class="item title" href="/2024/06/02/%E5%85%B3%E7%B3%BB%E2%80%94%E2%80%94relation/"><span class="title">关系——relation</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
 
 
 
 
-<div class="navbar top"><nav class="wiki"><a class="active" href="/wiki">所有项目</a></a><a href="/wiki/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/index.html">博客主题</a></a></nav></div>
-<div class="post-list wiki"><a class="post-card wiki" href="/wiki/stellar/index.html">
-<article class="md-text"><div class="preview"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/wiki/stellar/icon.svg"/></div><div class="excerpt"><div class="caps"><span class="cap breadcrumb">博客主题</span></div><h2 class="post-title">Stellar - 每个人的独立博客</h2><p>Stellar 是一个内置文档系统的简约商务风 Hexo 主题，支持丰富的标签和动态数据组件。</p></div></article>
-</a></div>
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-06-10T02:27:35.000Z">2024-06-10</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-06-10T04:27:42.227Z">2024-06-10</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>微积分（II）期末题型总结</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="求一定点到空间曲线上一定点切线的距离"><a href="#求一定点到空间曲线上一定点切线的距离" class="headerlink" title="求一定点到空间曲线上一定点切线的距离"></a>求一定点到空间曲线上一定点切线的距离</h2><p>核心问题：如何求一已知的空间曲线上一定点的切线</p>
+<p>涉及到的知识是<strong>多元函数微分学</strong>中的<strong>偏导数在几何上的应用</strong></p>
+<p>如果空间曲线是由参数方程的形式表达</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x=x(t)\\
+y=y(t)\\
+z=z(t)
+\end{cases}</script><p>那么某一点处的切向量就是</p>
+<script type="math/tex; mode=display">
+\vec{a}=(x'(t_0),y'(t_0),z'(t_0))</script><p>该切向量也就是过该点，垂直于该直线的平面的法向量</p>
+<p>我们知道对于给定的曲面方程$F$，我们可以得到该曲面方程上一点的切平面方程</p>
+<script type="math/tex; mode=display">
+F(x,y,z)=0,\\
+\frac{x-x_0}{F'_x(x_0,y_0,z_0)}=\frac{y-y_0}{F'_y(x_0,y_0,z_0)}=\frac{z-z_0}{F'_z(x_0,y_0,z_0)}</script><p>当曲线给出的形式是以两个曲平面的的交线给出的，如下</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+F(x,y,z)=0\\
+G(x,y,z)=0
+\end{cases}</script><p>那么我们就可以根据两个曲面的交线上一点的切线是两个曲面上过该点的切平面的交线这一性质得到曲线的切线</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+F'_x(P_0)(x-x_0)+F'_y(P_0)(y-y_0)+F'_z(P_0)(z-z_0)=0\\
+G'_x(P_0)(x-x_0)+G'_y(P_0)(y-y_0)+G'_z(P_0)(z-z_0)=0
+\end{cases}</script><p>如果我们对$F,G$进行移项处理，得到$z=z(x,y)$的形式，那么切线也可以表示为</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+f'_x(P_0)(x-x_0)+f'_y(P_0)(y-y_0)-(z-z_0)=0\\
+g'_x(P_0)(x-x_0)+g'_y(P_0)(y-y_0)-(z-z_0)=0
+\end{cases}</script><p>根据上述几个公式，我们可以求出一般的曲线方程在某一点的切线，接下来的问题是——<strong>如何求空间内已知直线到一点的最短距离呢</strong>，我们记切线的方向向量为$\vec{S}$,已知点到切点的向量为$\vec{OP_0}$,我们根据叉乘的知识知道，这两个向量叉乘得到的向量模长等于这两个向量所构成的平行四边形的面积，那么已知点到切线的最短距离就是这个平行四边形的高，也就是用叉乘后得到的模长除以切线向量的模长</p>
+<script type="math/tex; mode=display">
+d=\frac{|\vec{S}\times\vec{OP_0}|}{|\vec{S}|}</script><p><strong>例题</strong>；</p>
+<p>求原点到空间曲线</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+xy+z=0\\
+x^2+y^2+z^2=9
+\end{cases}</script><p>上点$P_0(2,1,-2)$处切线的距离</p>
+<h2 id="求空间曲线在一般位置上的平面的投影"><a href="#求空间曲线在一般位置上的平面的投影" class="headerlink" title="求空间曲线在一般位置上的平面的投影"></a>求空间曲线在一般位置上的平面的投影</h2><p>空间曲线在平面上的投影，可以看作是一个经过空间曲线的柱面与平面的交线，问题的关键是如何表示这个柱面。我们已知空间曲线和投影平面的方程，只需要求出投影柱面的方程即可的得到答案。</p>
+<p>我们可以想到，投影柱面的准线方向和投影平面的法向量是方向相同的，我们用$\vec{n}=(x_1,y_1,z_1)$表示法向量，由于我们要表示的是投影柱面，所以我们找柱面上任意一点$P(x,y,z)$那么一定存在一点$P_0(x_0,y_0,z_0)$存在于空间曲线上，满足</p>
+<script type="math/tex; mode=display">
+\vec{PP_0}\parallel\vec{n}</script><p>那么根据平行向量对应坐标比值相等</p>
+<script type="math/tex; mode=display">
+\frac{x-x_0}{x_1}=\frac{y-y_0}{y_1}=\frac{z-z_0}{z_1}</script><p>我们可以得到$x_0,y_0,z_0$的关于$x,y,z$的表达式(注意，这里要根据空间曲线得到的$x_0,y_0,z_0$的关系，将$x_0,y_0,z_0$换成只关于$x,y,z$的等式)，再将这些表达式带入原有的曲线方程，我们就可以得到投影柱面的方程</p>
+<p><strong>例题</strong></p>
+<p>求空间曲线</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x+y+z=0\\
+x^2+2y^2+3z^2=1
+\end{cases}</script><p>在平面$x-2y+2z=10$上的投影曲线方程</p>
+<h2 id="梯度的计算"><a href="#梯度的计算" class="headerlink" title="梯度的计算"></a>梯度的计算</h2><p>梯度是描述一个场内某一点处函数值增长速度最快的方向的一个向量，表示为</p>
+<script type="math/tex; mode=display">
+\mathcal{}\frac{\partial u}{\partial x}\vec{i}+\frac{\partial u}{\partial y}\vec{j}+\frac{\partial u}{\partial z}\vec{k}</script><p>一个点的方向导数就等于这个点的梯度在这个方向上的投影。</p>
+<p>梯度运算和导数运算具有相似的性质</p>
+<p>在了解了梯度的概念后，计算过程就是如何求偏导的过程</p>
+<p><strong>如何求隐函数的偏导</strong></p>
+<p>我们根据隐函数存在定理可以求出</p>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/06/10/%E6%95%91%E7%94%9F%E8%89%87/">救生艇</a></div></section></div>
+
+
+
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E4%B8%80%E5%AE%9A%E7%82%B9%E5%88%B0%E7%A9%BA%E9%97%B4%E6%9B%B2%E7%BA%BF%E4%B8%8A%E4%B8%80%E5%AE%9A%E7%82%B9%E5%88%87%E7%BA%BF%E7%9A%84%E8%B7%9D%E7%A6%BB"><span class="toc-text">求一定点到空间曲线上一定点切线的距离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E7%A9%BA%E9%97%B4%E6%9B%B2%E7%BA%BF%E5%9C%A8%E4%B8%80%E8%88%AC%E4%BD%8D%E7%BD%AE%E4%B8%8A%E7%9A%84%E5%B9%B3%E9%9D%A2%E7%9A%84%E6%8A%95%E5%BD%B1"><span class="toc-text">求空间曲线在一般位置上的平面的投影</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-text">梯度的计算</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
