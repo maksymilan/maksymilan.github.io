@@ -28,7 +28,7 @@
 <meta property="og:description" content="Streamstream是我们编程时与用户和文件系统进行交互的渠道，stream是source和destination之间的通道，使source将格式化的数据传到destination。 标准输入输出流cout cout(short for character output)是一个典型的输出流，从程序接收数据，将数据传送到控制台窗口，&lt;&lt;是流插入符号(stream insertion">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-03T07:56:35.000Z">
-<meta property="article:modified_time" content="2024-07-04T11:20:26.573Z">
+<meta property="article:modified_time" content="2024-07-04T11:24:52.545Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -78,7 +78,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-07-03T07:56:35.000Z">2024-07-03</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-07-04T11:20:26.573Z">2024-07-04</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-07-03T07:56:35.000Z">2024-07-03</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-07-04T11:24:52.545Z">2024-07-04</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -91,10 +91,10 @@
   </div>
   </div><article class="md-text content"><h1 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h1><p>stream是我们编程时与用户和文件系统进行交互的渠道，stream是source和destination之间的通道，使source将格式化的数据传到destination。</p>
 <h2 id="标准输入输出流"><a href="#标准输入输出流" class="headerlink" title="标准输入输出流"></a>标准输入输出流</h2><p><strong>cout</strong></p>
-<p>cout(short for character output)是一个典型的输出流，从程序接收数据，将数据传送到控制台窗口，<code>&lt;&lt;</code>是流插入符号(stream insertion operator)，是c++中用于将数据输入到流当中的符号，在这个例子中我们将字符串输入到cout流当中后，我们又输入了一个特殊的对象<code>endl</code>，下一次的控制台输出出现在新的一行。我们可以对cout流输入任意类型的数据。</p>
+<p>cout<code>(short for character output)</code>是一个典型的输出流，从程序接收数据，将数据传送到控制台窗口，<code>&lt;&lt;</code>是流插入符号<code>(stream insertion operator)</code>，是c++中用于将数据输入到流当中的符号，在这个例子中我们将字符串输入到cout流当中后，我们又输入了一个特殊的对象<code>endl</code>，下一次的控制台输出出现在新的一行。我们可以对cout流输入任意类型的数据。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;This is output stream.&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>cin</strong></p>
-<p>cin(short for character input)是输入流，cin以键盘输入为source，对应地有流提取运算符(strean extraction operator)<code>&gt;&gt;</code>。</p>
+<p>cin<code>(short for character input)</code>是输入流，cin以键盘输入为source，对应地有流提取运算符<code>(strean extraction operator)</code> <code>&gt;&gt;</code>。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;<span class="string">&quot;please enter an integer.&quot;</span>&lt;&lt;endl;</span><br><span class="line"><span class="type">int</span> myInteger;</span><br><span class="line">cin&gt;&gt;myInteger;</span><br></pre></td></tr></table></figure>
 <p>cin也是可以链式输入的，每一个输入之间输入一个空格符或者enter，但是空格一般推荐只在链式输入的单个数据内没有空格时使用，比如假如说<code>myString</code>的字符串值是<code>hello world</code>，那么中间的空格符就会被误认为是间隔符而产生错误输入，enter输入就不会有这种情况。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string myString;</span><br><span class="line"><span class="type">int</span> myInteger;</span><br><span class="line">cin&gt;&gt;myInteger&gt;&gt;myString;</span><br></pre></td></tr></table></figure>
