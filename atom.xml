@@ -41,29 +41,6 @@
   
   <entry>
     <title></title>
-    <link href="https://maksymilan.github.io/2024/09/21/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5%E4%B8%AA%E4%BA%BA%E5%B0%8F%E7%BB%93/"/>
-    <id>https://maksymilan.github.io/2024/09/21/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5%E4%B8%AA%E4%BA%BA%E5%B0%8F%E7%BB%93/</id>
-    <published>2024-09-21T07:46:48.460Z</published>
-    <updated>2024-09-21T07:50:34.041Z</updated>
-    
-    <content type="html"><![CDATA[<p>这次暑期社会实践活动，我们沿着红色足迹，传承红色精神，进行了红色场馆的参观和学习。</p><p>在参观中国共产党杭州历史馆的过程中，通过参观丰富的历史文物、照片、文献资料和历史场景复原，我仿佛回到了那个充满峥嵘岁月的年代。场馆通过详实的史料展示了中国共产党自成立以来，历经的苦难与辉煌，从党的诞生、发展到革命胜利，再到新中国的成立和社会主义建设，每一个阶段都充满了艰辛与奋斗。无论是革命先烈的英勇牺牲，还是普通党员的无私奉献，都让我切身体会到中国共产党为中国人民所做出的巨大贡献。特别是看到那些为国家独立与民族解放抛头颅、洒热血的无名英雄们的事迹时，我不禁心生敬佩。他们用生命和热血换来了我们今天的幸福生活，他们的精神应当永远铭刻在我们心中。通过讲解员的生动讲述和展览的历史资料，我进一步了解了中国共产党从1921年成立以来，如何带领中国人民从半殖民地半封建社会走向民族独立、人民解放和国家富强的光辉历程。特别是在抗日战争、解放战争以及新中国成立后的建设时期，党始终坚持全心全意为人民服务的宗旨，带领人民不断战胜困难，取得一个又一个伟大胜利。</p><p>通过这次活动，我深刻认识到学习党史的重要性。党史不仅是一部中国共产党艰苦卓绝的奋斗史，还是一座蕴含着无穷智慧和力量的宝库。正如习近平总书记所说：“历史是最好的教科书。”党的历史不仅是对过去的总结，更是对未来的指引。</p><p>中国共产党之所以能够从一个仅有几十人的小党，发展成为拥有9000多万党员、执政70多年的世界第一大党，离不开党的初心和使命。党始终坚持为人民谋幸福、为民族谋复兴的初心和使命，正是这种坚定的信念，支撑着中国共产党在各种艰难险阻中不断前行。</p><p>从党史中，我们可以看到，每当国家最危难的时刻，都是中国共产党挺身而出，带领人民摆脱困境，走向光明。无论是在革命战争年代，还是新中国成立后的社会主义建设时期，党始终坚持把人民利益放在第一位，始终与人民同呼吸、共命运。这种全心全意为人民服务的精神，是党能够长期执政、不断取得胜利的根本原因。</p><p>作为一名新时代的青年，在这次社会实践中，我不仅仅是学习了党史，更多的是从党史中汲取力量、明确责任与担当。我们这一代青年，生活在和平富足的时代，但肩负的责任依然重大。我们要继承和发扬党的优良传统，坚定理想信念，勇敢面对未来的挑战。</p><p>通过这次参观，我更加深刻地理解到，作为一名当代青年，必须时刻牢记党的历史，铭记革命先烈的牺牲和奉献。我们要把党史精神内化于心，外化于行，把个人的成长与国家的命运紧密结合起来，以实际行动来践行党史精神。</p><p>在今后的学习和生活中，我将以党史精神为指引，加强自身的学习和修养，努力提升自己的综合素质。作为当代青年，我不仅要有远大的理想，更要有脚踏实地的行动。在日常生活中，我会时刻保持对党史的学习热情，不断从党的奋斗历程中汲取智慧和力量，勇于担当责任，勇敢面对挑战，努力成为新时代中国特色社会主义事业的建设者和接班人</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="https://maksymilan.github.io/2024/09/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gdb%E8%B0%83%E8%AF%95cpp%E6%96%87%E4%BB%B6/"/>
     <id>https://maksymilan.github.io/2024/09/18/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gdb%E8%B0%83%E8%AF%95cpp%E6%96%87%E4%BB%B6/</id>
     <published>2024-09-18T08:46:05.989Z</published>
@@ -461,6 +438,29 @@
     <updated>2024-06-07T02:44:26.153Z</updated>
     
     <content type="html"><![CDATA[<h2 id="关系的闭包"><a href="#关系的闭包" class="headerlink" title="关系的闭包"></a>关系的闭包</h2><p>关系R对于性质P的闭包指的是在关系R中添加最少的有序对得到性质P</p><p><strong>自反闭包</strong></p><p>在有向图中，对所有顶点添加环</p><p>在矩阵中，在对角线上添加1</p><p><strong>对称闭包</strong></p><p>在有向图中添加反向边</p><p>在矩阵对称位置添加1</p><p><strong>传递闭包</strong></p><p>传递闭包用$t(R)$表示</p><p>构建传递闭包比自反闭包和对称闭包难得多，如果a到b有一条路径，那么就在a和b间建立关系</p><p>连通关系$R^*$</p><script type="math/tex; mode=display">R^*=\bigcup_{i=1}^{\infty}R^i</script><p>关系R的传递闭包,等价于联通关系 $R^*$</p><script type="math/tex; mode=display">t(R)=R^*</script><p>由于一个图中的关系的简单路径长度不会超过n-1，所以可以把上式简化，去除重复经过的节点</p><script type="math/tex; mode=display">t(R)=\bigcup_{i=1}^{n}R^i</script><h2 id="等价关系"><a href="#等价关系" class="headerlink" title="等价关系"></a>等价关系</h2><ul><li>自反性</li><li>对称性</li><li>传递性</li></ul><p><strong>等价类</strong></p><p>R是一个集合A上的等价关系，那么所有和元素a有等价关系的元素构成的集合就成为元素a的等价类，表示为$[a]_R$</p><script type="math/tex; mode=display">[a]_R=\{s|(a,s)\in R\}</script><p>其中等价类的每一个元素都可以作为该等价类的代表元。</p><p><strong>集合的割</strong></p><p>一个集合的割是该集合的一系列非空的不相交子集，他们的并集为该集合</p><p><strong>一个等价关系就是集合的一个割</strong></p><p>R是集合A上的一个等价关系，R的所有等价类的并集就是集合A</p><script type="math/tex; mode=display">\bigcup_{a\in A}[a]_R=A</script><h2 id="偏序"><a href="#偏序" class="headerlink" title="偏序"></a>偏序</h2><p>偏序关系指的是满足</p><ul><li>自反性</li><li>反对称性</li><li>传递性</li></ul><p>的一种关系</p><h3 id="偏序的可比较性"><a href="#偏序的可比较性" class="headerlink" title="偏序的可比较性"></a>偏序的可比较性</h3><p>一个偏序集里的两个元素a,b如果是可比较的，那么要么$a\leq b$要么$b\leq a$,如果a,b之间不存在前面这两条关系中的任何一条，那么这两个元素就是不可比较的</p><p>如果偏序集里所有的元素之间都是可以比较的，那么这个偏序集就成为<strong>全偏序（totally ordered）</strong>,或称为<strong>线性排序集（linear ordered set）</strong></p><p>如果在全偏序的基础上，偏序集还满足每一个非空子集都有最小元，那么就称为<strong>良序集</strong></p><h3 id="哈氏图术语"><a href="#哈氏图术语" class="headerlink" title="哈氏图术语"></a>哈氏图术语</h3><p>极大元(maximal)</p><p>极小元(minimal)</p><p>最大元(greatest element)</p><p>最小元(least element)</p><p>上界(upper bound)</p><p>下界(lower bound)</p><p>最小上界(least upper bound)</p><p>最大下界(greatest lower bound)</p><h3 id="格-lattice"><a href="#格-lattice" class="headerlink" title="格(lattice)"></a>格(lattice)</h3><p>一个偏序集中每一对元素都有最小上界和最大下界，那么这样的偏序集就称为格</p><h3 id="拓朴排序"><a href="#拓朴排序" class="headerlink" title="拓朴排序"></a>拓朴排序</h3><p>每一次随机取入度为0的元素即可，在偏序集里就是每一次取最小的元素</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>暑假计划</title>
+    <link href="https://maksymilan.github.io/2024/05/31/%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/"/>
+    <id>https://maksymilan.github.io/2024/05/31/%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/</id>
+    <published>2024-05-31T14:57:53.000Z</published>
+    <updated>2024-06-03T11:16:35.114Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CS61a"><a href="#CS61a" class="headerlink" title="CS61a"></a>CS61a</h1><p>把project写完，python，scheme，sql学会</p><h1 id="CS61b"><a href="#CS61b" class="headerlink" title="CS61b"></a>CS61b</h1><p>一样把project写完，学java</p><h1 id="CS61c"><a href="#CS61c" class="headerlink" title="CS61c"></a>CS61c</h1><p>暑假尽量学，开学之后把计组的时间放在这上面</p><p>暑期丰富自己的项目经历和编程能力，</p><h1 id="雅思备考"><a href="#雅思备考" class="headerlink" title="雅思备考"></a>雅思备考</h1><h2 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h2><p><strong>刘洪波阅读真经重点词汇</strong>，导入了欧路，配合朗文词典解释</p><h2 id="听力"><a href="#听力" class="headerlink" title="听力"></a>听力</h2><p><strong>何琼的听力课</strong>，何琼有常见同义替换整理，可以利用anki辅助背诵（可在anki软件内几块钱可购买），每日100个量刚刚好</p>]]></content>
     
     
       
