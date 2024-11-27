@@ -17,24 +17,25 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>数据结构错题整理 - Maksymilan's Notebook</title>
+  <title>react环境配置 - Maksymilan's Notebook</title>
 
   
-    <meta name="description" content="判断题1.It is always possible to represent a tree by a one-dimensional integer array.（T） 想一下不相交集的表示方法，下标表示某一个顶点，数组内储存的数字表示该顶点的父节点，由于每一个顶点都只有一个父节点，所以这样的表示是没有问题的 2.During the sorting, processing every elem">
+    <meta name="description" content="最近参与一个前端项目，需要配置react环境，记录一下在wsl里面的环境配置过程，主要的命令是参考了微软的wsl中的教程Install React on Windows Subsystem for Linux | Microsoft Learn 安装nodejs安装curl 1sudo apt-get install curl 安装nvm 1curl -o- https:&#x2F;&#x2F;raw.githubu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构错题整理">
-<meta property="og:url" content="https://maksymilan.github.io/2024/06/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86/index.html">
+<meta property="og:title" content="react环境配置">
+<meta property="og:url" content="https://maksymilan.github.io/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
-<meta property="og:description" content="判断题1.It is always possible to represent a tree by a one-dimensional integer array.（T） 想一下不相交集的表示方法，下标表示某一个顶点，数组内储存的数字表示该顶点的父节点，由于每一个顶点都只有一个父节点，所以这样的表示是没有问题的 2.During the sorting, processing every elem">
+<meta property="og:description" content="最近参与一个前端项目，需要配置react环境，记录一下在wsl里面的环境配置过程，主要的命令是参考了微软的wsl中的教程Install React on Windows Subsystem for Linux | Microsoft Learn 安装nodejs安装curl 1sudo apt-get install curl 安装nvm 1curl -o- https:&#x2F;&#x2F;raw.githubu">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-06-27T07:37:24.000Z">
-<meta property="article:modified_time" content="2024-06-27T12:55:30.434Z">
+<meta property="article:published_time" content="2024-11-21T09:13:13.000Z">
+<meta property="article:modified_time" content="2024-11-27T06:16:00.724Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="environment configuration">
 <meta name="twitter:card" content="summary">
   
   
   
-  
+  <meta name="keywords" content="environment configuration">
 
   <!-- feed -->
   
@@ -78,45 +79,38 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-06-27T07:37:24.000Z">2024-06-27</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-06-27T12:55:30.434Z">2024-06-27</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-21T09:13:13.000Z">2024-11-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-27T06:16:00.724Z">2024-11-27</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>数据结构错题整理</span></h1>
+        <h1 class="text title"><span>react环境配置</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h1><p><code>1.It is always possible to represent a tree by a one-dimensional integer array.</code>（T）</p>
-<p>想一下不相交集的表示方法，下标表示某一个顶点，数组内储存的数字表示该顶点的父节点，由于每一个顶点都只有一个父节点，所以这样的表示是没有问题的</p>
-<p><code>2.During the sorting, processing every element which is not yet at its final position is called a &quot;run&quot;. To sort a list of integers using quick sort, it may reduce the total number of recursions by processing the small partion first in each run.</code>(F)</p>
-<p>这个题考察的是什么是影响快速排序的因素，应该是每一次pivot的选择，只有当pivot每次都选择最居中的元素时，递归的深度最浅，如果每一次都选择最大或最小的pivot,那么递归地深度最深</p>
-<p><code>3.For binary heaps with N elements, the *BuildHeap* function (which adjust an array of elements into a heap in linear time) does at most N−log(N+1) comparisons between elements.</code>(F)</p>
-<p>线性时间建堆，最多的比较次数是2N-2</p>
-<p><code>4.Given that the pushing sequence of a stack is &#123; 1, 2, ⋯, n &#125; and popping sequence is &#123; x1,x2,⋯,xn &#125;. If x2=n, we can obtain 2 different possible popping sequences.</code>(F)</p>
-<p>我们只需要满足：n是第二个出堆就可以了，也就是说前N-1个元素我们可以任意弹出一个元素</p>
-<p><code>5.The best &quot;worst-case time complexity&quot; for any algorithm that sorts by comparisons only must be O(NlogN).</code>(T)</p>
-<p>基于比较的排序算法，最佳的上界是$O(N\log{N})$</p>
-<h1 id="选择题tips"><a href="#选择题tips" class="headerlink" title="选择题tips"></a>选择题tips</h1><ol>
-<li>无向图中去掉一条边会减少两个顶点的度，有向图中去掉一条边会减少一个顶点的入度和一个顶点的出度</li>
-<li>利用循环来进行树的中序遍历时，空间复杂度为$O(H)$,因为我们需要用到的栈的大小至少为树的最大高度</li>
-<li>最大流问题中，Gf是从互不连接的顶点加上增广路径得到的，Gr是原图减去增广路径并且加上反向边得到的</li>
-<li>给定一个图的顶点数量和边的数量，求至少有多少个连通分量时，将边环连接，这样求得的连通分量数最少，求最多有多少连通分量，将边连成完全图，这样求得的连通分量最多</li>
-<li>树中节点的度表示这个节点有几个孩子，度的和等于边的和，等于节点数加1（根节点）</li>
-<li>对二叉搜索树的节点的删除，我们将删除的节点用该节点的左子树最大值或者右子树最小值进行替代，其他的替代方法是不行的</li>
-<li>文件夹目录的打印用到的方法是前序遍历</li>
-<li>哈希的二次探测法，每一次是在第一次得到的结果上加上$i^2$，<strong>而不是</strong>加上$i^2$如果还是冲突，再加上$(i+1)^2$.</li>
-<li>堆排序是原地排序，不需要占用额外的空间</li>
-<li>判断一个排序算法是否是稳定的，我们看在这个算法里相等的元素在算法前后是否次序发生了改变，如果次序改变了，那么就不是稳定的，如果次序不变，那么就是稳定的，稳定的排序算法有：冒泡排序，归并排序，插入排序，基数排序，桶排序，不稳定的排序算法有：选择排序，快速排序，堆排序，希尔排序、</li>
-<li>Unoin by size得到的树的高度最高为$\log{N}+1$,最高的情况是，每一次都是大小相同的树合并，从两个孤立的根两两配对直到所有顶点结合成为一颗树</li>
-<li>审题要注意，堆的问题往往重建后还会有删除的要求，不要只读一半的条件就选答案</li>
-<li>堆排序建立的堆是最大堆，然后进行N次删除最大值的操作，这就是堆排序的过程</li>
-<li>在遇到和pivot相等的元素时停下的条件下，所有元素都相等的数组的快速排序的时间复杂度为$N\log{N}$</li>
-<li>在利用栈将中序表达式转化为后续表达式的过程中，优先级较小的操作符入栈前，要将栈内所有优先级大于等于它的操作符出栈，右括号不入栈，当选到右括号操作符时，将栈内所有在左括号上的元素出栈。</li>
-<li>rehash要取大于原来的TableSize两倍的最小质数</li>
-</ol>
+  </div><article class="md-text content"><p>最近参与一个前端项目，需要配置react环境，记录一下在wsl里面的环境配置过程，主要的命令是参考了微软的wsl中的教程<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/dev-environment/javascript/react-on-wsl">Install React on Windows Subsystem for Linux | Microsoft Learn</a></p>
+<h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><p>安装curl</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install curl</span><br></pre></td></tr></table></figure>
+<p>安装nvm</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>检查nvm是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> -v nvm</span><br></pre></td></tr></table></figure>
+<p>检查目前所用的node</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p>安装current和LTS两个版本的Node.js</p>
+<p>LTS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure>
+<p>current</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install node</span><br></pre></td></tr></table></figure>
+<p>查看当前node</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --version</span><br></pre></td></tr></table></figure>
+<p>切换node版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm use --lts<span class="comment">#使用lts版本</span></span><br><span class="line">nvm use node<span class="comment">#使用current</span></span><br></pre></td></tr></table></figure>
+<p>react环境安装，由于我这里的项目已经有了配置文件，我只需要进入该文件夹目录下，运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install</span><br></pre></td></tr></table></figure>
+<p>即可（pnpm安装过程在这里省去）</p>
 
 <div class="article-footer fs14">
     <section id="license">
@@ -126,7 +120,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/07/03/CS106L/">CS106L</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/06/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">数据结构期末复习</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">服务器环境配置的一些问题</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/11/19/%E5%85%89%E5%AD%A6/">光学</a></div></section></div>
 
 
 
