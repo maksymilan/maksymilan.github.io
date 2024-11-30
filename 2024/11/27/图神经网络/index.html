@@ -20,19 +20,22 @@
   <title>图神经网络 - Maksymilan's Notebook</title>
 
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="Node Embedding图表征学习(Graph Representation Learning) 将图中的节点，边等要素映射到低维的向量空间（即embedding），学习一个函数$f(u)$,将图中的节点$u$都映射到一个$d$维的向量空间：  f:u\rightarrow\R^d输入节点，输出$d$维向量，这个向量称为节点的嵌入表示（embedding） Embedding的作用  能保留节">
+<meta property="og:type" content="article">
 <meta property="og:title" content="图神经网络">
 <meta property="og:url" content="https://maksymilan.github.io/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="Node Embedding图表征学习(Graph Representation Learning) 将图中的节点，边等要素映射到低维的向量空间（即embedding），学习一个函数$f(u)$,将图中的节点$u$都映射到一个$d$维的向量空间：  f:u\rightarrow\R^d输入节点，输出$d$维向量，这个向量称为节点的嵌入表示（embedding） Embedding的作用  能保留节">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-27T06:11:38.000Z">
-<meta property="article:modified_time" content="2024-11-27T06:15:51.236Z">
+<meta property="article:modified_time" content="2024-11-27T09:23:11.321Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="research">
 <meta name="twitter:card" content="summary">
   
   
   
-  
+  <meta name="keywords" content="research">
 
   <!-- feed -->
   
@@ -63,7 +66,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"><span class="title">算法学习</span></a><a class="item title" href="/2024/11/01/CNN/"><span class="title">CNN</span></a><a class="item title" href="/2024/09/22/C++%E7%89%B9%E6%80%A7/"><span class="title">C++特性</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a><a class="item title" href="/2024/11/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"><span class="title">算法学习</span></a><a class="item title" href="/2024/11/01/CNN/"><span class="title">CNN</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -76,7 +79,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-27T06:11:38.000Z">2024-11-27</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-27T06:15:51.236Z">2024-11-27</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-27T06:11:38.000Z">2024-11-27</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-27T09:23:11.321Z">2024-11-27</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -87,7 +90,111 @@
     </div>
     
   </div>
-  </div><article class="md-text content">
+  </div><article class="md-text content"><h1 id="Node-Embedding"><a href="#Node-Embedding" class="headerlink" title="Node Embedding"></a>Node Embedding</h1><p><strong>图表征学习(Graph Representation Learning)</strong></p>
+<p>将图中的节点，边等要素映射到低维的向量空间（即<strong>embedding</strong>），学习一个函数$f(u)$,将图中的节点$u$都映射到一个$d$维的向量空间：</p>
+<script type="math/tex; mode=display">
+f:u\rightarrow\R^d</script><p>输入节点，输出$d$维向量，这个向量称为节点的嵌入表示（embedding）</p>
+<p><strong>Embedding的作用</strong></p>
+<ol>
+<li>能保留节点的相似性，连接较近的两个节点会有相似的嵌入表示</li>
+<li>编码网络信息，嵌入向量不仅包含结点的特征，还包含图的拓扑信息</li>
+<li>嵌入向量可以作为输入，用于””节点分类，链路预测，图分类的等任务</li>
+</ol>
+<p><strong>Embedding Node</strong></p>
+<p>嵌入的目标是将节点进行编码，使得得到的向量的相似性近似于图中的相似性</p>
+<p>Encoder：将每一个节点编码成一个低维向量</p>
+<p>Similarity function：区分如何将向量空间的关系映射到原始的网络上的关系</p>
+<p>Decoder：接受节点的嵌入向量作为输入，输出相似性分数</p>
+<p>要做的就是优化Decoder的参数使得计算的相似性分数和嵌入向量的点积相近</p>
+<script type="math/tex; mode=display">
+similarity(u,v)\approx z_{u}^Tz_{v}</script><p><strong>“Shallow” Encoding</strong></p>
+<p>浅层编码，直接通过为每一个节点分配一个嵌入向量来表示节点。</p>
+<p>编码器仅是一个嵌入查找表（Embedding lookup table）,每个节点被分配一个唯一的嵌入向量</p>
+<p><strong>define node similarity</strong></p>
+<p>解码器的选择主要看相似性是如何定义的，比如连接的节点有相似性还是有公共邻居的节点有相似性等等。</p>
+<h2 id="随机游走在节点嵌入上的应用"><a href="#随机游走在节点嵌入上的应用" class="headerlink" title="随机游走在节点嵌入上的应用"></a>随机游走在节点嵌入上的应用</h2><p>给定一个起始点，然后在这个起始点的邻居内随机选择一个，移动到这个邻居，然后在邻居内随机选择一个，以此类推，得到的点的随机序列就叫这个图上的随机游走。</p>
+<script type="math/tex; mode=display">
+z_{u}^Tz_{v}\approx u,v\in random \ walk</script><p><strong>如何用随机游走估计相似性</strong></p>
+<p>估计从节点u开始进行随机游走时，访问节点v的概率$P_{R(v|u)}$,$R$是随机游走的策略，决定了随机游走的规则（比如如何选择邻居节点）。</p>
+<p>过程：从节点u开始按照随机游走策略，遍历图中的路径，记录v在游走路径中的频率，作为$P_{R(u|v)}$的估计值</p>
+<p>随机游走的作用：捕获结点的局部和全局图结构信息，节点u和v在随机游走中共同出现的频率可以翻译他们在图中的相似性</p>
+<p><strong>如何优化嵌入</strong></p>
+<p>如果两个节点的嵌入向量距离较近（点积较大），则表示他们在图中的随机游走出现的概率高，相似性强</p>
+<p>我们要学习的是结点的嵌入向量，使得嵌入向量的相似性能够反映随机游走中的共现概率（嵌入向量的相似性通过点积来衡量），优化嵌入向量，使得节点嵌入向量之间的点击能近似等于$P_{R(u|v)}$</p>
+<p>最大化随机游走中邻居节点集合的预测概率</p>
+<script type="math/tex; mode=display">
+arg\ max_{z}\sum_{u\in V}log\ P(N_{R(U)}|z_{u})</script><p>邻居集合$N_{R(u)}$是从节点u开始的随机游走中访问的节点集合（多重集合，可重复），随机游走策略$R$决定这些节点的选择规则</p>
+<p><strong>最大化目标的等价形式：</strong></p>
+<p>最大化 </p>
+<script type="math/tex; mode=display">
+log\ P(N_{R(u)}|z_{u})</script><p> 等价于最小化负对数似然：</p>
+<script type="math/tex; mode=display">
+\mathcal{L} = -\sum_{u\in V}\sum_{v\in N_{R(u)}}\log{P(v|z_u)}</script><p>使用<strong>softmax</strong>函数建模$P(v|z_u)$</p>
+<script type="math/tex; mode=display">
+P(v|z_u)=\frac{exp(z_u^\top z_u)}{\sum_{n\in V}exp(z_u^\top z_n)}</script><p>损失函数的定义</p>
+<script type="math/tex; mode=display">
+\mathcal{L}= -\sum_{u\in V}\sum_{v\in N_{R(u)}}\frac{exp(z_u^\top z_u)}{\sum_{n\in V}exp(z_u^\top z_n)}</script><p>优化过程就是寻找$z_n$使得$\mathcal{L}$最小，我们定义好损失函数后，优化过程可以采用随机梯度下降</p>
+<p><strong>随机游走总结</strong></p>
+<ol>
+<li>在固定长度上进行随机游走</li>
+<li>对每一个节点$u$，收集其为起始点进行随机游走得到的$N_R(u)$</li>
+<li>使用随机梯度下降对损失函数进行优化</li>
+</ol>
+<h2 id="node2vec"><a href="#node2vec" class="headerlink" title="node2vec"></a>node2vec</h2><p>node2vec是一种基于随机游走的嵌入方法，开发了一种带偏置的二阶随机游走策略R，用于生成结点的邻域$N_{R(u)}$,从而学习更丰富的嵌入</p>
+<p><strong>带偏置的随机游走</strong></p>
+<p>在图的局部视图和全局试图进行权衡。</p>
+<p>随机游走有两个参数：</p>
+<ol>
+<li>返回参数p，决定是否要返回到上一个顶点</li>
+<li>进出参数q，决定是向外（DFS）还是向内（BFS）走</li>
+</ol>
+<p><strong>带偏置的随机游走的一步</strong></p>
+<ul>
+<li><p>随机游走通过(t,w)这条边到达了w</p>
+</li>
+<li><p>为节点w的邻居节点设置边的转移概率</p>
+<p>节点w的邻居节点有三类</p>
+<ul>
+<li><p>和t距离为0的节点（t本身）</p>
+<p>转移概率为$\frac{1}{p}$</p>
+</li>
+<li><p>和t距离为1的节点（t的邻居节点）</p>
+<p>转移概率为1</p>
+</li>
+<li><p>和t距离为2的节点（t的非直接邻居）</p>
+<p>转移概率为$\frac{1}{q}$</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>转移概率是没有归一化的，需要标准化为总合为1的分布</p>
+<p><strong>node2vec算法</strong></p>
+<ol>
+<li><p>计算边的转移概率</p>
+<p>对每条边计算转移概率</p>
+</li>
+<li><p>模拟随机游走</p>
+</li>
+<li><p>优化嵌入</p>
+<p>使用随机梯度下降优化目标函数</p>
+<p>最大化随机游走中邻居节点的共现概率</p>
+</li>
+</ol>
+<h2 id="Embedding-Entire-Graphs"><a href="#Embedding-Entire-Graphs" class="headerlink" title="Embedding Entire Graphs"></a>Embedding Entire Graphs</h2><p>将图或子图映射为一个嵌入向量，用于识别有毒分子和无毒分子或识别异常图等任务</p>
+<p><strong>approach 1</strong></p>
+<p>用节点的嵌入方式对一个图的所有节点进行嵌入向量映射，然后将所有的嵌入向量映射相加得到图的嵌入向量。</p>
+<p><strong>approach 2</strong></p>
+<p>引入一个虚拟节点来代表图，然后对这个虚拟节点计算嵌入向量</p>
+<h2 id="矩阵分解于嵌入向量"><a href="#矩阵分解于嵌入向量" class="headerlink" title="矩阵分解于嵌入向量"></a>矩阵分解于嵌入向量</h2><p>每个节点的嵌入向量为列组成的矩阵称为嵌入矩阵，记作$Z$，列数为节点数，行数为嵌入维度，优化目标是列向量的点积。</p>
+<p>如果我们定义相似性为两个节点是否相连，那么两个节点的嵌入向量的点积就应该近似与图的邻接矩阵的对于项，也就是</p>
+<script type="math/tex; mode=display">
+z_v^\top z_u=A_{u,v}</script><p>进一步我们得到</p>
+<script type="math/tex; mode=display">
+Z^\top Z=A</script><p>由于嵌入维度一般远小于节点数，将$A$精确分解比较困难，但是我们可以将$Z$近似化。优化目标为</p>
+<script type="math/tex; mode=display">
+\min||A-Z^\top Z||_2</script><p>优化$Z$使得弗罗贝尼乌斯范数（矩阵元素平方和的平方根）最小</p>
+<p>得到结论：点积作为decoder，相似性为边的连接性等价于对邻接矩阵的矩阵分解</p>
+
 <div class="article-footer fs14">
     <section id="license">
       <div class="header"><span>许可协议</span></div>
@@ -96,7 +203,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/">C++的一些trick</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a></div></section></div>
 
 
 
@@ -106,7 +213,14 @@
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E5%9C%A8%E8%8A%82%E7%82%B9%E5%B5%8C%E5%85%A5%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">随机游走在节点嵌入上的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node2vec"><span class="toc-text">node2vec</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Embedding-Entire-Graphs"><span class="toc-text">Embedding Entire Graphs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3%E4%BA%8E%E5%B5%8C%E5%85%A5%E5%90%91%E9%87%8F"><span class="toc-text">矩阵分解于嵌入向量</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>

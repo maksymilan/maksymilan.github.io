@@ -17,14 +17,18 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>Maksymilan's Notebook</title>
+  <title>C++的一些trick - Maksymilan's Notebook</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Maksymilan&#39;s Notebook">
-<meta property="og:url" content="https://maksymilan.github.io/page/4/index.html">
+    <meta name="description" content="求vector的最大值 调用algorithm中的max_elment 12vector&lt;int&gt; num &#x3D; &#123;......&#125;;int max &#x3D; *max_element(num.begin(),num.end()); 使用getline 调用sstream包的字符串流和fstream的文件输出流 123456std::ifstream file(file_na">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++的一些trick">
+<meta property="og:url" content="https://maksymilan.github.io/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="求vector的最大值 调用algorithm中的max_elment 12vector&lt;int&gt; num &#x3D; &#123;......&#125;;int max &#x3D; *max_element(num.begin(),num.end()); 使用getline 调用sstream包的字符串流和fstream的文件输出流 123456std::ifstream file(file_na">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-30T02:05:51.000Z">
+<meta property="article:modified_time" content="2024-11-30T07:53:38.732Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -47,7 +51,7 @@
 </head>
 <body>
 
-<div class="l_body s:aa index tech" id="start" layout="undefined" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
@@ -59,83 +63,60 @@
 <nav class="menu dis-select"></nav>
 </div>
 <div class="widgets">
-<widget class="widget-wrapper markdown"><div class="widget-header dis-select"><span class="name">一言</span></div><div class="widget-body fs14"><p>“大学教育的目标，绝不是造就多少专家如工程师、医生之类，而尤在于养成公忠坚毅、能担当大任、主持风气、转移国运的领导人才” <br> ————竺可桢</p>
 
-<div class="linklist center" style="grid-template-columns:repeat(1,1fr);">
-<a class="link" title="我的github主页" target="_blank" rel="noopener" href="https://github.com/maksymilan"><div class="flex"><span>我的github主页</span></div></a></div></div></widget>
 
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a><a class="item title" href="/2024/11/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"><span class="title">算法学习</span></a><a class="item title" href="/2024/11/01/CNN/"><span class="title">CNN</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
 
 
 
 
-<div class="navbar top"><nav class="post"><a class="active" href="/">近期发布</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/topic">专栏</a><a href="/archives">归档</a></nav></div>
-<div class="post-list post"><a class="post-card post" href="/2024/05/31/%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/">
-<article class="md-text"><h2 class="post-title">暑假计划</h2><div class="excerpt"><p>CS61a把project写完，python，scheme，sql学会
-CS61b一样把project写完，学java
-CS61c暑假尽量学，开学之后把计组的时间放在这上面
-暑期丰富自己的项目经历和编程能力，
-雅思备考单词刘洪波阅读真经重点词汇，导入...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-31T14:57:53.000Z">2024-05-31</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/29/%E9%97%AA%E5%87%BB%E6%9C%9F%E6%9C%AB%E8%A1%8C%E5%8A%A8/">
-<article class="md-text"><h2 class="post-title">闪击期末行动</h2><div class="excerpt"><p>起因看一眼考试时间，最早的考试只有三周不到的时间了，有点慌了，列一个时间表，规划一下最近的事情，避免期末周想亖
-正式进入战备状态，此次特殊军事行动为期四周，直至6月28日的数据结构考试结束！第一周为战略准备阶段，清理掉所有影响考试周复习的事务（5.2...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-29T15:05:03.000Z">2024-05-29</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/27/%E6%A0%91/">
-<article class="md-text"><h2 class="post-title">树</h2><div class="excerpt"><p>树的基础概念定义
-树是一个没有简单回路的连通的无向图
-Theorem1：一个无向图是树当且仅当任意两个顶点之间都有唯一的简单路径
-根树（Rooted Trees）
-根树有一个特定的节点称为根，从根开始，可以定义从跟到树中其他顶点的路径。这种路径的方向...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-27T01:28:44.000Z">2024-05-27</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/26/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">
-<article class="md-text"><h2 class="post-title">安卓开发</h2><div class="excerpt"><p>Kotlin语言和Jetpack ComposeKotlin基本语法
-变量和常量
-val不能多次赋值，var可以多次赋值
-1234val name = &quot;world&quot;//常量，不可变var greeting = &quot;Hel...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-26T09:13:23.000Z">2024-05-26</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/25/tarjan/">
-<article class="md-text"><h2 class="post-title">tarjan</h2><div class="excerpt"><p>tarjan算法用来求解一个有向图的强连通分量
-算法要求我们
-
-有$dfn$数组记录每一个节点在深度优先搜索中的访问次序
-$visited$数组作为全局变量，记录某一个节点是否被访问过
-$Stack$作为栈，储存在一次深度优先搜索中访问到的节点,$t...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-25T09:41:39.000Z">2024-05-25</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/24/pytorch/">
-<article class="md-text"><h2 class="post-title">pytorch</h2><div class="excerpt"><p>pytorch的安装在已经安装的python环境的前提下，只需要在命令行输入
-1pip install torch torchvision torchaudio
-即可。
-预备知识基本函数
-torch.empty(int size,int size)
-...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-24T04:02:44.000Z">2024-05-24</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/23/%E5%9B%BE/">
-<article class="md-text"><h2 class="post-title">图</h2><div class="excerpt"><p>图的术语（terminology）简单图（simple graph）
-每条边连接两个不同的顶点，并且两个顶点之间最多只存在一条边，对有向图来说，两个顶点之间一个方向上最多存在一条边
-多图（multigraphs）
-两个顶点间存在多条变的图
-圈（loo...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-23T08:36:56.000Z">2024-05-23</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/23/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F%E5%A4%A7%E5%85%A8/">
-<article class="md-text"><h2 class="post-title">热力学基础</h2><div class="excerpt"><p>热力学基础热力学第一定律准静态过程
-该过程所经历的一切中间状态都无限接近于平衡态。
-准静态过程气体做的功
-气体经历了一个准静态过程，体积由$V_1$变化为$V_2$，气体在整个过程中所做的功为
-
-W=\int_{V_1}^{V_2}pdV热力学第一定...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-23T02:40:23.000Z">2024-05-23</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/23/%E6%B0%94%E4%BD%93%E5%8A%A8%E7%90%86%E8%AE%BA%E5%85%AC%E5%BC%8F%E5%A4%A7%E5%85%A8/">
-<article class="md-text"><h2 class="post-title">气体动理论公式大全</h2><div class="excerpt"><p>理想气体状态方程
-pV=\frac{M}{\mu}RT=\nu RT$M$是气体质量，单位是千克
-$\mu$是气体的摩尔分子质量，单位是千克每摩尔，
-$\nu$是物质的量，单位是摩尔
-$R$是气体常量，$R = \frac{p_0V_m}{T_0}=...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-23T02:40:23.000Z">2024-05-23</time></span></div></article>
-</a><a class="post-card post" href="/2024/05/12/%E5%A4%9A%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95/">
-<article class="md-text"><h2 class="post-title">多源最短路径算法</h2><div class="excerpt"><p> 要解决多源最短路径问题，我们有两种方法，一是对每一个顶点进行单源最短路径算法，二是利用弗洛伊德算法解决。在这里我们了解弗洛伊德算法的实现过程。
-弗洛伊德算法利用一个矩阵，矩阵的元素代表两个节点之间的最短距离，如果两个节点没有直接相连，那么对角线上的...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2024-05-12T03:18:12.000Z">2024-05-12</time></span></div></article>
-</a></div>
-
-  <div class='paginator-wrap dis-select'>
-  <a class="extend prev" rel="prev" href="/page/3/"></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"></a>
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-30T02:05:51.000Z">2024-11-30</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-30T07:53:38.732Z">2024-11-30</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>C++的一些trick</span></h1>
+        
+      </div>
+    </div>
+    
   </div>
+  </div><article class="md-text content"><p><strong>求vector的最大值</strong></p>
+<p>调用<code>algorithm</code>中的<code>max_elment</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; num = &#123;......&#125;;</span><br><span class="line"><span class="type">int</span> max = *<span class="built_in">max_element</span>(num.<span class="built_in">begin</span>(),num.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<p><strong>使用getline</strong></p>
+<p>调用<code>sstream</code>包的字符串流和<code>fstream</code>的文件输出流</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::ifstream <span class="title">file</span><span class="params">(file_name)</span></span>;</span><br><span class="line">std::stringstream ss;</span><br><span class="line">type x,y;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">getline</span>(file,ss))&#123;</span><br><span class="line">    ss&gt;&gt;x&gt;&gt;y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用sort进行排序</strong></p>
+<p>下面是一个使用<code>sort</code>对一个<code>vector&lt;pair&lt;int,int&gt;&gt;</code>的<code>vector</code>按照第一个元素的大小进行排序的例子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; vec = &#123;&#123;<span class="number">3</span>, <span class="number">10</span>&#125;, &#123;<span class="number">1</span>, <span class="number">20</span>&#125;, &#123;<span class="number">4</span>, <span class="number">15</span>&#125;, &#123;<span class="number">2</span>, <span class="number">30</span>&#125;&#125;;</span><br><span class="line"><span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(),vec.<span class="built_in">end</span>(),[](<span class="type">const</span> pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; &amp;a ,<span class="type">const</span> pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt; &amp;b)&#123;</span><br><span class="line">    <span class="keyword">return</span> a.first &gt; b.first<span class="comment">// 按照第一个元素降序排列</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>vector的初始化</strong></p>
+<p>std::vector提供了一个可以指定元素个数和初始值的构造函数，函数签名如下，第一个是元素个数，第二个是元素的初始值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::vector&lt;Type&gt; <span class="title">vec</span><span class="params">(<span class="type">size_t</span> count,<span class="type">const</span> Type&amp; value)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>计时</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> std::literals::chrono_literals;<span class="comment">//使用“s”</span></span><br><span class="line">    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::<span class="built_in">now</span>();<span class="comment">//当前时间</span></span><br><span class="line">    std::this_thread::<span class="built_in">sleep_for</span>(<span class="number">1</span>s);<span class="comment">//程序休眠1s</span></span><br><span class="line">    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::<span class="built_in">now</span>();<span class="comment">//当前时间</span></span><br><span class="line">    std::chrono::duration&lt;<span class="type">float</span>&gt; duration = end - start;</span><br><span class="line">    std::cout&lt;&lt;duration.<span class="built_in">count</span>()&lt;&lt;<span class="string">&quot;s&quot;</span>&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">some_function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000</span>; ++i) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> start = chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">some_function</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> end = chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 微秒</span></span><br><span class="line">    <span class="keyword">auto</span> duration_micro = chrono::<span class="built_in">duration_cast</span>&lt;chrono::microseconds&gt;(end - start);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Time taken: &quot;</span> &lt;&lt; duration_micro.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot; microseconds&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 毫秒</span></span><br><span class="line">    <span class="keyword">auto</span> duration_milli = chrono::<span class="built_in">duration_cast</span>&lt;chrono::milliseconds&gt;(end - start);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Time taken: &quot;</span> &lt;&lt; duration_milli.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot; milliseconds&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 秒</span></span><br><span class="line">    <span class="keyword">auto</span> duration_sec = chrono::<span class="built_in">duration_cast</span>&lt;chrono::seconds&gt;(end - start);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Time taken: &quot;</span> &lt;&lt; duration_sec.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot; seconds&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">图神经网络</a></div></section></div>
+
+
+
+
 
 
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
