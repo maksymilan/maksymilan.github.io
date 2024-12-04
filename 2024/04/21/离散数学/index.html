@@ -1,0 +1,886 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0" theme-name="Stellar" theme-version="1.28.0">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>离散数学 - Maksymilan's Notebook</title>
+
+  
+    <meta name="description" content="Discrete mathChapter 1 Logic land Proofssection 1.1 Propositional Logicthe definition of propositions Connectives are listed bellow. Negation :$\neg$ Conjunction:$\land$ Disjunction:$\lor$ Connective">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学">
+<meta property="og:url" content="https://maksymilan.github.io/2024/04/21/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="Discrete mathChapter 1 Logic land Proofssection 1.1 Propositional Logicthe definition of propositions Connectives are listed bellow. Negation :$\neg$ Conjunction:$\land$ Disjunction:$\lor$ Connective">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-21T08:43:20.000Z">
+<meta property="article:modified_time" content="2024-05-23T10:17:13.918Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Maksymilan's Notebook" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.0">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a><a class="item title" href="/2024/11/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"><span class="title">算法学习</span></a><a class="item title" href="/2024/11/01/CNN/"><span class="title">CNN</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E7%AC%94%E8%AE%B0/">笔记</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-04-21T08:43:20.000Z">2024-04-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-23T10:17:13.918Z">2024-05-23</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>离散数学</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="Discrete-math"><a href="#Discrete-math" class="headerlink" title="Discrete math"></a>Discrete math</h1><h2 id="Chapter-1-Logic-land-Proofs"><a href="#Chapter-1-Logic-land-Proofs" class="headerlink" title="Chapter 1 Logic land Proofs"></a>Chapter 1 Logic land Proofs</h2><h3 id="section-1-1-Propositional-Logic"><a href="#section-1-1-Propositional-Logic" class="headerlink" title="section 1.1 Propositional Logic"></a>section 1.1 Propositional Logic</h3><p><em>the definition of propositions</em></p>
+<p><em>Connectives</em> are listed bellow.</p>
+<p><em>Negation</em> :$\neg$</p>
+<p><em>Conjunction</em>:$\land$</p>
+<p><em>Disjunction</em>:$\lor$</p>
+<p><em>Connective Or</em>:$\oplus$,异或指的是当两者之间只有一个为真时，两者的异或才为真，也就是两者具有不同的真假值时，异或命题为真，否则为假</p>
+<p><em>Implication</em>:$\rightarrow$，蕴含关系只有当条件为真，结论为假时才为假，蕴含关系的等价表达式是$p\rightarrow q = \neg p\lor q$</p>
+<p><em>a necessary condition for p is q</em> q是p的必要条件 </p>
+<p><em>a sufficient condition for q is p</em> p是q的充分条件</p>
+<p><em>Contrapositive</em>:逆否命题</p>
+<p><em>Inverse</em>:否命题</p>
+<p><em>converse</em>:逆命题</p>
+<p><em>Bi-conditional</em>：$\Leftrightarrow$,只有当两个两个命题同为真或同为假时双向条件才为真</p>
+<p><em>p iff q</em>  lor <em>p is necessary land sufficient for q</em></p>
+<p><strong><em>Problems</em></strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You can access the Internet from campus only if you are a computer science major lor you are not a freshman.</span><br></pre></td></tr></table></figure>
+<h4 id="Consistent-System-Specification"><a href="#Consistent-System-Specification" class="headerlink" title="Consistent System Specification"></a>Consistent System Specification</h4><p><em>Definition</em>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A list of propositions is consistent if it is possible to assign truth values to the proposition variables so that each proposition is true.</span><br></pre></td></tr></table></figure>
+<h5 id="Propositional-Equivalences"><a href="#Propositional-Equivalences" class="headerlink" title="Propositional Equivalences"></a>Propositional Equivalences</h5><p><em>Tautologies</em>: a proposition which is always true. </p>
+<p><em>Contradictions</em>: a proposition which is always false.</p>
+<p><em>Contingencies</em>: a proposition which is neither Tautology nor Contradiction.</p>
+<h6 id="Logically-Equivalent"><a href="#Logically-Equivalent" class="headerlink" title="Logically Equivalent"></a>Logically Equivalent</h6><p><em>definition</em>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Two compound propositions p land q are logically equivalent if  p↔q is a tautology.</span><br></pre></td></tr></table></figure>
+<p><strong><em>De Morgan`s Laws</em></strong></p>
+<p>$\neg (p\lor q) = \neg p\lor \neg q$</p>
+<p>$\neg(p\land q) = \neg p\lor q$</p>
+<h6 id="Equivalence-Proofs"><a href="#Equivalence-Proofs" class="headerlink" title="Equivalence Proofs"></a>Equivalence Proofs</h6><p><em>example</em>:</p>
+<p>Show that $\neg(p\lor(\neg p\land q))$ is logically equivalent to $\neg p\land q$</p>
+<p>Show that $(p\land q)\rightarrow ()p\lor q$ is a tautology. </p>
+<h6 id="Normal-Forms"><a href="#Normal-Forms" class="headerlink" title="Normal Forms"></a>Normal Forms</h6><p>There are two types of normal forms in propositional calculus:</p>
+<p><em>the disjunctive normal form(DNF)</em> land <em>the conjunctive normal form(CNF)</em></p>
+<p>DNF:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A propositional formula is in disjunctive normal form if it consists of a disjunction  of (1, ... ,n) disjuncts where each disjunct consists of a conjunction of (1, ..., m) atomic formulas lor the negation of an atomic formula</span><br></pre></td></tr></table></figure>
+<p>CNF:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A compound proposition is in Conjunctive Normal Form (CNF) if it is a conjunction of disjunctions.</span><br></pre></td></tr></table></figure>
+<h6 id="Propositional-Satisfiability"><a href="#Propositional-Satisfiability" class="headerlink" title="Propositional Satisfiability"></a>Propositional Satisfiability</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A compound proposition is satisfiable if there is an assignment of truth valuesto its variables that make it true. When no such assignments exist, the compound proposition is unsatisfiable</span><br></pre></td></tr></table></figure>
+<p><em>Sudoku Puzzle</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A Sudoku puzzle is represented by a 9*9 grid made up of nine 3*3 subgrids,known as blocks. Some of the 81 cells of the puzzle are assigned one of the numbers 1,2, ..., 9.</span><br></pre></td></tr></table></figure>
+<p><em>Solution</em>:</p>
+<ul>
+<li>For each cell with a given value, assert $p(i,j,n)$, when the cell in row $i$ land column $j$ has the given value.</li>
+<li>Assert that every row contains every number.</li>
+</ul>
+<script type="math/tex; mode=display">
+\bigwedge_{i=1}^9\bigwedge_{n=1}^9\bigvee_{j=1}^9p(i,j,n)</script><ul>
+<li><p>Assert that every column contains every number.</p>
+<script type="math/tex; mode=display">
+\bigwedge_{j=1}^9\bigwedge_{n=1}^9\bigvee_{i=1}^9p(i,j,n)</script></li>
+<li><p>Assert that each of the $3*3$ blocks contain every number.</p>
+<script type="math/tex; mode=display">
+\bigwedge_{r=0}^2\bigwedge_{s=0}^2\bigwedge_{n=1}^9\bigvee_{i=1}^3\bigvee_{j=1}^3p(3r+i,3s+j,n)</script></li>
+<li><p>Assert that no cell contains more than one number. Take the conjunction over all values of $n$,$n^<em>$,$i$,$j$, where each variable ranges from 1 to 9 land $n\neq n^</em>$,of</p>
+<script type="math/tex; mode=display">
+p(i,j,n)\rightarrow \neg p(i,j,n^*)</script></li>
+</ul>
+<hr>
+<h3 id="section-1-2-Predicate-Logic"><a href="#section-1-2-Predicate-Logic" class="headerlink" title="section 1.2 Predicate Logic"></a>section 1.2 Predicate Logic</h3><h4 id="Introduction-Predicate-Logic"><a href="#Introduction-Predicate-Logic" class="headerlink" title="Introduction Predicate Logic"></a>Introduction Predicate Logic</h4><p>Predicate Logic uses the following new features:</p>
+<ul>
+<li>Variables: $x,y,z$</li>
+<li>Predicates:$P(x),M(x)$</li>
+<li>Quantifiers:$\exists ,\forall$</li>
+</ul>
+<p><em>Propositional Functions</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Propositional functions become propositions (land have truth values) when their variables are each replaced by a value from the domain (lor  bound by a quantifier, as we will see later).</span><br></pre></td></tr></table></figure>
+<h4 id="Quantifiers"><a href="#Quantifiers" class="headerlink" title="Quantifiers"></a>Quantifiers</h4><p>$\forall P(x)$ asserts $P(x)$ is true for every $x$ in the domain.(<em>Universal Quantifier</em>)</p>
+<p>$\exists P(x)$ asserts $P(x)$ is true for some $x$ in the domain.(<em>Existential Quantifier</em>)</p>
+<p>The $\forall ,\exists$ have higher precedence than all the logical operators.</p>
+<p><strong>Example 1:</strong> Translate the following sentence into predicate logic: “Every student in this class has taken a course in Java.”</p>
+<p><strong>Solution:</strong><br>First decide on the domain _U_.</p>
+<p><strong>Solution 1:</strong> If _U_ is all students in this class, define a propositional function _J(x)_ denoting “x has taken a course in Java” land translate as $(\forall x J(x))$.</p>
+<p><strong>Solution 2:</strong> But if _U_ is all people, also define a propositional function _S(x)_ denoting “x is a student in this class” land translate as $(\forall x (S(x) \rightarrow J(x)))$.</p>
+<p>$(\forall x (S(x) \land J(x)))$ is not correct. This means that all people are the student in this class land take a course in Java.</p>
+<p><strong>Example 2:</strong> Translate the following sentence into predicate logic: “Some student in this class has taken a course in Java.”</p>
+<p><strong>Solution:</strong><br>First decide on the domain _U_.</p>
+<p><strong>Solution 1:</strong> If _U_ is all students in this class, translate as</p>
+<script type="math/tex; mode=display">\exists x J(x)</script><p><strong>Solution 1:</strong> But if _U_ is all people, then translate as</p>
+<script type="math/tex; mode=display">\exists x (S(x) \land J(x))</script><p>$\exists x (S(x) \rightarrow J(x))$ is not correct. In this proposition, if $x$ such that$J(x)$ is true, then for anyone in the _U_, the proposition is correct.</p>
+<h5 id="De-Morgan’s-Laws-for-Quantifiers"><a href="#De-Morgan’s-Laws-for-Quantifiers" class="headerlink" title="De Morgan’s Laws for Quantifiers"></a>De Morgan’s Laws for Quantifiers</h5><p>$\neg \forall xP(x) \equiv \exists x\neg P(x)$</p>
+<p>$\neg \exists xP(x) \equiv \forall x\neg P(x)$</p>
+<h4 id="Nested-Quantifiers"><a href="#Nested-Quantifiers" class="headerlink" title="Nested Quantifiers"></a>Nested Quantifiers</h4><p>$ \forall x\forall y P(x,y)$</p>
+<p>$\forall x\exists y P(x,y)$</p>
+<h3 id="section-1-3-Proofs"><a href="#section-1-3-Proofs" class="headerlink" title="section 1.3 Proofs"></a>section 1.3 Proofs</h3><h4 id="Rules-of-Inference"><a href="#Rules-of-Inference" class="headerlink" title="Rules of Inference"></a>Rules of Inference</h4><p><em>Modus Ponens</em>: $(p\land (p\rightarrow q))\rightarrow q$</p>
+<p><em>Modus Tollens</em>:$((p\rightarrow q)\land \neg p)\rightarrow \neg q$</p>
+<p><em>Hypothetical Syllogism</em>: $((p\rightarrow q)\land (q\rightarrow r))\rightarrow(p\rightarrow r)$</p>
+<p><em>Disjunctive Syllogism</em>: $((p\lor q)\land\neg p)\rightarrow q$</p>
+<p><em>Resolution</em>:$((\neg p\lor q)\land(p\lor r))\rightarrow q\lor r$</p>
+<p><em>Universal Instantiation(UI)</em>:$\forall xP(x)\rightarrow P(c)$</p>
+<p><em>Existential Instantiation(EI)</em>:$\exists xP(x)\rightarrow P(c)$</p>
+<h4 id="introduction-to-proofs"><a href="#introduction-to-proofs" class="headerlink" title="introduction to proofs"></a>introduction to proofs</h4><ul>
+<li>Mathematical Proofs</li>
+<li>Forms of Theorems</li>
+<li>Direct Proofs</li>
+<li>Indirect Proofs <ul>
+<li>Proof of the Contrapositive</li>
+<li>Proof by Contradiction</li>
+</ul>
+</li>
+</ul>
+<h2 id="Chapter-2-Sets-Functions-Sequences"><a href="#Chapter-2-Sets-Functions-Sequences" class="headerlink" title="Chapter 2 Sets,Functions,Sequences"></a>Chapter 2 Sets,Functions,Sequences</h2><h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><ul>
+<li>The language of Sets</li>
+</ul>
+<p><em>Roster Method</em></p>
+<p><em>Set Builder Notation</em>:</p>
+<p>$S = \{x|P(x)\}$</p>
+<p><em>Interval Notation</em>:</p>
+<p>$[a,b],(a,b)$</p>
+<p><em>Set Equality</em>:</p>
+<p>$\forall x(x\in A\leftrightarrow x\in B)$</p>
+<p>$(A\subset B) \land (B\subset A)$</p>
+<p><em>Sub Set</em>:</p>
+<p>$\forall x(x\in A\rightarrow x\in B)$</p>
+<p><em>Power Set</em>:</p>
+<p>The set of all subset of a set $A$, denoted $P(A)$, is called the <em>power set</em> of $A$.</p>
+<p><em>Cartesian Product</em>:</p>
+<p>$A\times B = \{(a,b)|a\in A\land b\in B\}$</p>
+<ul>
+<li>Set Operations</li>
+</ul>
+<p><em>Union</em>:$A\cup B$</p>
+<p><em>Intersection</em>:$A\cap B$</p>
+<p><em>Complementation</em>:$U-A$</p>
+<p><em>Difference</em>:$B-A$</p>
+<p><em>Symmetric Difference</em>:$A\oplus B$</p>
+<p>$\{x|((x\in A)\lor(x\in B))\land(x\notin(A\cap B))\}$</p>
+<ul>
+<li>Set Identities</li>
+</ul>
+<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><p>Definition:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Let A land B be nonempty sets. A function f from A to B, denoted  f: A → B is an assignment of each element of A to exactly one element of B.  We write  f(a) = b  if b is the unique element of B assigned by the function f to the element a of A</span><br></pre></td></tr></table></figure>
+<p>Functions are sometimes called mappings lor transformations.</p>
+<ul>
+<li>Function language</li>
+</ul>
+<p><em>Domain</em>: $A$</p>
+<p><em>Cdomain</em>: $B$</p>
+<p><em>image</em>: $y$</p>
+<p><em>preimage</em>: $x$</p>
+<p><em>Injection(one-to-one)</em>:$f(a)=f(b)\leftrightarrow a=b$</p>
+<p><em>Surjection(onto)</em>:$\forall y\in B,\exists x\in A,f(x)=y$</p>
+<p><em>Bijection(one-to-one land onto,AKA one-to-one correspondence)</em></p>
+<p><em>Composition</em>:$f(g(x)),A\rightarrow B\rightarrow C$</p>
+<ul>
+<li>Types of Functions</li>
+<li>Operation on Functions</li>
+<li>Computability</li>
+</ul>
+<h3 id="Sequences"><a href="#Sequences" class="headerlink" title="Sequences"></a>Sequences</h3><p>Definition:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A sequence is a function from a subset of the integers to a Set S.</span><br></pre></td></tr></table></figure>
+<p><em>Geometric Progression</em>: </p>
+<script type="math/tex; mode=display">
+a_n = ar^n</script><p><em>Arithmetic Progression</em>:</p>
+<script type="math/tex; mode=display">
+a_n = a+nd</script><ul>
+<li>Type of Sequences</li>
+<li>Summation Formula</li>
+</ul>
+<h3 id="Set-Cardinality"><a href="#Set-Cardinality" class="headerlink" title="Set Cardinality"></a>Set Cardinality</h3><ul>
+<li>Cardinality</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A set that is either finite lor has the same cardinality as the set of positive integers (Z+) is called countable. A set that is not countable is uncountable</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Countable Sets</li>
+</ul>
+<h4 id="Problem-1-Infinite-Binary-Sequences"><a href="#Problem-1-Infinite-Binary-Sequences" class="headerlink" title="Problem 1: Infinite Binary Sequences"></a>Problem 1: Infinite Binary Sequences</h4><p><strong>Claim</strong>: The set of all infinite binary sequences is uncountable.</p>
+<p><strong>Proof</strong>:<br>Assume for contradiction that the set of all infinite binary sequences is countable. Then we can list all such sequences:</p>
+<ol>
+<li><code>s_1 = b_&#123;11&#125;, b_&#123;12&#125;, b_&#123;13&#125;, b_&#123;14&#125;, ...</code></li>
+<li><code>s_2 = b_&#123;21&#125;, b_&#123;22&#125;, b_&#123;23&#125;, b_&#123;24&#125;, ...</code></li>
+<li><code>s_3 = b_&#123;31&#125;, b_&#123;32&#125;, b_&#123;33&#125;, b_&#123;34&#125;, ...</code></li>
+<li><code>...</code></li>
+</ol>
+<p>Now, construct a new binary sequence <code>s</code> where the <code>i</code>-th digit <code>s_i</code> is defined as follows: <code>s_i = 1</code> if <code>b_&#123;ii&#125; = 0</code> land <code>s_i = 0</code> if <code>b_&#123;ii&#125; = 1</code>. This sequence <code>s</code> differs from each <code>s_i</code> in the list by at least one digit (the <code>i</code>-th digit). Therefore, <code>s</code> is not in the list, which contradicts our assumption that the set is countable. Hence, the set of all infinite binary sequences is uncountable.</p>
+<hr>
+<h4 id="Problem-2-Real-Numbers-Between-0-land-1"><a href="#Problem-2-Real-Numbers-Between-0-land-1" class="headerlink" title="Problem 2: Real Numbers Between 0 land 1"></a>Problem 2: Real Numbers Between 0 land 1</h4><p><strong>Claim</strong>: The set of all real numbers between 0 land 1 is uncountable.</p>
+<p><strong>Proof</strong>:<br>This is a classic result proven by Cantor’s diagonal argument, similar to the proof for Problem 1. If we assume that the set of real numbers between 0 land 1 is countable, we could list all such numbers land their decimal expansions. By constructing a new number not in the list by changing the <code>n</code>-th decimal place of the <code>n</code>-th number, we would arrive at a contradiction. Therefore, the set of real numbers between 0 land 1 is uncountable.</p>
+<hr>
+<h4 id="Problem-3-Continuous-Functions-from-0-1-to-ℝ"><a href="#Problem-3-Continuous-Functions-from-0-1-to-ℝ" class="headerlink" title="Problem 3: Continuous Functions from [0, 1] to ℝ"></a>Problem 3: Continuous Functions from [0, 1] to ℝ</h4><p><strong>Claim</strong>: The set of all continuous functions from the interval [0, 1] to ℝ is uncountable.</p>
+<p><strong>Proof</strong>:<br>One way to prove this is to use the fact that there is a continuous function corresponding to each sequence of real numbers (considered as the values of the function at rational points in [0, 1], land extended to the whole interval by continuity). Since the set of sequences of real numbers is uncountable (as we can map each sequence to a real number in (0,1)), the set of continuous functions must also be uncountable.</p>
+<hr>
+<h4 id="Problem-4-Polynomials-with-Rational-Coefficients"><a href="#Problem-4-Polynomials-with-Rational-Coefficients" class="headerlink" title="Problem 4: Polynomials with Rational Coefficients"></a>Problem 4: Polynomials with Rational Coefficients</h4><p><strong>Claim</strong>: The set of all polynomials with rational coefficients is countable.</p>
+<p><strong>Proof</strong>:<br>Every polynomial with rational coefficients can be uniquely represented by a finite sequence of rational numbers (its coefficients). Since the set of rational numbers is countable, land a finite sequence of countable sets is also countable, the set of all such sequences is countable. Therefore, the set of all polynomials with rational coefficients is countable.</p>
+<hr>
+<h4 id="Problem-5-Power-Set-of-ℕ"><a href="#Problem-5-Power-Set-of-ℕ" class="headerlink" title="Problem 5: Power Set of ℕ"></a>Problem 5: Power Set of ℕ</h4><p><strong>Claim</strong>: The power set of ℕ (the set of all subsets of natural numbers) is uncountable.</p>
+<p><strong>Proof</strong>:<br>Cantor’s theorem states that for any set <code>A</code>, the power set of <code>A</code> (denoted by <code>2^A</code>) has a greater cardinality than <code>A</code> itself. Since the natural numbers are countable, let’s assume for contradiction that the power set of ℕ is also countable. Then there would exist a bijection between ℕ land <code>2^ℕ</code>, which is impossible by Cantor’s theorem. Therefore, the power set of ℕ is uncountable.</p>
+<h2 id="Chapter-3-Algorithms"><a href="#Chapter-3-Algorithms" class="headerlink" title="Chapter 3 Algorithms"></a>Chapter 3 Algorithms</h2><ul>
+<li>Algorithms</li>
+</ul>
+<p><em>Properties of Algorithms</em></p>
+<p><em>Algorithm for Searching land sorting</em></p>
+<p><em>Greedy Algorithm</em></p>
+<p><code>Proving Optimality For U.S. Coins</code></p>
+<p>Show that the change making algorithm for US coins is optimal.</p>
+<p><strong><em>lemma 1</em></strong>: If n is a positive integer, then n cents in change using quarters(25), dimes(10), nickels(5), land pennies(1), using the fewest coins possible has at most 2 dimes,1 nickel,4 pennies, land cannot have 2 dimes land a nickel. The total amount of change in dimes, nickels, land penneies must not exceed 24 cents.</p>
+<p><em>Proof</em>: By contradiction</p>
+<ol>
+<li>Assume that there is a positive integer n such that change can be made for n cents with fewer total number of coins than given by the algorithm.</li>
+<li>Then $q_i \leq q$ , where $q_i$ is the number of quarters used in this optimal way land q is the number of quarters in the greedy algorithm’s solution. But this is not possible by Lemma 1,  since the value of the coins other than quarters can not be greater than 24 cents.</li>
+<li>Similarly, by Lemma 1, the two algorithms must have the same number of dimes, nickels, land quarters.</li>
+</ol>
+<p><em>Halting Problem</em></p>
+<ul>
+<li>Growth of Functions</li>
+</ul>
+<p>$O$ land $Ω$</p>
+<p>$O$:$|f(x)|\leq C|g(x)|$</p>
+<p>$Ω$:$|f(x)|\geq C|g(x)|$</p>
+<ul>
+<li>Complexity of Algorithms</li>
+</ul>
+<h2 id="Chapter-4-Number-Theory"><a href="#Chapter-4-Number-Theory" class="headerlink" title="Chapter 4 Number Theory"></a>Chapter 4 Number Theory</h2><h3 id="section-4-1-Divisibility-land-Modular"><a href="#section-4-1-Divisibility-land-Modular" class="headerlink" title="section 4.1 Divisibility land Modular"></a>section 4.1 Divisibility land Modular</h3><ul>
+<li>Division</li>
+</ul>
+<p><em>Definition</em>:(denoted as $a|b$)</p>
+<p>$a$ divides $b$ if there exists an integer $c$ such that $b=ac$.(all integers)</p>
+<ul>
+<li>Division Algorithm</li>
+</ul>
+<p>Definition of Functions $div$ land $mod$:</p>
+<script type="math/tex; mode=display">
+q = a \div d</script><script type="math/tex; mode=display">
+r = a\mod d</script><ul>
+<li>Modular Arithmetic</li>
+</ul>
+<p><em>Congruence Relation</em>:</p>
+<p>$a$ is <code>congruent to b mod m</code> if $m$ divides $a -  b$</p>
+<p><em>notation</em>:</p>
+<script type="math/tex; mode=display">
+a \equiv (b\mod m)\leftrightarrow a\mod m = b\mod m\rightarrow ca\equiv cb(\mod m)\land (c+a)\equiv(c+b)(\mod m)</script><p><em>Congruence of Sums land Products</em>:</p>
+<p>If </p>
+<script type="math/tex; mode=display">
+a\equiv b(\mod m)\land c\equiv d(\mod m)</script><p> then</p>
+<script type="math/tex; mode=display">
+ac\equiv bd(\mod m)\land (a+c)\equiv (b+d)(\mod m)</script><p><em>Computing the mod m Function of Products land Sums</em></p>
+<script type="math/tex; mode=display">
+(a+b)(\mod m)=((a\mod m)+(b\mod m))\mod m</script><script type="math/tex; mode=display">
+ab(\mod m)=((a\mod m)*(b\mod m))\mod m</script><h3 id="Section-4-2-Integer-Representations-land-Algorithms"><a href="#Section-4-2-Integer-Representations-land-Algorithms" class="headerlink" title="Section 4.2 Integer Representations land Algorithms"></a>Section 4.2 Integer Representations land Algorithms</h3><ul>
+<li>Integer Representation(Base b,Binary,Octal,Hexadecimal)</li>
+</ul>
+<p>Base b Representations:</p>
+<script type="math/tex; mode=display">
+n = \sum_{i=0}^k a_ib^i</script><ul>
+<li>Base Conversion Algorithm</li>
+</ul>
+<p>To construct the base b expansion of an integer n:</p>
+<ol>
+<li><p>Divide n by b to obtain a quotient land remainder.</p>
+<script type="math/tex; mode=display">
+n = bq_0+a_0(0\leq a_0\leq b)</script></li>
+<li><p>The remainder $a_0$ is the rightmost digit in the base b expansion of $n$.Next,divide $q_0$ by b.</p>
+<script type="math/tex; mode=display">
+q_0=bq_1+a_1(0\leq a_1\leq b)</script></li>
+<li><p>The remainder  $a_1$ is the second digit from the right in the base b expansion of n.</p>
+</li>
+<li><p>Continue by successively dividing the quotients by $b$, obtaining the additional base b digits as the remainder. The process terminates when the quotient is $0$.</p>
+<script type="math/tex; mode=display">
+n = \sum_{i=0}^ka_ib^i</script><script type="math/tex; mode=display">
+(n)_b = a_ka_{k-1}...a_1a_0</script></li>
+</ol>
+<ul>
+<li>Algorithms for Integer Operations</li>
+</ul>
+<ol>
+<li>Binary Addition of Integers($O(n)$)</li>
+<li>Binary Multiplication of Integers($O(n^2)$)</li>
+<li>Binary Modular Exponentiation($O((log m)^2 log n)$ when find $b^n\mod m$)</li>
+</ol>
+<h3 id="Section-4-3-Primes-land-Greatest-Common-Divisors"><a href="#Section-4-3-Primes-land-Greatest-Common-Divisors" class="headerlink" title="Section 4.3 Primes land Greatest Common Divisors"></a>Section 4.3 Primes land Greatest Common Divisors</h3><ul>
+<li>Prime numbers land their Properties</li>
+</ul>
+<p><strong><em>The Fundamental Theorem of Arithmetic</em></strong>:</p>
+<p><code>Every positive integer greater than 1 can be written unniquely as a prime lor as the product of two lor more primes where the prime factors are written in order of nondecreasing size.</code></p>
+<p><strong><em>Infinitude of Primes</em></strong></p>
+<p><code>There are infinitely many primes.</code></p>
+<ul>
+<li>Greatest Common Divisors land Least Common Multiples</li>
+</ul>
+<script type="math/tex; mode=display">
+ab = gcd(a,b)*lcm(a,b)</script><ul>
+<li><p>The Euclidian Algorithm</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">GCD</span>(<span class="params">a,b</span>):<span class="comment">#a&lt;b</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> GCD(b%a,a)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>GCDs as Liner Combinations</p>
+</li>
+</ul>
+<p><em>Bezout’s Theorem</em>: If a land b are positive integers, then there exist integers s land t such that </p>
+<script type="math/tex; mode=display">
+gcd(a,b) = sa+tb</script><h3 id="Section-4-4-Solving-Congruences"><a href="#Section-4-4-Solving-Congruences" class="headerlink" title="Section 4.4 Solving Congruences"></a>Section 4.4 Solving Congruences</h3><ul>
+<li>Linear Congruences</li>
+</ul>
+<p>A congruence of  the form </p>
+<script type="math/tex; mode=display">
+ax\equiv b(\mod m)</script><p>is called linear congruence.</p>
+<p><em>Inverse of a modulo m</em>:</p>
+<p><code>An inverse of a modulo m exists whenever a land m are relatively p,land the inverse is unique.</code></p>
+<ul>
+<li>The Chinese Remainder Theorem</li>
+</ul>
+<script type="math/tex; mode=display">
+x\equiv a_1(\mod m_1)</script><script type="math/tex; mode=display">
+x\equiv a_2(\mod m_2)</script><script type="math/tex; mode=display">
+...</script><script type="math/tex; mode=display">
+x\equiv a_n(\mod m_n)</script><p>has a unique solution modulo $m=m_1m_2…m_n$</p>
+<script type="math/tex; mode=display">
+M_k=m/m_k</script><script type="math/tex; mode=display">
+M_ky_k\equiv 1(\mod m_k)</script><script type="math/tex; mode=display">
+x=\sum_{i=1}^n a_iM_iy_i</script><ul>
+<li>Fermat’s Little Theorem</li>
+</ul>
+<p>If p is a prime land a is an integer not divisible by p,then</p>
+<script type="math/tex; mode=display">
+a^{p-1}\equiv 1(\mod p)</script><ul>
+<li>Pseudoprimes</li>
+</ul>
+<p>Let b be a positive integer. If n is a composite integer, land </p>
+<script type="math/tex; mode=display">
+b^{n-1}\equiv 1(\mod n)</script><p>then n is called pseudoprime to the base b.</p>
+<ul>
+<li>Primitive Roots land Discrete Logarithms</li>
+</ul>
+<p>A primitive root modulo a prime p is an integer r in $Z_p$ such that every nonzero element of $Z_p$ is a power of r. </p>
+<p><strong><em>important fact</em></strong>:</p>
+<p><code>There is aprimitive root modulo p for every prime number p.</code></p>
+<ul>
+<li>Discrete Logarithms</li>
+</ul>
+<p>Suppose p is prime land r is a primitive root modulo p. If a is an integer between 1 land p-1, that is an element of $Z_p$, there is a unique exponent $e$ such that</p>
+<script type="math/tex; mode=display">
+r^e(\mod p)=a</script><p>we say that $e$ is the <strong><em>discrete logarithm of a modulo p to the base r</em></strong>. And we write </p>
+<script type="math/tex; mode=display">
+log_ra=e</script><h3 id="Recursive-Algorithms"><a href="#Recursive-Algorithms" class="headerlink" title="Recursive Algorithms"></a>Recursive Algorithms</h3><p>an algorithm is called <em>recursive</em> if it solves a problem by reducing it  to an instance of the same problem with smaller input.</p>
+<p><strong><em>examples</em></strong>:</p>
+<p><em>Recursive Factorial Algorithm​</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">RFA</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n*RFA(n-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><em>Recursive Exponentiation Algorithm</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">REA</span>(<span class="params">a,power</span>):</span><br><span class="line">    <span class="keyword">if</span> power == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> a*REA(a,power-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><em>Recursive GCD Algorithm</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gcd</span>(<span class="params">a,b</span>):<span class="comment">#a&lt;b</span></span><br><span class="line">	<span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> gcd(b%a,a)</span><br></pre></td></tr></table></figure>
+<p><em>Recursive Modular Exponentiation Algorithm</em></p>
+<p>$Corollary$:Let m be a positive integer land let a land b be integers. </p>
+<p>Then $ab$  $mod $  $m$ $=$ (($a$ $mod$ $m$)($b$ $mod$ $m$)) $mod$ $m$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">RMEA</span>(<span class="params">b,m,n</span>):</span><br><span class="line">       <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">           <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">       <span class="keyword">elif</span> n%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">           <span class="keyword">return</span> <span class="built_in">pow</span>(RMEA(b,m,n/<span class="number">2</span>),<span class="number">2</span>)%m</span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           <span class="keyword">return</span> <span class="built_in">pow</span>(RMEA(b,m,(n-<span class="number">1</span>/<span class="number">2</span>)),<span class="number">2</span>)%m</span><br></pre></td></tr></table></figure>
+<p><em>Recursive Binary Search Algorithm</em></p>
+<p>Just similar to binary search.</p>
+<h3 id="Proving-Recursive-Algorithm-Correct"><a href="#Proving-Recursive-Algorithm-Correct" class="headerlink" title="Proving Recursive Algorithm Correct"></a>Proving Recursive Algorithm Correct</h3><p>Both mathematical land strong induction are useful techniques to show that recursive algorithms always produce the correct output.</p>
+<h3 id="Merge-Sort"><a href="#Merge-Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">      </span><br></pre></td></tr></table></figure>
+<h4 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Counting"><a href="#Counting" class="headerlink" title="Counting"></a>Counting</h2><h3 id="The-Basic-of-Counting"><a href="#The-Basic-of-Counting" class="headerlink" title="The Basic of Counting"></a>The Basic of Counting</h3><ul>
+<li>The Product Rule</li>
+<li>The Sum Rule</li>
+<li>The Subtraction Rule</li>
+<li>The Division Rule</li>
+</ul>
+<h5 id="The-Product-Rule"><a href="#The-Product-Rule" class="headerlink" title="The Product Rule"></a>The Product Rule</h5><p>I think the product rule is kind of like on-line algorithm, every product is to get closer to the right answer.</p>
+<h5 id="The-Sum-Rule"><a href="#The-Sum-Rule" class="headerlink" title="The Sum Rule"></a>The Sum Rule</h5><p>Similarly,the sum rule is kind of like off-line algorithm, we sum up every part, land every sum is get the every part of right answer together.</p>
+<h5 id="The-Subtraction-Rule"><a href="#The-Subtraction-Rule" class="headerlink" title="The Subtraction Rule"></a>The Subtraction Rule</h5><p>Also known as <em>the principle of inclusion-exclusion</em>.</p>
+<h5 id="The-Division-Rule"><a href="#The-Division-Rule" class="headerlink" title="The Division Rule"></a>The Division Rule</h5><p>Remove the same answer.<em>**</em></p>
+<h3 id="The-pigeonhole-Principle-鸽巢原理"><a href="#The-pigeonhole-Principle-鸽巢原理" class="headerlink" title="The pigeonhole Principle(鸽巢原理)"></a>The pigeonhole Principle(鸽巢原理)</h3><p>如果k+1个或更多的物体放入k个盒子，那么至少有一个盒子包含两个或更多的物体</p>
+<p>Corollary(推论)：一个从k+1甚至更多的元素的集合到k个元素的集合的函数f不是一对一函数</p>
+<h3 id="The-Generalized-Pigeonhole-Principle-广义鸽巢原理"><a href="#The-Generalized-Pigeonhole-Principle-广义鸽巢原理" class="headerlink" title="The Generalized Pigeonhole Principle(广义鸽巢原理)"></a>The Generalized Pigeonhole Principle(广义鸽巢原理)</h3><p>如果$N$个物体放进$k$个盒子，那么至少有一个包含了$\lceil N/k\rceil$个物体。</p>
+<p>例子：在一百个人中至少有$\lceil 100/12\rceil$个人出生在同一个月。</p>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/04/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构基础与算法</a></div><div class="item" id="next"></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-1-Logic-land-Proofs"><span class="toc-text">Chapter 1 Logic land Proofs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#section-1-1-Propositional-Logic"><span class="toc-text">section 1.1 Propositional Logic</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Consistent-System-Specification"><span class="toc-text">Consistent System Specification</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Propositional-Equivalences"><span class="toc-text">Propositional Equivalences</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#section-1-2-Predicate-Logic"><span class="toc-text">section 1.2 Predicate Logic</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Introduction-Predicate-Logic"><span class="toc-text">Introduction Predicate Logic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Quantifiers"><span class="toc-text">Quantifiers</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#De-Morgan%E2%80%99s-Laws-for-Quantifiers"><span class="toc-text">De Morgan’s Laws for Quantifiers</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nested-Quantifiers"><span class="toc-text">Nested Quantifiers</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#section-1-3-Proofs"><span class="toc-text">section 1.3 Proofs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Rules-of-Inference"><span class="toc-text">Rules of Inference</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#introduction-to-proofs"><span class="toc-text">introduction to proofs</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-2-Sets-Functions-Sequences"><span class="toc-text">Chapter 2 Sets,Functions,Sequences</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sets"><span class="toc-text">Sets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Functions"><span class="toc-text">Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sequences"><span class="toc-text">Sequences</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set-Cardinality"><span class="toc-text">Set Cardinality</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-1-Infinite-Binary-Sequences"><span class="toc-text">Problem 1: Infinite Binary Sequences</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-2-Real-Numbers-Between-0-land-1"><span class="toc-text">Problem 2: Real Numbers Between 0 land 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-3-Continuous-Functions-from-0-1-to-%E2%84%9D"><span class="toc-text">Problem 3: Continuous Functions from [0, 1] to ℝ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-4-Polynomials-with-Rational-Coefficients"><span class="toc-text">Problem 4: Polynomials with Rational Coefficients</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-5-Power-Set-of-%E2%84%95"><span class="toc-text">Problem 5: Power Set of ℕ</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-3-Algorithms"><span class="toc-text">Chapter 3 Algorithms</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-4-Number-Theory"><span class="toc-text">Chapter 4 Number Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#section-4-1-Divisibility-land-Modular"><span class="toc-text">section 4.1 Divisibility land Modular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Section-4-2-Integer-Representations-land-Algorithms"><span class="toc-text">Section 4.2 Integer Representations land Algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Section-4-3-Primes-land-Greatest-Common-Divisors"><span class="toc-text">Section 4.3 Primes land Greatest Common Divisors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Section-4-4-Solving-Congruences"><span class="toc-text">Section 4.4 Solving Congruences</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recursive-Algorithms"><span class="toc-text">Recursive Algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Proving-Recursive-Algorithm-Correct"><span class="toc-text">Proving Recursive Algorithm Correct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Merge-Sort"><span class="toc-text">Merge Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Quick-Sort"><span class="toc-text">Quick Sort</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Counting"><span class="toc-text">Counting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Basic-of-Counting"><span class="toc-text">The Basic of Counting</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#The-Product-Rule"><span class="toc-text">The Product Rule</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#The-Sum-Rule"><span class="toc-text">The Sum Rule</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#The-Subtraction-Rule"><span class="toc-text">The Subtraction Rule</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#The-Division-Rule"><span class="toc-text">The Division Rule</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-pigeonhole-Principle-%E9%B8%BD%E5%B7%A2%E5%8E%9F%E7%90%86"><span class="toc-text">The pigeonhole Principle(鸽巢原理)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Generalized-Pigeonhole-Principle-%E5%B9%BF%E4%B9%89%E9%B8%BD%E5%B7%A2%E5%8E%9F%E7%90%86"><span class="toc-text">The Generalized Pigeonhole Principle(广义鸽巢原理)</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }
+});
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\(","\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body></html>

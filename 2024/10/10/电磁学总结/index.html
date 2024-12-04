@@ -1,0 +1,718 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0" theme-name="Stellar" theme-version="1.28.0">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>电磁学总结 - Maksymilan's Notebook</title>
+
+  
+    <meta name="description" content="常量真空中的电容率  \epsilon_{0} &#x3D; \frac{1}{4\pi k}&#x3D;8.854*10^{-12}C^{2}&#x2F;(N·m^2)公式和定理库仑定律  \vec{F_{12}}&#x3D;-\vec{F_{21}} &#x3D; \frac{1}{4\pi \epsilon_{0}}\frac{q_1q_2}{r_{12}^2}\hat{r_{12}}场强的定义式 单个电荷产生的场强公式为  \vec{E}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电磁学总结">
+<meta property="og:url" content="https://maksymilan.github.io/2024/10/10/%E7%94%B5%E7%A3%81%E5%AD%A6%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="常量真空中的电容率  \epsilon_{0} &#x3D; \frac{1}{4\pi k}&#x3D;8.854*10^{-12}C^{2}&#x2F;(N·m^2)公式和定理库仑定律  \vec{F_{12}}&#x3D;-\vec{F_{21}} &#x3D; \frac{1}{4\pi \epsilon_{0}}\frac{q_1q_2}{r_{12}^2}\hat{r_{12}}场强的定义式 单个电荷产生的场强公式为  \vec{E}">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-10T08:21:30.000Z">
+<meta property="article:modified_time" content="2024-10-28T13:38:45.237Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Maksymilan's Notebook" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.0">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a><a class="item title" href="/2024/11/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"><span class="title">算法学习</span></a><a class="item title" href="/2024/11/01/CNN/"><span class="title">CNN</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-10-10T08:21:30.000Z">2024-10-10</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-28T13:38:45.237Z">2024-10-28</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>电磁学总结</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>真空中的电容率</p>
+<script type="math/tex; mode=display">
+\epsilon_{0} = \frac{1}{4\pi k}=8.854*10^{-12}C^{2}/(N·m^2)</script><h1 id="公式和定理"><a href="#公式和定理" class="headerlink" title="公式和定理"></a>公式和定理</h1><p><strong>库仑定律</strong></p>
+<script type="math/tex; mode=display">
+\vec{F_{12}}=-\vec{F_{21}} = \frac{1}{4\pi \epsilon_{0}}\frac{q_1q_2}{r_{12}^2}\hat{r_{12}}</script><p><strong>场强的定义式</strong></p>
+<p>单个电荷产生的场强公式为</p>
+<script type="math/tex; mode=display">
+\vec{E} = \frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}\hat{r}</script><p>连续分布的电荷的电场强度可以通过许多电荷元叠加产生</p>
+<script type="math/tex; mode=display">
+\vec{E} = \int{d\vec{E}}=\frac{1}{4\pi \epsilon_{0}}\int_{V}\frac{dq}{r^2}\hat{r}</script><p>定义通过任一曲面的<strong>电通量</strong></p>
+<script type="math/tex; mode=display">
+\Phi_e=\int\vec{E}·d\vec{S}</script><p><strong>高斯定理</strong></p>
+<p>静电场中的任一闭合曲面上所通过的电通量和这一闭合曲面内包含的电荷之间存在关系</p>
+<script type="math/tex; mode=display">
+\Phi_e = \oiint\vec{E}·d\vec{S}=\frac{1}{\epsilon_0}\sum_i{q_i}</script><p>通过闭合曲面的电通量只取决于闭合曲面内包含的净电荷，而与电荷的空间分布无关</p>
+<p><strong>利用高斯公式计算特殊情况的电场</strong></p>
+<ol>
+<li><p>球对称，点电荷的电场分布</p>
+<script type="math/tex; mode=display">
+\vec{E} = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\hat{r}</script></li>
+<li><p>轴对称，无限长均匀带电的直线或圆柱面</p>
+<script type="math/tex; mode=display">
+\vec{E}·2\pi rl=\frac{\lambda l}{\epsilon_0}\rightarrow\vec{E}=\frac{1}{2\pi \epsilon_0}\frac{\lambda}{r}\hat{r}</script></li>
+<li><p>无限大平面，均匀带电的平板两侧</p>
+<script type="math/tex; mode=display">
+2\vec{E}\vec{S}=\frac{\sigma\vec{S}}{\epsilon_0}\rightarrow\vec{E}=\frac{\sigma}{2\epsilon_0}\hat{r}</script></li>
+</ol>
+<p><strong>静电场的环路定理</strong></p>
+<p>电场力做的功仅仅与实验电荷的起点和终点位置有关，与经过的路径无关</p>
+<p>对于静电场的<strong>环流</strong>，积分结果都为0</p>
+<script type="math/tex; mode=display">
+\oint\vec{E}·d\vec{l}=0</script><p>高斯定理表明电厂的闭合面积分不为零，是<strong>有源场</strong>，环路定理表明电厂的闭合线积分为零，是<strong>有势场</strong></p>
+<p><strong>电势</strong></p>
+<p>电势从能量角度来描述电场，电场力做正功电势能减小。由于势能的定义是相对的，对于有限分布的场源电荷可取无限远处的电势为零，某一点的电势就等于在该点的试验电荷移到无穷远处做的功除以该试验电荷的电量。</p>
+<script type="math/tex; mode=display">
+W_p=A_{p\rightarrow\infty}=q_0\int_{p}^{\infty}\vec{E}·d\vec{l}</script><p>对于点电荷而言，我们可以得到离场源电荷$q$的距离为$r_p$的$p$点处电荷为$q_0$的实验电荷的电势能为</p>
+<script type="math/tex; mode=display">
+W_p=\frac{q_0q}{4\pi\epsilon_0r_p}</script><p><strong>电势的定义式</strong></p>
+<p>一点的电势的梯度等于该点的场强</p>
+<p>等于电场沿着电场方向直到电势为0处的积分，不一定必须是无穷远处，只要到电势为0的地方就可以了</p>
+<script type="math/tex; mode=display">
+U_p=\frac{W_p}{q_0}=\int_{p}^{\infty}\vec{E}·d\vec{l}</script><p><strong>电势叠加原理</strong></p>
+<p>电势标量可加</p>
+<p><strong>导体的静电平衡</strong></p>
+<p>静电平衡的导体内部任意一点的电场强度都等于零，导体是一个等势体，导体表面是一个等势面，导体表面的场强垂直于导体表面</p>
+<p>空腔导体在外电场中，内表面无电荷存在，导体内部及空腔内的场强等于零</p>
+<p>腔内电荷可激发导体内外表面电荷，但腔内电荷的位置不能改变导体外面的电荷分布，导体外表面接地时，腔内电荷不会对导体外的物体产生影响</p>
+<p><strong>静电屏蔽</strong></p>
+<p>利用接地的空腔导体将腔内带电体与外界隔绝的现象，外电场不会影响空腔导体内部，内电场不会影响空腔导体外部。</p>
+<p><strong>电容</strong></p>
+<p>孤立导体的电势和所带的点亮呈线性相关关系，其壁纸称为孤立导体的电容</p>
+<p><strong>电容器</strong></p>
+<p>电容器是两个导体组成的系统，用来储存电荷和电能，定义为</p>
+<script type="math/tex; mode=display">
+C=\frac{Q}{U_A-U_B}</script><p>$Q$为任一导体所带电量的绝对值，分母为两导体的电势差</p>
+<p><strong>典型的电容器的电容</strong></p>
+<ol>
+<li><p><strong>平行板电容器</strong></p>
+<p>两极板间距为$d$,面积为$S$,带电量的绝对值为$q$,忽略边缘效应</p>
+<script type="math/tex; mode=display">
+C = \frac{q}{U_A-U_B} =\frac{\epsilon_0 S}{d}</script><p>可见电容大小仅与材料结合结构决定</p>
+</li>
+<li><p><strong>圆柱性电容</strong></p>
+<p>圆柱形电容两极板间的场强分布不是线性的，计算电势差的时候要对场强进行积分</p>
+<p>两同轴金属圆柱面，内外柱面半径分别为$R_A$,$R_B$,内外柱面线电荷密度为$+\lambda$和$-\lambda$,长度远大于两极板的间距，忽略边缘效应，由高斯定理计算场强分布后可以得到</p>
+<script type="math/tex; mode=display">
+U=\int_{R_A}^{R_B}\vec{E}·d\vec{l}=\int_{R_A}^{R_B}\frac{\lambda}{2\pi \epsilon_0 r}dr=\frac{\lambda}{2\pi \epsilon_0}\ln{\frac{R_B}{R_A}}</script><script type="math/tex; mode=display">
+C=\frac{Q}{U_A-U_B}=\frac{\lambda l}{U_A-U_B}=\frac{2\pi\epsilon_0l}{\ln{\frac{R_B}{R_A}}}</script></li>
+<li><p><strong>球形电容器</strong></p>
+<p>同心金属球壳作为电容器的两个极板，内外半径分别为$R_A$,$R_B$，电荷分别为$+q$,$-q$</p>
+<script type="math/tex; mode=display">
+C=\frac{q}{U_A-U_B}=4\pi\epsilon_0\frac{R_BR_A}{(R_B-R_A)}</script></li>
+</ol>
+<p><strong>电容器的串并联</strong></p>
+<p><strong>串联</strong>电容减小，耐压增加</p>
+<script type="math/tex; mode=display">
+\frac{1}{C}=\frac{1}{C_1}+\frac{1}{C_2}+……+\frac{1}{C_n}</script><p><strong>并联</strong>电容增加，耐压减小为所有电容器的最低耐压值</p>
+<script type="math/tex; mode=display">
+C=C_1+C_2+……+C_n</script><p><strong>静电场中的电介质</strong></p>
+<p><strong>电介质</strong>是电的非导体，是绝缘介质，在外电场中对电场有影响，静电平衡时内部场强不为零</p>
+<p><strong>电介质对电场的影响</strong></p>
+<p>插入电介质后，电势差发生了改变，这一变化的比例常数写作$\epsilon_r$，称为电介质的相对介电常数，真空中的$\epsilon_r = 1$,插入电解质后电荷不变，电容变为原来的$\epsilon_r$倍，电压也对应的减小。</p>
+<p><strong>电介质的极化</strong></p>
+<p>电介质在外电场中，与外电场垂直的表面里出现正负电荷层，这些电荷不能自由移动，称为<strong>极化电荷</strong>，这种现象称为电介质的极化。</p>
+<p><strong>电极化强度矢量和极化电荷面密度</strong></p>
+<p>单位体积内分子电偶极矩的矢量和称为<strong>电极化强度矢量</strong></p>
+<script type="math/tex; mode=display">
+\vec{P}=\frac{\sum\vec{p}}{\Delta V}</script><p>对于大多数各向同性电介质（一般情况）满足($E$是和场强)</p>
+<script type="math/tex; mode=display">
+\vec{P}=\chi_e\epsilon_0\vec{E}</script><p>电介质极化时的极化电荷面密度等于极化强度眼外发现方向的分量值</p>
+<script type="math/tex; mode=display">
+\sigma^、=|\vec{P}|\cos{\theta}=\vec{P}·\vec{e}</script><p><strong>电介质中的静电场的基本定理</strong></p>
+<p><strong>电介质中的场强</strong>是由外电场和介质内的自由电荷激发的电场的和</p>
+<script type="math/tex; mode=display">
+E=E_0+E^、</script><p>对于<strong>无限大的平行板内</strong>充满的电介质的和场强与外部场强满足以下关系</p>
+<script type="math/tex; mode=display">
+E=\frac{E_0}{1+\chi_e}</script><script type="math/tex; mode=display">
+\epsilon_r=1+\chi_e</script><script type="math/tex; mode=display">
+\epsilon=\epsilon_r\epsilon_0=(1+\chi_e)\epsilon_0</script><p>其中新定义的$\epsilon$称为介电常数或电容率</p>
+<p><strong>有电介质时的高斯定理</strong></p>
+<p>定义<strong>电位移矢量$D$</strong></p>
+<script type="math/tex; mode=display">
+\vec{D}=\epsilon_0\vec{E}+\vec{P}</script><p>极化电荷激发的也是静电场，因此高斯定理依然成立</p>
+<p>有电介质时的高斯定理为：通过电介质中任一闭合曲面的电位移通量等于该面所包围的自由电荷量的代数和</p>
+<script type="math/tex; mode=display">
+\oiint_{S}\vec{D}·d\vec{s}=q_0</script><p><strong>电位移线</strong></p>
+<p>电位移线上每一点的切线方向和该点的电位移矢量方向相同，垂直于电位移线的单位面积上通过的电位移线数等于该点的电位移矢量的值</p>
+<script type="math/tex; mode=display">
+\vec{D}=\epsilon\vec{E}</script><p><strong>静电场的能量</strong></p>
+<p>静电场能量的携带者是电场而不是电荷</p>
+<p>$n$个点电荷间的相互作用能为</p>
+<script type="math/tex; mode=display">
+W=\frac{1}{2}\sum_{i=1}^n{q_iU_i}</script><p>连续分布的静电能为积分，以电荷体为例</p>
+<script type="math/tex; mode=display">
+W=\frac{1}{2}\iiint U\rho dV</script><p><strong>电容器所带的静电能</strong></p>
+<script type="math/tex; mode=display">
+W=\frac{1}{2}\frac{Q^2}{C}=\frac{1}{2}C(U_A-U_B)^2=\frac{1}{2}Q(U_A-U_B)</script><p><strong>电场能量密度</strong></p>
+<script type="math/tex; mode=display">
+w_e=\frac{W}{V}=\frac{1}{2}\epsilon E^2=\frac{1}{2}\frac{D^2}{\epsilon}=\frac{1}{2}ED</script><p>上式对于任意的变化静电场都适用，对于任意一个带电体，可以由电场能量密度计算它的总静电能</p>
+<script type="math/tex; mode=display">
+W=\iiint_Vw_edV=\iiint_V\frac{1}{2}\vec{E}·\vec{D}dV</script><p>通过电场能量密度对总静电能积分和对电荷体进行积分求得的总静电能结果是一样的</p>
+<p><strong>电流和磁场</strong></p>
+<p><strong>稳恒电流</strong>导体中个点电流密度矢量不随时间变化</p>
+<p><strong>电流强度</strong>指的是单位时间通过导体内任一截面的电量</p>
+<script type="math/tex; mode=display">
+I=\frac{dq}{dt}</script><p>在导体内部某点取一个与该点电流方向垂直的面元$dS$,设通过该面元的电流强度为$dI$,则定义电流密度的大小为</p>
+<script type="math/tex; mode=display">
+j=\frac{dI}{dS}</script><p>通过导体任意截面S的电流强度为</p>
+<script type="math/tex; mode=display">
+I=\int_SjdS\cos{\theta}=\int\vec{j}·d\vec{S}</script><p>电流密度$j$形成的矢量场称为电流场，可引进<strong>电流线</strong>来描述电流场的分布</p>
+<p><strong>漂移运动</strong>：电子在电场作用下，除了作无规则热运动外，还将定向运动，这种定向运动的平均速度称为<strong>漂移速度</strong>$v_d$</p>
+<p>由<strong>漂移速度</strong>可以定义电流强度的另一个表达式，设自由电子书密度为$n$,$\Delta t$时间内流出$\Delta S$</p>
+<script type="math/tex; mode=display">
+I=\frac{\Delta q}{\Delta t}=env_d\Delta S</script><p>电流密度等于</p>
+<script type="math/tex; mode=display">
+j=\frac{I}{\Delta S}=env_d</script><h2 id="15-2电动势"><a href="#15-2电动势" class="headerlink" title="15.2电动势"></a>15.2电动势</h2><p>电动势$\epsilon$是指在电源内部，将单位正电荷从负电极移动到正点击时非静电力所做的功</p>
+<p>设想非静电力是由非静电性的外场$E_K$所引起的，那么电动势可以表示为</p>
+<script type="math/tex; mode=display">
+\epsilon = \int_-^+\vec{E}·d\vec{l}</script><p>若$E_K$分布于整个回路，那么：</p>
+<script type="math/tex; mode=display">
+\epsilon = \oint\vec{E}·d\vec{l}</script><p><strong>电源的路端电压</strong></p>
+<p>指的是电源两极的电势差，经过计算推导可得(r为电源的内阻):</p>
+<script type="math/tex; mode=display">
+U_+-U_-=\epsilon - Ir</script><p><strong>磁力</strong></p>
+<ul>
+<li>磁场是由运动电荷产生的</li>
+<li>与电场不同，磁场对静止的电荷没有作用，仅当电荷运动时（比如电流）才会有相互作用产生</li>
+<li>因此磁场的存在可以用运动电荷在磁场中的受力情况表现出来</li>
+</ul>
+<p><strong>磁感应强度</strong></p>
+<p>定义如下，方向由$\vec{F}\times\vec{v}$定</p>
+<script type="math/tex; mode=display">
+B = \frac{F}{qv}</script><h2 id="15-6毕奥-萨伐尔定律"><a href="#15-6毕奥-萨伐尔定律" class="headerlink" title="15.6毕奥-萨伐尔定律"></a>15.6毕奥-萨伐尔定律</h2><p>电流元$Id\vec{l}$在空间$P$点激发的磁感应强度公式为</p>
+<script type="math/tex; mode=display">
+d\vec{B}=\frac{\mu_0}{4\pi}\frac{Id\vec{l}\times\hat{r}}{r^2}</script><script type="math/tex; mode=display">
+\frac{\mu_0}{4\pi}=10^{-7}T·m/A</script><p>对任意载流导线所激发的总磁感应强度为：</p>
+<script type="math/tex; mode=display">
+\vec{B}=\int_Ld\vec{B}=\frac{\mu_0}{4\pi}\int_L\frac{Id\vec{l}\times\hat{r}}{r^2}</script><p>对于<strong>载流长直导线</strong>的磁场,距离导线为$a$的点,在两个夹角间这段导线产生的磁场为</p>
+<script type="math/tex; mode=display">
+B=\frac{\mu_0I}{4\pi a}(\cos{\theta_1}-\cos{\theta_2})</script><p>对于<strong>载流圆线圈</strong>，平行于线圈的磁场分量全部抵消，垂直于磁场的分量互相增强，距离线圈中心为$x$的点的磁场强度为</p>
+<script type="math/tex; mode=display">
+B=\frac{\mu_0IR^2}{2(R^2+x^2)^{\frac{3}{2}}}</script><p><strong>磁矩</strong></p>
+<p>引入磁矩$p_m$来描述载流线圈的磁性质</p>
+<script type="math/tex; mode=display">
+\vec{p_m}=NIS\vec{n}</script><p>$n$的方向和电流环绕的方向呈右手螺旋关系。引入磁矩后，上面载流圆线圈无限远处的磁场可以改写为</p>
+<script type="math/tex; mode=display">
+\vec{B}=\frac{\mu_0\vec{p_m}}{2\pi x^3}</script><p>载流直螺线管内部的磁场，经过计算推导可得</p>
+<script type="math/tex; mode=display">
+B=-\frac{\mu_0}{2}\vec{n}I\int_{\beta_1}^{\beta_2}\sin{\beta}d\beta=\frac{\mu_0}{2}nI(\cos{\beta_2-\cos{\beta_1}})</script><h2 id="15-7磁场的高斯定律和安培环路定律"><a href="#15-7磁场的高斯定律和安培环路定律" class="headerlink" title="15.7磁场的高斯定律和安培环路定律"></a>15.7磁场的高斯定律和安培环路定律</h2><p>磁通量</p>
+<script type="math/tex; mode=display">
+d\Phi=\vec{B}·d\vec{S}</script><p><strong>磁场里的高斯定理</strong>反映了磁场是无源场</p>
+<script type="math/tex; mode=display">
+\oiint\vec{B}·d\vec{S}=0</script><p><strong>安培环路定理</strong></p>
+<p>在磁场中，沿着任何闭合曲线，$\vec{B}$的先积分等于真空中的磁导率$\mu_0$乘以穿过这个闭合曲线为边界所张任意曲面的各恒定电流的代数和</p>
+<script type="math/tex; mode=display">
+\int_L\vec{B}d\vec{l}=\mu_0\sum_S{I}</script><h1 id="物质中的磁场"><a href="#物质中的磁场" class="headerlink" title="物质中的磁场"></a>物质中的磁场</h1><p>介质在磁场中被磁化，戒指内的磁感应强度为外磁场和自己激发的磁场的强度之和，氛围顺磁性，抗磁性和铁磁性</p>
+<p><strong>磁场强度</strong></p>
+<script type="math/tex; mode=display">
+\vec{H} = \frac{\vec{B}}{\mu_0}=\vec{M}</script><p><strong>磁介质中的安培环路定理</strong></p>
+<script type="math/tex; mode=display">
+\oint_L\vec{H}·d\vec{l}=\sum I_0</script><p>磁场强度沿任意闭合路径的环流，等于穿过该路径所包围的传导电流的代数和</p>
+<p>$B$,$M$,$H$三者的关系</p>
+<p>由磁场强度的定义式</p>
+<script type="math/tex; mode=display">
+\vec{B} = \mu_0\vec{H}+\mu_0\vec{M}</script><p>对于各向同性的磁介质，M和H成正比</p>
+<script type="math/tex; mode=display">
+\vec{M}=\chi_m\vec{H}</script><p>$\chi_m$称为磁化率，大于零为顺磁，小于零为逆磁，对于铁磁质$\chi_m$很大，而且不是恒量</p>
+<p>$\mu_r$为相对磁导率</p>
+<script type="math/tex; mode=display">
+\mu_r=1+\chi_m</script><p>由此可以得到</p>
+<script type="math/tex; mode=display">
+\vec{B}=\mu_0\mu_r\vec{H}=\mu\vec{H}</script><p>$\mu$为磁导率</p>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/10/12/ads%E9%94%99%E9%A2%98%E9%9B%86/">ads错题集</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/09/22/C++%E7%89%B9%E6%80%A7/">C++特性</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#15-2%E7%94%B5%E5%8A%A8%E5%8A%BF"><span class="toc-text">15.2电动势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-6%E6%AF%95%E5%A5%A5-%E8%90%A8%E4%BC%90%E5%B0%94%E5%AE%9A%E5%BE%8B"><span class="toc-text">15.6毕奥-萨伐尔定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-7%E7%A3%81%E5%9C%BA%E7%9A%84%E9%AB%98%E6%96%AF%E5%AE%9A%E5%BE%8B%E5%92%8C%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E5%BE%8B"><span class="toc-text">15.7磁场的高斯定律和安培环路定律</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }
+});
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\(","\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body></html>

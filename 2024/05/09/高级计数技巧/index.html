@@ -1,0 +1,713 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0" theme-name="Stellar" theme-version="1.28.0">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>高级计数技巧 - Maksymilan's Notebook</title>
+
+  
+    <meta name="description" content="最后一次小测要来了，从计数技巧的基础重新复习这两个单元计数和高级计数方法 Chapter6.计数基础的计数方法设计的重点有  计数中的加法，乘法，减法原理 鸽笼原理及其相关的证明题 二项式定理 重复的排列和组合  6.1基础计数规则乘法原则如果一个问题可以按照流程被分为几个部分执行，那么解决这个问题的方法数量就等于每一部分方法数量的乘积。可以理解成一个程序，主程序由三个函数按顺序组成，其中每个函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高级计数技巧">
+<meta property="og:url" content="https://maksymilan.github.io/2024/05/09/%E9%AB%98%E7%BA%A7%E8%AE%A1%E6%95%B0%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="最后一次小测要来了，从计数技巧的基础重新复习这两个单元计数和高级计数方法 Chapter6.计数基础的计数方法设计的重点有  计数中的加法，乘法，减法原理 鸽笼原理及其相关的证明题 二项式定理 重复的排列和组合  6.1基础计数规则乘法原则如果一个问题可以按照流程被分为几个部分执行，那么解决这个问题的方法数量就等于每一部分方法数量的乘积。可以理解成一个程序，主程序由三个函数按顺序组成，其中每个函数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-09T08:36:06.000Z">
+<meta property="article:modified_time" content="2024-06-07T02:37:30.295Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Maksymilan's Notebook" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.0">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">专栏：胡豆</span></div><div class="widget-body"><a class="item" href="/2024/06/02/%E5%85%B3%E7%B3%BB%E2%80%94%E2%80%94relation/"><span class="title">关系——relation</span></a><a class="item" href="/2024/05/25/tarjan/"><span class="title">tarjan</span></a><a class="item" href="/2024/05/11/%E5%A4%9A%E9%87%8D%E7%A7%AF%E5%88%86/"><span class="title">多重积分</span></a><a class="item active" href="/2024/05/09/%E9%AB%98%E7%BA%A7%E8%AE%A1%E6%95%B0%E6%8A%80%E5%B7%A7/"><span class="title">高级计数技巧</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a></div></widget>
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a><a class="item title" href="/2024/11/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"><span class="title">算法学习</span></a><a class="item title" href="/2024/11/01/CNN/"><span class="title">CNN</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" id="menu" href="/topic">专栏</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/2024/06/02/%E5%85%B3%E7%B3%BB%E2%80%94%E2%80%94relation/">胡豆</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-09T08:36:06.000Z">2024-05-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-06-07T02:37:30.295Z">2024-06-07</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>高级计数技巧</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>最后一次小测要来了，从计数技巧的基础重新复习这两个单元<strong>计数</strong>和<strong>高级计数方法</strong></p>
+<h2 id="Chapter6-计数"><a href="#Chapter6-计数" class="headerlink" title="Chapter6.计数"></a>Chapter6.计数</h2><p>基础的计数方法设计的重点有</p>
+<ul>
+<li>计数中的加法，乘法，减法原理</li>
+<li>鸽笼原理及其相关的证明题</li>
+<li>二项式定理</li>
+<li>重复的排列和组合</li>
+</ul>
+<h3 id="6-1基础计数规则"><a href="#6-1基础计数规则" class="headerlink" title="6.1基础计数规则"></a>6.1基础计数规则</h3><h4 id="乘法原则"><a href="#乘法原则" class="headerlink" title="乘法原则"></a><strong>乘法原则</strong></h4><p>如果一个问题可以按照流程被分为几个部分执行，那么解决这个问题的方法数量就等于每一部分方法数量的乘积。可以理解成一个程序，主程序由三个函数按顺序组成，其中每个函数都各自有几种不同的实现方法，那么这个主程序的实现方法就等于这几个函数实现方法的乘积。也可以抽象地和离线算法的性质类比。</p>
+<p><strong>例子</strong></p>
+<p>从一个含有m个元素的集合映射到一个含有n个元素的集合，有多少个映射函数？</p>
+<p>solution:</p>
+<p>每一个元素都有n种选择，所以是$n^m$个函数</p>
+<h4 id="加法原则"><a href="#加法原则" class="headerlink" title="加法原则"></a><strong>加法原则</strong></h4><p>加法原则就是完成一个问题可以用$n_1$种方法，同时也可以用另外$n_2$种方法，那么总的方法数就是$n_1+n_2$,可以把加法原则运用到上述乘法原则的某一个部分中来理解。加法原则就是我们分类讨论可能会有多少种情况。</p>
+<p><strong>例子</strong></p>
+<p>如果我们假定一个程序里变量的命名方式只能为单个小写字母或者单个小写字母后跟一个数字，那么有多少种变量命名方法</p>
+<p>solution：</p>
+<script type="math/tex; mode=display">
+26+26*10</script><p><strong>减法原则(subtraction rule)</strong></p>
+<p>如果完成一项任务的不同方法间有重合，那么减去重合部分，才能得到总方法数。具体地例子就是求两个集合并集后的元素个数，那么我们在加上两个集合的元素个数后，还要减去两个集合的交集个数。所以减法原则也就是<strong>容斥原理</strong></p>
+<p><strong>除法原则</strong></p>
+<p>如果我们对一个问题得到了n种答案，其中每一种答案都有其他d-1种答案与之等价，那么实际上我们找到的答案是$n/d$</p>
+<p><strong>例子</strong></p>
+<p>我们有一个有四个位置的圆桌，四个不同的人有几种不同的坐法（当两种坐法中，一个人的左侧和右侧的人对应一样，那么我们认为这两种坐法一样）</p>
+<p>solution:</p>
+<script type="math/tex; mode=display">
+\frac{4!}{4}</script><p>每一种坐法顺时针转一个人都会得到相同的坐法，所以重复次数是4</p>
+<h3 id="鸽笼原理"><a href="#鸽笼原理" class="headerlink" title="鸽笼原理"></a>鸽笼原理</h3><p>如果k+1个物品放到k个盒子里面去，那么至少有一个盒子放的物品数量大于等于1</p>
+<p>从函数的角度来看就是，一个定义域有n+1个元素，值域有n个元素的函数一定不是一个一一映射的函数</p>
+<h3 id="广义的鸽笼原理"><a href="#广义的鸽笼原理" class="headerlink" title="广义的鸽笼原理"></a>广义的鸽笼原理</h3><p>如果N个物品被放进了k个盒子里，那么至少有一个盒子包含的物品个数大于等于$\lceil \frac{N}{k}\rceil$</p>
+<p><strong>例子</strong></p>
+<p>一百个人里至少有多少人的生日是在同一个月</p>
+<p>至少有$\lceil\frac{100}{12}\rceil=9$个</p>
+<p><strong>例子</strong></p>
+<p>在30天里，一个棒球队，每天都至少打一场比赛，但是一个月总的比赛场数不超过45场，证明有一段连续的日子，这个棒球队在这段时间里打的比赛的数目正好是14场</p>
+<p>solution：</p>
+<p>我们用$a_i$表示第i天打的比赛数目，$bi=\sum_{i=1}^{i=j}a_i$,$b_i$表示前i天一共打的比赛数目。$c_i=b_i+14$,那么$15\leq c_i\leq 59$,$b_i$和$c_i$总共是60个数字，那么60个数字放入59个盒子里，肯定有两个数字相等，也就是$b_i=c_j=b_j+14$,得证。</p>
+<h3 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h3><p>一些性质</p>
+<p><strong>帕斯卡定理</strong></p>
+<script type="math/tex; mode=display">
+C_{n+1}^{k}=C_{n}^{k}+C_{n}^{k-1}</script><h3 id="重复的排列组合"><a href="#重复的排列组合" class="headerlink" title="重复的排列组合"></a>重复的排列组合</h3><p><strong>排列</strong></p>
+<script type="math/tex; mode=display">
+A_n^r=\frac{n!}{(n-r)!}</script><p><strong>允许重复的排列</strong></p>
+<script type="math/tex; mode=display">
+n^r</script><p><strong>组合</strong></p>
+<script type="math/tex; mode=display">
+\frac{n!}{r!(n-r)!}</script><p><strong>允许重复的组合</strong></p>
+<script type="math/tex; mode=display">
+C(n+r-1,r)=C(n+r-1,n-1)=\frac{(n+r-1)!}{r!(n-1)!}</script><p>允许重复的组合也就是在一个含有n个元素的集合里，选出r个元素，每次选出的元素可以相同也可以不同</p>
+<p><strong>例子</strong></p>
+<p>假如有4种饼干，现在要从这四种饼干里选出6个，请问有多少种选法</p>
+<p>solution：</p>
+<p>4是集合元素的个数(n)，6是要选出的个数(r),故</p>
+<script type="math/tex; mode=display">
+C_{n+r-1}^{r}=C_9^6=84</script><p><strong>例子</strong></p>
+<p>$x_1+x_2+x_3=11$有多少组解</p>
+<p>solution：</p>
+<p>假设每选一次$x_i$就代表$x_i$加一，那么元素个数为3，选的次数为11，所以</p>
+<script type="math/tex; mode=display">
+C_{3+11-1}^{11}=C_{3+11-1}^{3-1}=C_{13}^2=78</script><p><strong>例子</strong></p>
+<p>$x_1+x_2+x_3+x_4+x_5=21$在满足条件$0\leq x_1\leq 10$的前提下有多少组解</p>
+<p>solution:</p>
+<p>用没有限制的解的个数减去在$10&lt;x_1$的条件下解的个数。</p>
+<h2 id="本章总结："><a href="#本章总结：" class="headerlink" title="本章总结："></a>本章总结：</h2><ol>
+<li>递归关系在计数中的运用</li>
+<li>求解线性递归关系<ul>
+<li>齐次递归关系</li>
+<li>非齐次递归关系</li>
+</ul>
+</li>
+<li>生成函数在计数中的运用</li>
+</ol>
+<h2 id="递归关系的运用"><a href="#递归关系的运用" class="headerlink" title="递归关系的运用"></a>递归关系的运用</h2><ul>
+<li>斐波那契数</li>
+<li>汉诺塔问题</li>
+<li>计数问题</li>
+</ul>
+<p><strong>斐波那契数</strong></p>
+<p>在一座小岛上放一对刚出生兔子。每一对兔子直到出生两个月后才开始繁衍，当他们两个月大的时候，以后每一个月他们都会产生一对兔子，找到兔子数量与月数的递归关系。</p>
+<script type="math/tex; mode=display">
+a_n = a_{n-1}+a_{n-1}(a_1=1,a_2=1)</script><script type="math/tex; mode=display">
+a_1=1</script><script type="math/tex; mode=display">
+a_2=1</script><p><strong>汉诺塔问题</strong></p>
+<p>在每次只能移动一个圆盘，同时，大圆盘不能放在小圆盘之上的条件下，求把一堆圆盘从一根柱子移到另一根柱子上所需要的步数的递推关系。</p>
+<script type="math/tex; mode=display">
+a_n=2a_{n-1}+1</script><script type="math/tex; mode=display">
+a_1 = 1</script><p><strong>比特串计数</strong></p>
+<p>找出长度为n且没有两个连续的0的比特串的数目的递推关系。</p>
+<p>问题的关键是找到一个方法能描述出长度为n的所有满足条件的比特串，我们通过最后一位是0还是1来列举，因为所有满足条件的比特串最后一位要么是0要么是1。如果最后一位是1，那么比特串的数量就等于n-1个长度的比特串的数量，如果最后一位是0，那么比特串的数量就等于最后一位是1且长度为n-1的比特串数量，也就是长度为n-2的比特串数量。</p>
+<script type="math/tex; mode=display">
+a_n = a_{n-1}+a_{n-2}</script><script type="math/tex; mode=display">
+a_0 = 0</script><script type="math/tex; mode=display">
+a_1 = 1</script><p>作业题：</p>
+<p>1.找出至少含有两个连续的0的长度为n比特串数量的递推关系</p>
+<p>SOLUTION:</p>
+<p>如果最后一位是1，那么就是$a_{n-1}$个串</p>
+<p>如果最后一位是0：</p>
+<p>​    如果倒数第二位是0：$2^{n-2}$个</p>
+<p>​    如果倒数第二位是1：$a_{n-2}$个</p>
+<p>故</p>
+<script type="math/tex; mode=display">
+a_n=a_{n-1}+a_{n-2}+2^{n-2}</script><p>找出不含连续相同数字的三元串的数量（三元串是指由012三个数字组成的字符串）</p>
+<p>SOLUTION:</p>
+<p>每一个长度为n-1的串都对应两个长度为n的串，故</p>
+<script type="math/tex; mode=display">
+a_n = 2a_{n-1}</script><h2 id="求解线性递归关系"><a href="#求解线性递归关系" class="headerlink" title="求解线性递归关系"></a>求解线性递归关系</h2><ul>
+<li>线性齐次</li>
+</ul>
+<p>求解线性齐次的递归方程我们是通过求解特征方程的根来解决问题的，对于如下的递归关系</p>
+<script type="math/tex; mode=display">
+a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}</script><p>满足c1到ck都是常数，且最后一项ck不等于零，我们就称为线性齐次递归关系，可以用特征根法求解。</p>
+<p>我们以特征方程有两个不同根的情况为例，数列的通项可以如下表示</p>
+<script type="math/tex; mode=display">
+a_n = α_1r_1^n + \alpha_2r_2^n</script><p>如果特征方程存在等根，那么$a_n$的一般表示方法如下</p>
+<script type="math/tex; mode=display">
+a_n=\sum_{i=1}^t(\sum_{j=0}^{m_i-1}\alpha_{i,j}n^j)r_i^n</script><p>其中$m_i$是每个根的重复度，$t$是不等根的个数，比如2,2,2,5,5,9这一组解中，2的重复度就为3，$m_2=3$,$t=3$</p>
+<ul>
+<li>线性不齐次</li>
+</ul>
+<p>对于下面这种形式的递推关系</p>
+<script type="math/tex; mode=display">
+a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}+F(n)</script><p>其中$F(n)$是只与n有关的函数式，这种形式就不能简单地用特征方程求解。</p>
+<p>我们通过$F(n)$的形式得出$f(n)$的一般方程，通过待定系数法求解</p>
+<p>我们将该方程分为两部分：一部分是齐次递推关系的通解，通过忽略非齐次项得到，另一部分是非齐次递推关系的特解，特解的形式通常依赖于非齐次项的形式，最终解的形式即为特解和通解的形式相加得到。</p>
+<p>在s不等于特征方程的根的情况下，如果非齐次项的形式如下</p>
+<script type="math/tex; mode=display">
+F(n)=(b_tn^t+b_{t-1}n^{t-1}+....+b_1n+b_0)S^n</script><p>那么特解的形式就应该是</p>
+<script type="math/tex; mode=display">
+f(n)=(p_tn^t+p_{t-1}n_{t-1}+.....p_1n+p_0)s^n</script><p>如果s是一个根的话，那么</p>
+<script type="math/tex; mode=display">
+f(n)=n^m(p_tn^t+p_{t-1}n_{t-1}+.....p_1n+p_0)s^n</script><p>其中m是s的重复度。</p>
+<p>让我们看一个更复杂的例子：</p>
+<p>求解该递推方程</p>
+<script type="math/tex; mode=display">
+a_n=5a_{n-1}-6a_{n-2}+2^n+3n,a_0=0,a_1=1</script><p>我们将该方程视为两个递归关系的和，分别求解两个递归关系，然后将两个解相加即可</p>
+<script type="math/tex; mode=display">
+a_n=5a_{n-1}-6a_{n-2}+2^n</script><script type="math/tex; mode=display">
+a_n=5a_{n-1}-6a_{n-2}+3n</script><p>最后得到</p>
+<script type="math/tex; mode=display">
+a_n=c_12^n+c_23^n+p_0n2^n+p_1n+p_2</script><p>带入n=1,n=0,解出系数即可。</p>
+<h2 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h2><p>对于序列$a_n$,他的生成函数是</p>
+<script type="math/tex; mode=display">
+G(x)=a_0+a_1x+a_2x^2+...+a_kx^k+...=\sum_{k=0}^\infty a_kx^k</script><h3 id="利用生成函数解决计数问题"><a href="#利用生成函数解决计数问题" class="headerlink" title="利用生成函数解决计数问题"></a>利用生成函数解决计数问题</h3><p>1.</p>
+<p>找到下面这个方程解的个数</p>
+<script type="math/tex; mode=display">
+x_1+x_2+x_3=17</script><p>其中变量满足下列条件</p>
+<script type="math/tex; mode=display">
+2\leq x_1\leq 5,3\leq x-2\leq 6,4\leq x_3\leq7</script><p><strong>解</strong></p>
+<p>我们把要求解的数字看作系数，那么</p>
+<script type="math/tex; mode=display">
+(x^2+x^3+x^4+x^5)(x^3+x^4+x^5+x^6)(x^4+x^5+x^6+x^7)</script><p>所得到的$x^{17}$的系数就是解的个数。</p>
+<p>2.</p>
+<p>如果我们有若干个1￥，2￥，5￥的硬币，我们想通过这些硬币的组合买一件r￥的商品，有多少种组合方式</p>
+<p><strong>解</strong></p>
+<ul>
+<li>不考虑组合顺序</li>
+</ul>
+<script type="math/tex; mode=display">
+(1+x+x^2+x^3+x^4+……)(1+x^2+x^4+x^6+……)(1+x^5+x^{10}+x^{15}+x^{20}+……)</script><ul>
+<li>考虑组合顺序</li>
+</ul>
+<script type="math/tex; mode=display">
+\sum_{n=0}^\infty(x+x^2+x^5)^n</script><h3 id="用生成函数解决递归方程"><a href="#用生成函数解决递归方程" class="headerlink" title="用生成函数解决递归方程"></a>用生成函数解决递归方程</h3><p>用生成函数解下面这个递归方程</p>
+<script type="math/tex; mode=display">
+a_n=8a_{n-1}+10^{n-1},a_1=9,a_0=1</script><p><strong>解</strong></p>
+<script type="math/tex; mode=display">
+a_nx^n=8a_{n-1}x^{n}+10^{n-1}x^n</script><script type="math/tex; mode=display">
+G(x)=\sum_{n=0}^\infty a_nx^n</script><script type="math/tex; mode=display">
+G(x)-1=\sum_{n=1}^\infty a_nx^n=8\sum_{n=1}^\infty a_{n-1}x^n+\sum_{n=1}^\infty 10^{n-1}x^n</script><script type="math/tex; mode=display">
+=8x\sum_{n=1}^\infty a_{n-1}x^{n-1}+x\sum_{n=1}^\infty10^{n-1}x^{n-1}</script><script type="math/tex; mode=display">
+=8x\sum_{n=0}^\infty a_nx^n+x\sum_{n=0}^\infty10^nx^n</script><script type="math/tex; mode=display">
+G(x)=\sum_{n=0}^\infty 1/2(8^n+10^n)x^n</script><p>对应可得到zh$a_n=1/2(8^n+10^n)$</p>
+<p>下面这个多项式(广义二项式定理）</p>
+<script type="math/tex; mode=display">
+(1+x+x^2+x^3+x^4+……)^k</script><p>x次数为n时，其前面的系数为</p>
+<script type="math/tex; mode=display">
+a_n=C(n+k-1,n)</script><h2 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h2><script type="math/tex; mode=display">
+|A_1\cup A_2\cup A_3\cup……\cup A_n|=\\\sum_{1\leq i\leq n}|A_i|-\sum_{1\leq i\leq j\leq n}|A_i\cap A_j|……+(-1)^{n+1}|A_1\cap A_2\cap A_3\cap……\cap A_n|</script><p>语言描述，n个集合并集的模等于,n个集合的模的和，减去每一对集合交集的模，加上每三个集合交集的模，减去每四个集合交集的模……这样交替计算，直到算完n个集合交集的模</p>
+<h3 id="用容斥原理求满射函数的个数"><a href="#用容斥原理求满射函数的个数" class="headerlink" title="用容斥原理求满射函数的个数"></a>用容斥原理求满射函数的个数</h3><p>定理：定义域有m个元素，值域有n个元素，建立在这样的集合上的满射函数的个数为</p>
+<script type="math/tex; mode=display">
+n^m - C(n,1)(n-1)^m+C(n,2)(n-2)^m-……+(-1)^{n-1}C(n,n-1)(n-(n-1))^m</script><p><strong>例子</strong></p>
+<p>有3个小朋友，6个玩具，有多少种分配方法使得每个小朋友都至少拿到一个玩具呢</p>
+<p>SOLUTION:</p>
+<p>把小朋友看成值域，玩具看成定义域，小朋友拿到玩具看成玩具到小朋友的一个映射，那么此题即求从大小为6的定义域到大小为3的值域的满射函数的个数。</p>
+<script type="math/tex; mode=display">
+3^6-C(3,1)(3-1)^6+C(3,2)(3-2)^6=540</script><p>重排：排序后，原来的每一样物品都不在自己原来的位置上。</p>
+<script type="math/tex; mode=display">
+D_n=n!-C(n,1)(n-1)!+C(n,2)(n-2)!-……+(-1)^nC(n,n)(n-n)!</script>
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/05/10/%E7%9B%B8%E5%AF%B9%E8%AE%BA/">相对论</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/05/03/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AE%9E%E7%8E%B0/">图的邻接表实现</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter6-%E8%AE%A1%E6%95%B0"><span class="toc-text">Chapter6.计数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1%E5%9F%BA%E7%A1%80%E8%AE%A1%E6%95%B0%E8%A7%84%E5%88%99"><span class="toc-text">6.1基础计数规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%98%E6%B3%95%E5%8E%9F%E5%88%99"><span class="toc-text">乘法原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E5%8E%9F%E5%88%99"><span class="toc-text">加法原则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%B8%BD%E7%AC%BC%E5%8E%9F%E7%90%86"><span class="toc-text">鸽笼原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%9A%84%E9%B8%BD%E7%AC%BC%E5%8E%9F%E7%90%86"><span class="toc-text">广义的鸽笼原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="toc-text">二项式定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E7%9A%84%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88"><span class="toc-text">重复的排列组合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E7%AB%A0%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">本章总结：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%85%B3%E7%B3%BB%E7%9A%84%E8%BF%90%E7%94%A8"><span class="toc-text">递归关系的运用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E7%BA%BF%E6%80%A7%E9%80%92%E5%BD%92%E5%85%B3%E7%B3%BB"><span class="toc-text">求解线性递归关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0"><span class="toc-text">生成函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E8%A7%A3%E5%86%B3%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-text">利用生成函数解决计数问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E8%A7%A3%E5%86%B3%E9%80%92%E5%BD%92%E6%96%B9%E7%A8%8B"><span class="toc-text">用生成函数解决递归方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86"><span class="toc-text">容斥原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86%E6%B1%82%E6%BB%A1%E5%B0%84%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0"><span class="toc-text">用容斥原理求满射函数的个数</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }
+});
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\(","\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body></html>

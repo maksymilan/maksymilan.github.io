@@ -1,0 +1,623 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0" theme-name="Stellar" theme-version="1.28.0">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>数据结构基础与算法 - Maksymilan's Notebook</title>
+
+  
+    <meta name="description" content="数据结构与算法基础快期中考试了，对数据结构的一些定义和问题理解还不太清晰，遂决定在复习的同时在这篇文章里写下一些自己的理解和思考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构基础与算法">
+<meta property="og:url" content="https://maksymilan.github.io/2024/04/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="数据结构与算法基础快期中考试了，对数据结构的一些定义和问题理解还不太清晰，遂决定在复习的同时在这篇文章里写下一些自己的理解和思考">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-26T11:26:20.141Z">
+<meta property="article:modified_time" content="2024-05-12T03:16:07.599Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Maksymilan's Notebook" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.0">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a><a class="item title" href="/2024/11/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"><span class="title">算法学习</span></a><a class="item title" href="/2024/11/01/CNN/"><span class="title">CNN</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E7%AE%97%E6%B3%95/c/">c</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-04-26T11:26:20.141Z">2024-04-26</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-12T03:16:07.599Z">2024-05-12</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>数据结构基础与算法</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="数据结构与算法基础"><a href="#数据结构与算法基础" class="headerlink" title="数据结构与算法基础"></a>数据结构与算法基础</h1><p>快期中考试了，对数据结构的一些定义和问题理解还不太清晰，遂决定在复习的同时在这篇文章里写下一些自己的理解和思考</p>
+<span id="more"></span>
+<p>数据结构的内容涉及以下几个方面</p>
+<ul>
+<li>算法分析</li>
+<li>表，栈和队列</li>
+<li>树（二叉树，完全二叉树）</li>
+<li>优先队列（堆）</li>
+<li>不相交集</li>
+<li>…(期中考试暂时不考，后面再补档)</li>
+</ul>
+<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><p>算法分析主要分为时间复杂度和空间复杂度两方面的分析，复杂度的上界表示为<strong><em>O</em></strong>,复杂度的下界表示为<strong><em>Ω</em></strong>，复杂度的等价表示为<strong><em>Θ</em></strong></p>
+<p>复杂度的层次分为常数阶（$O(1)$），对数阶($O(logn)$) ，线性阶($O(n)$)，对数乘线性阶($O(nlogn)$)，幂指数阶($O(n^k)$)，指数阶($O(k^n)$)，阶乘阶($O(n!)$)</p>
+<h1 id="表，栈和队列"><a href="#表，栈和队列" class="headerlink" title="表，栈和队列"></a>表，栈和队列</h1><h2 id="表"><a href="#表" class="headerlink" title="表"></a>表</h2><p>表指的是链表，是一个递归定义的抽象数据结构，含有数据域和指针域两部分,定义如下，还有循环链表（尾节点指向头节点），双链表（每个节点），实现方法类似</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">	datatype data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">Next</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>事实上，栈，队列都可以用链表表示，同时链表也是树的一种特殊情况（每个节点都只有一个孩子节点），树又是不相交集和堆的基础和图的一种特殊情况，可以说链表的递归定义的思想贯穿整个数据结构</p>
+<p>此外，值得一提的是，链表的实现，个人认为添加一个<em>dummy node</em>比较好，这样在删除链表结点时就更加方便，不用担心头节点被删除时不小心导致的链表丢失</p>
+<p>除了递归定义的到链表外，链表还可以通过游标实现，核心思想是以数组的下标作为地址来进行元素间的索引</p>
+<h3 id="链表的实际运用例子"><a href="#链表的实际运用例子" class="headerlink" title="链表的实际运用例子"></a>链表的实际运用例子</h3><h4 id="多项式的加减乘运算"><a href="#多项式的加减乘运算" class="headerlink" title="多项式的加减乘运算"></a>多项式的加减乘运算</h4><p>用链表表示次数相差很大的多项式时比数组有很大的优势</p>
+<h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><p>在了解基数排序之前，我们要先了解他的来源—桶式排序</p>
+<h5 id="桶式排序"><a href="#桶式排序" class="headerlink" title="桶式排序"></a>桶式排序</h5><p>我们有$N$个整数，范围是从$1$到$M$,我们设置一个名为$count$的数组，大小为$M$，并初始化为$0$，$count$的每一个元素都表示一个桶，开始时都是空的，当$A_i$被读入时，$count[A_i]++$,读入所有的输入后，扫描$count$,输出排好序的表</p>
+<h5 id="基数排序-1"><a href="#基数排序-1" class="headerlink" title="基数排序"></a>基数排序</h5><p>基数排序是这种排序的推广，我们用实际的例子来解释这种排序方法，假设我们有$10$个数字，范围在$0$到$999$之间，我们将其排序，一般来说这是$0$到$N^p-1$之间的$N$个数字（这十个数字的范围就满足在$0$到$10^3-1$之间），我们的策略是使用多趟桶式排序，我们采用最低位优先的策略进行排序。</p>
+<p>第一次比较最低位，对最低位的数字进行桶式排序。第二次比较次低位，对次低位的数字进行桶式排序，以此类推直到最高位。每一次桶式排序的过程中，每个桶得到的都是一张按特定位数排好序的表，比如第二次桶式排序完成时，桶$1$内都是十位为$1$,并且按个位的大小排好序的表。</p>
+<h2 id="栈（LIFO）"><a href="#栈（LIFO）" class="headerlink" title="栈（LIFO）"></a>栈（LIFO）</h2><p>后进先出是栈的数据结构特点，可以用数组和链表分别对栈进行实现,pop和push是栈的两种基本操作</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize 10000</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stack</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> stack_array[Maxsize];</span><br><span class="line">    <span class="type">int</span> TopOfStacl;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> element;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">Next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stack</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> MaxSize;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">TopOfStack</span>;</span><span class="comment">//使用头插法在链表实现的栈中进行pop和push</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于数组实现的栈来说，可以用一个数组同时实现两个栈，即分别用数组的$0$号位置和$N-1$号位置作为栈底，从两端向中间靠拢，栈满的标志就是$TopofStack1 + 1 == TopOfStack2 $.</p>
+<h3 id="栈的应用实例"><a href="#栈的应用实例" class="headerlink" title="栈的应用实例"></a>栈的应用实例</h3><h3 id="平衡符号"><a href="#平衡符号" class="headerlink" title="平衡符号"></a>平衡符号</h3><h4 id="后缀表达式的计算"><a href="#后缀表达式的计算" class="headerlink" title="后缀表达式的计算"></a>后缀表达式的计算</h4><h4 id="中缀表达式转后缀表达式"><a href="#中缀表达式转后缀表达式" class="headerlink" title="中缀表达式转后缀表达式"></a>中缀表达式转后缀表达式</h4><h2 id="队列（FIFO）"><a href="#队列（FIFO）" class="headerlink" title="队列（FIFO）"></a>队列（FIFO）</h2><h2 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h2><p>一棵树是$N$个节点和$N-1$条边的集合（每条边将一个节点与他的父节点相连，而除了根节点，每一个节点都有一个父节点）</p>
+<p>没有子节点的节点称为叶子节点（<em>leaf</em>）</p>
+<p>具有相同节点的节点称为兄弟节点（<em>sibling</em>）</p>
+<p>在一棵树中从根节点到每一个节点都只存在一条唯一路径，节点的深度就是这条路径的长度。</p>
+<p>后裔：descendant         祖先：ancestor         真后裔：proper descendant         真祖先：proper ancestor</p>
+<h4 id="树的一般实现"><a href="#树的一般实现" class="headerlink" title="树的一般实现"></a>树的一般实现</h4><p>由于每个节点的儿子数目是未知的，所以树的一般实现是通过将父节点与他的所有孩子节点放在一个链表中，递归实现：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>* <span class="title">PtrNode</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span><br><span class="line">    ElementType Element;</span><br><span class="line">    PtrNode Firstchidren;</span><br><span class="line">    PtrNode NextSibling;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每个节点储存的信息的作用是访问该节点的下一层其他节点和访问该节点的这一层其他节点。</p>
+<h4 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h4><p>平均二叉树的平均深度为$N^{1/2}$,二叉查找树的平均深度是$log N$,最坏情况下是$N-1$(退化成链表)。</p>
+<h5 id="表达式树（expression-tree）"><a href="#表达式树（expression-tree）" class="headerlink" title="表达式树（expression tree）"></a>表达式树（expression tree）</h5><p>表达式树的树叶是操作数（常量或变量）（operand），其他节点是操作符（operator),一般来说对于所有操作都是二元的情况，表达式树正好是一棵二叉树。</p>
+<p>我们通过中序遍历（inorder traversal）实现对表达式树的求值，首先递归产生带括号的左表达式树，然后打印根处的运算符，最后递归打印带括号的右表达式树，这样就得到一个中缀表达式（infix expression）。</p>
+<p>还可以通过后序遍历得到后缀表达式，或者前序遍历得到前缀表达式  。</p>
+<h5 id="由后缀表达式构建表达式树"><a href="#由后缀表达式构建表达式树" class="headerlink" title="由后缀表达式构建表达式树"></a>由后缀表达式构建表达式树</h5><p>设输入为$ab+cde+**$</p>
+<ol>
+<li>前两个数是操作数，因此我们构建两个单节点树，并把他们的指针压入栈中</li>
+<li>紧接着读入$+$，因此，弹出栈内的这两个指针，并将$+$指向这两个指针，形成一棵树。并将这棵树的指针压入栈中。</li>
+<li>压入$cde$三个单节点树的指针。</li>
+<li>读入$+$，弹出$de$的指针，并使$+$指向这两个指针，构建一颗树，并将这棵树压入栈内。</li>
+<li>读入$<em>$,弹出$c$和上一步压入的树指针，$</em>$指向这两个指针，形成一颗新树，并压入栈中</li>
+<li>最后读入$<em>$,弹出栈中存在的两棵树，$</em>$指向这两棵树，形成最后的树。</li>
+</ol>
+<h5 id="查找树ADT—二叉查找树"><a href="#查找树ADT—二叉查找树" class="headerlink" title="查找树ADT—二叉查找树"></a>查找树ADT—二叉查找树</h5><p>二叉查找树是满足树内每一个节点的左节点都小于该节点且右节点都大于该节点的二叉树。</p>
+<p>建立空树</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BinaryTree <span class="title function_">MakeEmpty</span><span class="params">(BinaryTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        MakeEmpty(T-&gt;left);</span><br><span class="line">        MakeEmpry(T-&gt;right);</span><br><span class="line">        <span class="built_in">free</span>(T);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查找元素</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BinaryTree <span class="title function_">Find</span><span class="params">(BinaryTree T,ElementType target)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span></span><br><span class="line">    &#125;<span class="comment">//Don&#x27;t forget this Line!</span></span><br><span class="line">	<span class="keyword">if</span>(target &gt; T-&gt;element)&#123;</span><br><span class="line">        Find(T-&gt;right,target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(target &lt; T-&gt;element)&#123;</span><br><span class="line">        Find(T-&gt;left,target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>插入元素</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">BinaryTree <span class="title function_">Insert</span><span class="params">(BinaryTree T,Elementtype X)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        T = (BinaryTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(TreeNode));</span><br><span class="line">        <span class="keyword">if</span>(T == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Out of Space&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            T-&gt;elemrnt = X;</span><br><span class="line">            T-&gt;ledt = T-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(X &gt; T-&gt;element)&#123;</span><br><span class="line">            T-&gt;right = Insert(T-&gt;right,X)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(X &lt; T-&gt;element)&#123;</span><br><span class="line">            T-&gt;left = Insert(T-&gt;left,X);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除元素</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">BinaryTree <span class="title function_">Delete</span><span class="params">(BinaryTree T,Elementtype X)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Not Found the Node&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(X &gt; T-&gt;element)&#123;</span><br><span class="line">            Delete(T-&gt;right,X);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(X &lt; T-&gt;element)&#123;</span><br><span class="line">            Delete(T-&gt;left,X);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(T-&gt;left&amp;&amp;T-&gt;right)&#123;</span><br><span class="line">                TreeNode TempCell = FindMin(T-&gt;right);</span><br><span class="line">                T-&gt;element = TempCell-&gt;element;</span><br><span class="line">                Delete(T-&gt;right,T-&gt;element);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                TreeNode TempCell = T;</span><br><span class="line">                <span class="keyword">if</span>(T-&gt;left == <span class="literal">NULL</span>)</span><br><span class="line">                    T = T-&gt;right;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(T-&gt;right == <span class="literal">NULL</span>)</span><br><span class="line">                    T = T-&gt;left;</span><br><span class="line">                <span class="built_in">free</span>(TempCell);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="AVL树（不考）"><a href="#AVL树（不考）" class="headerlink" title="AVL树（不考）"></a>AVL树（不考）</h5><p><em>Adelson-Velskii和Landis树</em> 是带有平衡条件的二叉查找树。</p>
+<p>一颗AVL树是其每个节点的左子树和右子树的高度最多差1的二叉查找树（空树的高度定义为-1），每个节点都储存着高度信息。当进行插入操作时，我们需要更新通向根节点路径上的节点的平衡信息，而这可能会破坏AVL树的特性，我们可以通过对树进行简单的修正来避免这种情况发生，这个操作我们称之为<code>旋转</code>。</p>
+<h2 id="优先队列（堆）"><a href="#优先队列（堆）" class="headerlink" title="优先队列（堆）"></a>优先队列（堆）</h2><h4 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h4><p>优先队列是允许至少能实现插入和删除最小元素的操作的数据结构。</p>
+<h4 id="二叉堆（binary-heap）"><a href="#二叉堆（binary-heap）" class="headerlink" title="二叉堆（binary heap）"></a>二叉堆（binary heap）</h4><p> 和二叉树一样，堆也具有两个性质，结构性和堆序性。</p>
+<p><strong>结构性</strong></p>
+<p>堆是一颗被完全填满的二叉树（完全二叉树）（complete binary tree）,高为$h$的完全二叉树有$2^h$到$2^{h+1}-1$个节点的树，完全二叉树的结构性质使得它可以被一个数组实现而不需要指针，对于任意下标为 <em>i</em>上的元素，其左儿子在下标 <em>2i+1</em>上，其父节点在$\lfloor （i-1）/2 \rfloor$上。</p>
+<p><strong>堆序性</strong></p>
+<p>以一个最小堆为例，在一个堆中，对于每一个节点$X$，$X$的父节点的值应该小于或者等于$X$节点的值，根结点除外。</p>
+<p><strong>堆的基本操作</strong></p>
+<p>堆的数据结构声明</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">heap</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> Capacity;</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    ElementType* Elements;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">heap</span> <span class="title">heap</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> heap* Heap;</span><br></pre></td></tr></table></figure>
+<p>我们将索引值封装成函数，方便后续使用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 获取左子节点的索引 */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">left</span><span class="params">(Heap heap, <span class="type">int</span> i)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 获取右子节点的索引 */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">right</span><span class="params">(Heap heap, <span class="type">int</span> i)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * i + <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 获取父节点的索引 */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">parent</span><span class="params">(Heap heap, <span class="type">int</span> i)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (i - <span class="number">1</span>) / <span class="number">2</span>; <span class="comment">// 向下取整</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>插入（percolate up）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">push</span><span class="params">(Heap heap,ElementType val)</span>&#123;</span><br><span class="line">    <span class="comment">//不考虑堆满的情况</span></span><br><span class="line">    heap-&gt;Elements[heap-&gt;size++] = val;</span><br><span class="line">    ShiftUp(heap,heap-&gt;size);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ShiftUp</span><span class="params">(Heap heap,<span class="type">int</span> index)</span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="type">int</span> p = parent(heap,index);</span><br><span class="line">        <span class="keyword">if</span>(p&gt;<span class="number">0</span>||heap-&gt;Elements[p]&gt;heap-&gt;Elements[index])</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        swap(heap,p,index);<span class="comment">//swap函数是交换两个节点的元素值，实现略去</span></span><br><span class="line">        index = p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除最小元（pop）</p>
+<p>堆删除顶点是通过将堆尾元素代替堆顶元素，然后进行percolate down实现的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">pop</span><span class="params">(Heap heap)</span>&#123;</span><br><span class="line">    <span class="comment">//不考虑堆为空的情况</span></span><br><span class="line">    <span class="type">int</span> val = heap-&gt;Elements[<span class="number">0</span>];</span><br><span class="line">    heap-&gt;Elements[<span class="number">0</span>] = heap-&gt;Elements[heap-&gt;size--];</span><br><span class="line">    Shiftdown(heap,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Shiftdown</span><span class="params">(Heap heap,<span class="type">int</span> i)</span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="comment">//判断节点中最小的值，记作min</span></span><br><span class="line">        <span class="type">int</span> L = left(heap,index);</span><br><span class="line">        <span class="type">int</span> R = right(heap,index);</span><br><span class="line">        <span class="type">int</span> min = i;</span><br><span class="line">        <span class="keyword">if</span>(L &lt; heap-&gt;size&amp;&amp;heap-&gt;Elements[L]&lt;heap-&gt;Elements[min])&#123;</span><br><span class="line">            min = L;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(R &lt; heap-&gt;size&amp;&amp;heap-&gt;Elements[R]&lt;heap-&gt;Elements[min])&#123;</span><br><span class="line">            min = R;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(max == i)&#123;<span class="comment">//如果max＝i那么说明，要么L和R越界了，要么i所在的元素已经比他的子节点都小了，这两种情况下都不需要再进行交换了。</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(heap,i,min);</span><br><span class="line">        i = min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建堆</p>
+<p>建堆可以通过两种方法实现，一种是不断将元素入堆，时间复杂度为$O(n\log n)$,另一种是对已有的数组进行从底至上遍历堆化，时间复杂度为$O(n)$。</p>
+<p>我们对第二种遍历堆化进行分析，由于每个叶子节点没有子节点，天然地是一个合法的堆，所以我们自底向上的堆化是从最后一个节点的父节点开始的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Heap <span class="title function_">BuidHeap</span><span class="params">(<span class="type">int</span>* nums,<span class="type">int</span> size)</span>&#123;</span><br><span class="line">    Heap minheap = (Heap)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(heap));</span><br><span class="line">    minheap-&gt;size = size;</span><br><span class="line">    <span class="built_in">memcpy</span>(minheap-&gt;Elements,nums,size*<span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = parent(minheap,size<span class="number">-1</span>);i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">        Shiftdown(minheap,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minheap;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h4 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a><strong>基础概念</strong></h4><p><strong>连通</strong>：若两个顶点之间存在路径，那么这两个顶点就是连通的</p>
+<p><strong>路径</strong>：指的是两个顶点之间一系列顶点的集合，路径的长度是边长度的总和，如果两个顶点之间的路径的所有顶点都不同，则称为简单路径</p>
+<p><strong>回路</strong>：起点等于终点的路径</p>
+<p><strong>连通图</strong>：任意两点均连通的图</p>
+<p><strong>连通分量</strong>：无向图的<strong>极大</strong>连通子图（极大值和最大值的区别，极大连通子图不止一个）</p>
+<p><strong>强连通</strong>：有向图中两个顶点存在双向路径，则称这两个顶点是强连通的</p>
+<p><strong>强连通图</strong>：任意两个顶点都是强连通的有向图</p>
+<p><strong>强连通分量</strong>：有向图的<strong>极大</strong>强连通子图</p>
+<h4 id="图的拓扑排序（TopSort）"><a href="#图的拓扑排序（TopSort）" class="headerlink" title="图的拓扑排序（TopSort）"></a>图的拓扑排序（TopSort）</h4><p>拓扑排序是对有向无圈图顶点的一种排序，它使得如果存在一条从$v_i$到$v_j$的路径，那么在排序中$v_j$出现在$v_i$后面。如果图是有圈的，那么拓扑排序无法实现，因为在圈中的顶点既是圈内其他顶点的前驱，也是圈内其他顶点的后继，使得拓扑排序结果不唯一。</p>
+<p>简单的拓扑排序伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">TopSort</span><span class="params">(Gragh G)</span>&#123;</span><br><span class="line">    <span class="type">int</span> counter;</span><br><span class="line">    Vertex V,W;</span><br><span class="line">    <span class="keyword">for</span>(couter = <span class="number">0</span>;counter &lt; NumOfVertex; ++Couter)&#123;</span><br><span class="line"> 		V = FindNewVertexOfZeroIndegree();</span><br><span class="line">        <span class="keyword">if</span>(V == NotVertex)&#123;</span><br><span class="line">            Error(<span class="string">&quot;Gragh has a cycle&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TopNum[V] = couter;</span><br><span class="line">        <span class="keyword">for</span> each W adjacent to V</span><br><span class="line">            Indegree[W]--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>FindNewVertexOfZeroIndegree()</em>是一个对含有所有顶点的集合进行遍历，返回其中入度为0的顶点的函数，如果没有入度为0的函数，那么就返回<em>NotVertex</em>。这个算法存在对顶点的多次重复扫描，我们可以通过队列，将所有入度为0的顶点全部都放入这个队列当中，减少扫描次数。</p>
+<p>队列实现的拓扑排序伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">TopSort</span><span class="params">()</span>&#123;</span><br><span class="line">    Queue Q;</span><br><span class="line">    <span class="type">int</span> couter = <span class="number">0</span>;</span><br><span class="line">    Vertex V,W;</span><br><span class="line">    Q = createQueue();</span><br><span class="line">    Q = makeempty();</span><br><span class="line">    <span class="keyword">for</span> each Vertex</span><br><span class="line">        <span class="keyword">if</span> Indegree[Vertex] == <span class="number">0</span></span><br><span class="line">            Enqueue(Vertex,Q);</span><br><span class="line">    <span class="keyword">while</span>(!Isempty(Q))&#123;</span><br><span class="line">        V = Dequeue(Q);</span><br><span class="line">        TopNUm[V] = ++couter;</span><br><span class="line">        <span class="keyword">for</span> each W adjacent to V</span><br><span class="line">            <span class="title function_">if</span><span class="params">(--Indegree[W]==<span class="number">0</span>)</span></span><br><span class="line">                <span class="title function_">Enqueue</span><span class="params">(W,Q)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(couter != NumOfvertex)</span><br><span class="line">        Error(<span class="string">&quot;Gragh has a cycle&quot;</span>);</span><br><span class="line">    DisposeQueue(Q);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="最短路径算法"><a href="#最短路径算法" class="headerlink" title="最短路径算法"></a>最短路径算法</h4><h5 id="单源最短路径问题（introduction）"><a href="#单源最短路径问题（introduction）" class="headerlink" title="单源最短路径问题（introduction）"></a>单源最短路径问题（introduction）</h5><p>给定一个赋权图$G=(V,E)$和一个特定顶点$s$作为输入，找到从$s$到$G$中每一个其他的顶点的最短赋权路径。</p>
+<h5 id="无权最短路径"><a href="#无权最短路径" class="headerlink" title="无权最短路径"></a>无权最短路径</h5><p>广度优先算法（<em>breadth-first search</em>）</p>
+<p>按照递增的顺序找出各个顶点的最短路径</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Unweighted</span><span class="params">(Tabel T)</span><span class="comment">/*Assume T is initialized*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> CurrDist;</span><br><span class="line">    Vertex V,W;</span><br><span class="line">    <span class="keyword">for</span>(currDist = <span class="number">0</span>;CurrDist&lt;numVertex;CurrDist++)&#123;</span><br><span class="line">        <span class="keyword">for</span> each Vertex V</span><br><span class="line">            <span class="title function_">if</span><span class="params">(!T[V].known &amp;&amp; T[V].Dist == CurDist)</span>&#123;</span><br><span class="line">                T[V].known = True;</span><br><span class="line">                <span class="keyword">for</span> each W adjacent to V</span><br><span class="line">                    <span class="title function_">if</span><span class="params">(T[W].Dist == Infinity)</span>&#123;</span><br><span class="line">                        T[W].Dist = CurrDist + <span class="number">1</span>;</span><br><span class="line">                        T[W].path = V;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/05/03/%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AE%9E%E7%8E%B0/">图的邻接表实现</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/04/21/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8"><span class="toc-text">表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9E%E9%99%85%E8%BF%90%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="toc-text">链表的实际运用例子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E5%8A%A0%E5%87%8F%E4%B9%98%E8%BF%90%E7%AE%97"><span class="toc-text">多项式的加减乘运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F"><span class="toc-text">基数排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%B6%E5%BC%8F%E6%8E%92%E5%BA%8F"><span class="toc-text">桶式排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F-1"><span class="toc-text">基数排序</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%EF%BC%88LIFO%EF%BC%89"><span class="toc-text">栈（LIFO）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-text">栈的应用实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E8%A1%A1%E7%AC%A6%E5%8F%B7"><span class="toc-text">平衡符号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-text">后缀表达式的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">中缀表达式转后缀表达式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97%EF%BC%88FIFO%EF%BC%89"><span class="toc-text">队列（FIFO）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="toc-text">二叉查找树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E4%B8%80%E8%88%AC%E5%AE%9E%E7%8E%B0"><span class="toc-text">树的一般实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-text">二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%EF%BC%88expression-tree%EF%BC%89"><span class="toc-text">表达式树（expression tree）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%B1%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%9E%84%E5%BB%BA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91"><span class="toc-text">由后缀表达式构建表达式树</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%A0%91ADT%E2%80%94%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="toc-text">查找树ADT—二叉查找树</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AVL%E6%A0%91%EF%BC%88%E4%B8%8D%E8%80%83%EF%BC%89"><span class="toc-text">AVL树（不考）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%88%E5%A0%86%EF%BC%89"><span class="toc-text">优先队列（堆）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-text">模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E5%A0%86%EF%BC%88binary-heap%EF%BC%89"><span class="toc-text">二叉堆（binary heap）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE"><span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%EF%BC%88TopSort%EF%BC%89"><span class="toc-text">图的拓扑排序（TopSort）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95"><span class="toc-text">最短路径算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%EF%BC%88introduction%EF%BC%89"><span class="toc-text">单源最短路径问题（introduction）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A0%E6%9D%83%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="toc-text">无权最短路径</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }
+});
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\(","\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body></html>
