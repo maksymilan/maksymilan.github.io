@@ -1,0 +1,580 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0" theme-name="Stellar" theme-version="1.28.0">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>Maksymilan's Notebook</title>
+
+  
+    <meta name="description" content="序列模型在时间$t$观察到$x_t$,那么得到$T$个不独立的随机变量$(x_1,x_2,…,x_T)\sim p(x)$  使用条件概率展开  p(a,b)&#x3D;p(a)p(a|b)可以得到 正向序列概率求得  p(\mathcal{x})&#x3D;p(x_1)*p(x_2|x_1)*p(x_3|x_2x_1)*...*p(x_T|x_1x_2...x_{T-1})反向序列概率求得  p(x)&#x3D;p(x_t)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maksymilan&#39;s Notebook">
+<meta property="og:url" content="https://maksymilan.github.io/2024/12/13/RNN/index.html">
+<meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="序列模型在时间$t$观察到$x_t$,那么得到$T$个不独立的随机变量$(x_1,x_2,…,x_T)\sim p(x)$  使用条件概率展开  p(a,b)&#x3D;p(a)p(a|b)可以得到 正向序列概率求得  p(\mathcal{x})&#x3D;p(x_1)*p(x_2|x_1)*p(x_3|x_2x_1)*...*p(x_T|x_1x_2...x_{T-1})反向序列概率求得  p(x)&#x3D;p(x_t)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-13T11:45:07.537Z">
+<meta property="article:modified_time" content="2024-12-17T12:02:06.697Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Maksymilan's Notebook" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.0">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/"><span class="title">量子光学&量子力学</span></a><a class="item title" href="/2024/11/30/C++%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/12/04/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"><span class="title">概率论和数理统计</span></a><a class="item title" href="/2024/10/12/ads%E9%94%99%E9%A2%98%E9%9B%86/"><span class="title">ads错题集</span></a><a class="item title" href="/2024/09/13/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="title">高级数据结构</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/12/10/Pytorch%E7%9A%84%E5%B0%8Ftrick/"><span class="title">Pytorch的小trick</span></a><a class="item title" href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6&%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/"><span class="title">量子光学&量子力学</span></a><a class="item title" href="/2024/07/03/CS106L/"><span class="title">CS106L</span></a><a class="item title" href="/2024/09/22/C++%E7%89%B9%E6%80%A7/"><span class="title">C++特性</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-13T11:45:07.537Z">2024-12-13</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-17T12:02:06.697Z">2024-12-17</time></span></div></div></div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="序列模型"><a href="#序列模型" class="headerlink" title="序列模型"></a>序列模型</h1><p>在时间$t$观察到$x_t$,那么得到$T$个不独立的随机变量$(x_1,x_2,…,x_T)\sim p(x)$ </p>
+<p>使用条件概率展开</p>
+<script type="math/tex; mode=display">
+p(a,b)=p(a)p(a|b)</script><p>可以得到</p>
+<p>正向序列概率求得</p>
+<script type="math/tex; mode=display">
+p(\mathcal{x})=p(x_1)*p(x_2|x_1)*p(x_3|x_2x_1)*...*p(x_T|x_1x_2...x_{T-1})</script><p>反向序列概率求得</p>
+<script type="math/tex; mode=display">
+p(x)=p(x_t)*p(x_{T-1}|x_T)*p(x_{T-2}|x_{T-1}x_T)*...*p(x_1|x_2x_3x_4...x_T)</script><p>马尔科夫假设：假设当前数据之和$\tau$个过去的数据点相关</p>
+<script type="math/tex; mode=display">
+p(x_t|x_1x_2...x_{t-1})=p(x_t|x_{t-\tau},...x_{t-1})=p(x_t|f(x_{t-\tau,...,x_{t-1}}))</script><p>潜变量模型</p>
+<p>引入潜变量$h_t$来表示过去信息$h_t=f(x_1,…,x_{t-1})$</p>
+<script type="math/tex; mode=display">
+x_t=p(x_t|h_t)</script><p>时序模型中，当前数据和之前观察的数据相关，自回归模型用自身的过去数据来预测未来。</p>
+<p>自回归模型使用自身过去数据预测未来</p>
+<p>马尔可夫假设模型当前之和最近最少数数据有关，从而简化模型</p>
+<p>潜变量使用潜变量来概括历史信息</p>
+<h1 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h1><p>RNN的模型是由输入$x_{t-1}$和隐变量 $h_{t-1}$计算得到$h_t$，然后由$h_t$进行计算得到 $o_t$，实现对输入$x_t$的下一个元素的预测，$\phi$是激活函数</p>
+<p>更新隐藏状态的方程</p>
+<script type="math/tex; mode=display">
+h_t=\phi(W_{hh}h_{t-1}+W_{xh}x_{t-1}+b_h)</script><p>得到输出</p>
+<script type="math/tex; mode=display">
+o_t=W_{ho}h_t =b_o</script><p>$h_t$处于隐藏层，也叫做hidden state，作用是可以储存历史信息，从而实现对时间序列数据的建模，上面这个例子里表示的是单层的循环神经网络架构。</p>
+<p>具体来说网络的工作流程如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">输入:     我       喜欢       学习</span></span><br><span class="line">          ↓        ↓         ↓</span><br><span class="line"><span class="section">隐藏层:   h_1  →   h_2   →   h_3</span></span><br><span class="line">          ↓        ↓         ↓</span><br><span class="line"><span class="section">输出:    喜欢      学习       &lt;预测下一个单词&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="困惑度"><a href="#困惑度" class="headerlink" title="困惑度"></a>困惑度</h2><p>利用平均交叉熵来对我们当前的模型的好坏进行评价</p>
+<script type="math/tex; mode=display">
+\pi=\frac{1}{n}\sum_{i=1}^n-\log{p(x_t|x_{t-1},x_{t-2},...)}</script><p>$p$是语言模型的预测概率，$x_t$是输入的真实词</p>
+<p>由于历史原因，NLP使用困惑度($\exp(\pi)$)来衡量模型好坏，代表了每一次预测时预测的结果的个数，1代表下一个预测结果只有一种可能，无穷大代表有无数种可能</p>
+<h2 id="梯度剪裁"><a href="#梯度剪裁" class="headerlink" title="梯度剪裁"></a>梯度剪裁</h2><p>如果输入长度为$T$，那么在每一个隐藏层的迭代过程中就要计算$T$个时间步上的梯度，在反向传播过程中产生长度为 $O(T)$的矩阵乘法链，导致数值不稳定。梯度剪裁能有效预防梯度爆炸（梯度的长度变得很大，导致训练不稳定或参数更新过大），下面这个表达式就表示了梯度裁剪的计算过程，$\theta$是设定的超参数，是我们设定的允许的最大梯度，$g$是当前的梯度向量，$||g||$代表向量的模长，当梯度超过了阈值的时候，就会自动将梯度进行拉回</p>
+<script type="math/tex; mode=display">
+g\leftarrow\min(1,\frac{\theta}{||g||})g</script><h2 id="RNN的应用"><a href="#RNN的应用" class="headerlink" title="RNN的应用"></a>RNN的应用</h2><p>下面的输入输出的数量是以一个token为一个输入来计量的</p>
+<ul>
+<li>由一个输入生成一个输出（MLP）</li>
+<li>由一个输入生成多个输出（文本生成）</li>
+<li>由多个输入生成一个输出（对文本内容进行分类）</li>
+<li>由多个输入生成多个输出（问答或机器翻译）</li>
+</ul>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p><strong>对输入数据进行独热编码</strong></p>
+<p>在训练过程中，我们假设有batch_size个文本，每个文本的长度为t，同时vocab中所有的词数为vocab_size，我们要先将文本转换为可以计算的向量，这个过程是独热编码（one-hot）,由$\text{batch_size<em>t}$的文本输入可以得到$\text{batch_size</em>t<em>vocab_size}$的向量，这是因为每一个长度为t的文本的每一个词都是一个长度为$\text{vocab_size}$的向量，为了在后续的遍历每一个时间步的计算过程中更方便，我们先对$\text{batch_size</em>t}$进行转置，然后进行独热编码（这样得到的就是 $\text{t<em>batch_size</em>vocal_size}$能直接进行运算）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X.shape()</span><br><span class="line"><span class="comment">#[batch_size,t]</span></span><br><span class="line">torch.nn.functional.one_hot(X.T,vocal_size)</span><br></pre></td></tr></table></figure>
+<p><strong>对计算参数的解析</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#初始化模型参数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_params</span>(<span class="params">vocab_size,num_hiddens,device</span>):</span><br><span class="line">    num_inputs = num_outputs = vocab_size</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">normal</span>(<span class="params">shape</span>):</span><br><span class="line">        <span class="keyword">return</span> torch.randn(size=shape,device=device)*<span class="number">0.01</span></span><br><span class="line">    </span><br><span class="line">    W_xh = normal((num_inputs,num_hiddens))</span><br><span class="line">    W_hh = normal((num_hiddens,num_hiddens))</span><br><span class="line">    b_h = torch.zeros(num_hiddens,device=device)</span><br><span class="line">    W_hq = normal((num_hiddens,num_outputs))</span><br><span class="line">    b_q = torch.zeros(num_outputs,device=device)</span><br><span class="line">    params = [W_xh,W_hh,b_h,W_hq,b_q]</span><br><span class="line">    <span class="keyword">for</span> param <span class="keyword">in</span> params:</span><br><span class="line">        param.requires_grad_(<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">return</span> params</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#RNN模型</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rnn</span>(<span class="params">inputs,state,params</span>):</span><br><span class="line">    W_xh,W_hh,b_h,W_hq,b_q = params</span><br><span class="line">    H, = state</span><br><span class="line">    outputs = []</span><br><span class="line">    <span class="keyword">for</span> X <span class="keyword">in</span> inputs:<span class="comment">#X的形状是(batch_size,vocab_size)，按照第一维（也就是时间步）进行遍历</span></span><br><span class="line">        H = torch.tanh(torch.mm(X,W_xh)+torch.mm(H,W_hh)+b_h)</span><br><span class="line">        Y = torch.mm(H,W_hq)+b_q</span><br><span class="line">        outputs.append(Y)</span><br><span class="line">    <span class="keyword">return</span> torch.cat(outputs,dim=<span class="number">0</span>),(H,)</span><br></pre></td></tr></table></figure>
+<p>在<code>RNN</code>计算过程中，每一个<code>X</code>代表的是按照时间步从0开始的元素，形状为$\text{batch_size<em>input_size}$,表示有$\text{batch_size}$个元素参与运算，每个元素的特征个数为$\text{vocab_size}$，所以由输入层到隐藏层的参数的设置为$\text{input_size</em>hidden_size}$，其中$\text{hidden_size}$表示的是隐藏层的特征维度个数，在隐藏层之间的参数的形状就是$\text{hidden_size<em>hidden_size}$，从隐藏层到输出层的参数设置为$\text{hidden_size</em>output_size}$，其中$\text{output_size}$是输出元素的特征维度。在我们的这个模型中，我们是想用一本书来训练一个模型，让这个模型预测书中的内容，所以有$\text{input_size = out_put_size = vocab_size}$，因为输入输出的词都是在我们定义的$\text{vocab}$当中。</p>
+<p><code>H</code>是隐变量，特征维数为$\text{hidden_size}$，同时由于每一个<code>X</code>的字都会有一个对应的隐变量，所以在矩阵运算中<code>H</code>的形状为$\text{batch_size*hidden_size}$，在隐藏层进行运算的时候不会改变隐变量的形状</p>
+<h2 id="模型的训练函数"><a href="#模型的训练函数" class="headerlink" title="模型的训练函数"></a>模型的训练函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一个迭代周期内的训练函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train_epoch_ch8</span>(<span class="params">net,train_iter,loss,updater,device,use_random_iter</span>):</span><br><span class="line">    state,timer = <span class="literal">None</span>,d2l.Timer()</span><br><span class="line">    metric = d2l.Accumulator(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> X,Y <span class="keyword">in</span> train_iter:</span><br><span class="line">        <span class="keyword">if</span> state <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> use_random_iter:</span><br><span class="line">            state = net.begin_state(batch_size=X.shape[<span class="number">0</span>],device=device)</span><br><span class="line">        <span class="keyword">else</span>: </span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">isinstance</span>(net,RNNModelScratch) <span class="keyword">and</span> <span class="keyword">not</span> use_random_iter:</span><br><span class="line">                <span class="keyword">for</span> s <span class="keyword">in</span> state:</span><br><span class="line">                    s.detach_()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                state.detach_()</span><br><span class="line">        y = Y.T.reshape(-<span class="number">1</span>)</span><br><span class="line">        X,Y = X.to(device),Y.to(device)</span><br><span class="line">        y = y.to(device)</span><br><span class="line">        y_hat,state = net(X,state)</span><br><span class="line">        l = loss(y_hat,y).mean()</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(updater,torch.optim.Optimizer):</span><br><span class="line">            updater.zero_grad()</span><br><span class="line">            l.backward()</span><br><span class="line">            grad_clipping(net,<span class="number">1</span>)</span><br><span class="line">            updater.step()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            l.backward()</span><br><span class="line">            grad_clipping(net,<span class="number">1</span>)</span><br><span class="line">            updater(batch_size=<span class="number">1</span>)</span><br><span class="line">        metric.add(l*y.numel(),y.numel())</span><br><span class="line">    <span class="keyword">return</span> math.exp(metric[<span class="number">0</span>]/metric[<span class="number">1</span>]),metric[<span class="number">1</span>]/timer.stop()</span><br></pre></td></tr></table></figure>
+<p>对于这个训练函数，流程如下</p>
+<ol>
+<li>首先进行累加器的初始化，用于计算损失</li>
+<li>第一个<code>for</code>循环是对<code>state</code>进行初始化<ul>
+<li>如果是在<code>state</code>没有初始化或者每一次的批量都是随机从样本中抽取的，我们就将state初始化为形状为$\text{batch_size*hidden_size}$，$0$填充的张量。如果每一个批次都是随机的，那么每一次的state都应该和上一个批次的state无关，所以初始化为0。</li>
+<li>如果是在<code>state</code>已经初始化了，并且是采用的顺序的迭代器，每一个批次在原文本中都是紧挨着上一个批次，那么我们就需要对<code>state</code>进行保留，但是需要对其进行<code>detach</code>操作，这样是为了避免长序列导致的梯度爆炸问题。<ul>
+<li><code>detach</code>：我们举例说明detach的作用，令$x=2$,$y=x^2$,那么对$y$求梯度就等于$4$,我们令,$\text{y_detach=y.detach()}$$f=y<em>x$,$\text{g = y_detach</em>x}$,分别对$f$和$g$进行求梯度，结果分别是$\text{grad_f = 12,grad_g=4}$。从这个例子我们可以得到， $\text{detach}$操作实际上就是断开两个函数间的梯度关系。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>初始化完成后就是计算过程，<code>Y</code>是返回的标签序列，形状为$\text{batch_size*t}$,<code>X</code>的形状是一样的，将<code>Y</code>转置后按序列长度拼接为一个列向量。这么做是为了与<code>X</code>计算得到的$\hat{Y}$的形状对应，然后进行平均损失计算。</li>
+<li>计算完成后就是进行参数更新，如果是调用的torch库函数的优化器的话，我们就直接先清空梯度，然后进行<code>backward</code>运算，进行梯度裁剪，最后是更新参数。如果是自定义的优化器，就调用对应的函数。</li>
+<li>最后是返回困惑值</li>
+</ol>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/12/19/ADS_local_search/">2024-12-19</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/12/10/Pytorch%E7%9A%84%E5%B0%8Ftrick/">Pytorch的小trick</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%B0%E6%83%91%E5%BA%A6"><span class="toc-text">困惑度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E5%89%AA%E8%A3%81"><span class="toc-text">梯度剪裁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RNN%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">RNN的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AE%AD%E7%BB%83%E5%87%BD%E6%95%B0"><span class="toc-text">模型的训练函数</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }
+});
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\(","\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body></html>

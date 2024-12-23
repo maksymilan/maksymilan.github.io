@@ -20,15 +20,15 @@
   <title>概率论和数理统计 - Maksymilan's Notebook</title>
 
   
-    <meta name="description" content="数理统计基础概念总体：研究对象的全体 个体：总体中的成员 数理统计的主要任务是从总体中抽取一部分个体，然后根据这部分个体的数据对总体分布进行判断，被抽取的部分个体叫做总体的一个样本 随机样本：从总体中随机地取n个个体，称为一个随机样本。 简单随机样本：满足以下两个条件的随机样本($X_1$,$X_2$,…,$X_n$)称为容量是n的简单随机样本。（一般提到的样本都是简单随机样本）  每个$X_i$">
+    <meta name="description" content="常见的分布及其性质泊松分布(Poisson Distribution) X\sim P(\lambda)\\ X\sim \pi(\lambda) \\P(X&#x3D;k)&#x3D;\frac{\lambda^k e^{-\lambda}}{k!},k&#x3D;0,1,2性质：  数学期望和方差都等于参数$\lambda$  $\lambda &gt; 0$  可加性： 若随机变量 $X\sim\pi(\lambda_1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率论和数理统计">
 <meta property="og:url" content="https://maksymilan.github.io/2024/12/04/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Maksymilan&#39;s Notebook">
-<meta property="og:description" content="数理统计基础概念总体：研究对象的全体 个体：总体中的成员 数理统计的主要任务是从总体中抽取一部分个体，然后根据这部分个体的数据对总体分布进行判断，被抽取的部分个体叫做总体的一个样本 随机样本：从总体中随机地取n个个体，称为一个随机样本。 简单随机样本：满足以下两个条件的随机样本($X_1$,$X_2$,…,$X_n$)称为容量是n的简单随机样本。（一般提到的样本都是简单随机样本）  每个$X_i$">
+<meta property="og:description" content="常见的分布及其性质泊松分布(Poisson Distribution) X\sim P(\lambda)\\ X\sim \pi(\lambda) \\P(X&#x3D;k)&#x3D;\frac{\lambda^k e^{-\lambda}}{k!},k&#x3D;0,1,2性质：  数学期望和方差都等于参数$\lambda$  $\lambda &gt; 0$  可加性： 若随机变量 $X\sim\pi(\lambda_1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-04T11:05:12.000Z">
-<meta property="article:modified_time" content="2024-12-04T14:52:24.146Z">
+<meta property="article:modified_time" content="2024-12-20T13:23:26.842Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -65,7 +65,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/09/22/C++%E7%89%B9%E6%80%A7/"><span class="title">C++特性</span></a><a class="item title" href="/2024/12/04/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"><span class="title">概率论和数理统计</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"><span class="title">服务器环境配置的一些问题</span></a><a class="item title" href="/2024/11/27/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="title">图神经网络</span></a><a class="item title" href="/2024/08/16/Git/"><span class="title">Git</span></a><a class="item title" href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/11/21/react%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><span class="title">react环境配置</span></a><a class="item title" href="/2024/11/26/%E5%91%BD%E4%BB%A4%E8%A1%8C/"><span class="title">命令行</span></a><a class="item title" href="/2024/11/19/%E5%85%89%E5%AD%A6/"><span class="title">光学</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/"><span class="title">量子光学&量子力学</span></a><a class="item title" href="/2024/11/30/C++%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/12/04/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"><span class="title">概率论和数理统计</span></a><a class="item title" href="/2024/10/12/ads%E9%94%99%E9%A2%98%E9%9B%86/"><span class="title">ads错题集</span></a><a class="item title" href="/2024/09/13/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="title">高级数据结构</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/12/10/Pytorch%E7%9A%84%E5%B0%8Ftrick/"><span class="title">Pytorch的小trick</span></a><a class="item title" href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6&%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/"><span class="title">量子光学&量子力学</span></a><a class="item title" href="/2024/07/03/CS106L/"><span class="title">CS106L</span></a><a class="item title" href="/2024/09/22/C++%E7%89%B9%E6%80%A7/"><span class="title">C++特性</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -78,7 +78,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-04T11:05:12.000Z">2024-12-04</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-04T14:52:24.146Z">2024-12-04</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-04T11:05:12.000Z">2024-12-04</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-20T13:23:26.842Z">2024-12-20</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -89,7 +89,302 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="数理统计"><a href="#数理统计" class="headerlink" title="数理统计"></a>数理统计</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><p>总体：研究对象的全体</p>
+  </div><article class="md-text content"><h1 id="常见的分布及其性质"><a href="#常见的分布及其性质" class="headerlink" title="常见的分布及其性质"></a>常见的分布及其性质</h1><h2 id="泊松分布-Poisson-Distribution"><a href="#泊松分布-Poisson-Distribution" class="headerlink" title="泊松分布(Poisson Distribution)"></a>泊松分布(Poisson Distribution)</h2><script type="math/tex; mode=display">
+X\sim P(\lambda)\\
+X\sim \pi(\lambda)
+\\P(X=k)=\frac{\lambda^k e^{-\lambda}}{k!},k=0,1,2</script><p><strong>性质</strong>：</p>
+<ul>
+<li><p>数学期望和方差都等于参数$\lambda$</p>
+</li>
+<li><p>$\lambda &gt; 0$</p>
+</li>
+<li><p>可加性：</p>
+<p>若随机变量 $X\sim\pi(\lambda_1),Y\sim\pi(\lambda_2)$，且$X,Y$相互独立。若$Z=X+Y$，则$Z\sim\pi(\lambda_1+\lambda_2)$</p>
+</li>
+</ul>
+<h2 id="均匀分布-Uniform-Distribution"><a href="#均匀分布-Uniform-Distribution" class="headerlink" title="均匀分布(Uniform Distribution)"></a>均匀分布(Uniform Distribution)</h2><script type="math/tex; mode=display">
+X\sim U(a,b)</script><p>$X$具有概率密度</p>
+<script type="math/tex; mode=display">
+f(x)=
+\begin{cases}
+\frac{1}{b-a},x\in(a,b)\\
+0,\text{else}
+\end{cases}</script><p>方差为</p>
+<script type="math/tex; mode=display">
+D(X)=\frac{(a-b)^2}{12}</script><h2 id="指数分布-Exponential-Distribution"><a href="#指数分布-Exponential-Distribution" class="headerlink" title="指数分布(Exponential Distribution)"></a>指数分布(Exponential Distribution)</h2><script type="math/tex; mode=display">
+X\sim E(\lambda)</script><p>$X$服从参数为$\lambda$的指数分布时，$X$具有概率密度</p>
+<script type="math/tex; mode=display">
+f(x)=
+\begin{cases}
+\lambda e ^{-\lambda x},x>0\\
+0,\text{else}
+\end{cases}</script><p>$X$的分布函数</p>
+<script type="math/tex; mode=display">
+F(x)=
+\begin{cases}
+1-e^{-\lambda x},x >0\\
+0,\text{else}
+\end{cases}</script><p>服从指数分布的随机变量$X$具有<strong>无记忆性</strong>，即满足</p>
+<script type="math/tex; mode=display">
+P(X>t_0+t|X>t_0)=P(X>t)</script><p><strong>数学期望和方差</strong>：</p>
+<script type="math/tex; mode=display">
+E(X)=\frac{1}{\lambda}\\D(X)=\frac{1}{\lambda^2}</script><h2 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h2><script type="math/tex; mode=display">
+X\sim N(\mu,\sigma^2)</script><p>服从正态分布的随机变量的概率密度函数满足</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty<x<+\infty</script><p>若$Z\sim N(0,1)$，称$Z$服从标准正态分布，$Z$的概率密度：</p>
+<script type="math/tex; mode=display">
+\phi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p> <strong>普通正态分布转换为标准正态分布的计算公式</strong></p>
+<p>当$X\sim N(\mu,\sigma^2)$时，$\frac{X-\mu}{\sigma}\sim N(0,1)$</p>
+<script type="math/tex; mode=display">
+P(x\leq b)=\Phi(\frac{b-\mu}{\sigma})</script><p>$\mu,\sigma$分别是普通正态的均值和标准差。</p>
+<h2 id="几何分布-Geometric-Distribution"><a href="#几何分布-Geometric-Distribution" class="headerlink" title="几何分布(Geometric Distribution)"></a>几何分布(Geometric Distribution)</h2><p>几何分布指的是在一系列伯努利试验中，<strong>第一次成功出现之前的失败次数为k-1</strong>时的概率</p>
+<script type="math/tex; mode=display">
+P(X=k)=(1-p)^{k-1}p</script><p><strong>性质</strong></p>
+<ul>
+<li><p>期望</p>
+<script type="math/tex; mode=display">
+ E(X)=\frac{1-p}{p}</script></li>
+<li><p>方差</p>
+<script type="math/tex; mode=display">
+D(X)=\frac{1-p}{p^2}</script></li>
+</ul>
+<h1 id="Gamma-函数求积分"><a href="#Gamma-函数求积分" class="headerlink" title="$\Gamma$函数求积分"></a>$\Gamma$函数求积分</h1><p>$\Gamma$函数的表达如下</p>
+<script type="math/tex; mode=display">
+\Gamma(z)=\int_o^{\infty} t^{z-1}e(-t)dt</script><p>对于$z$为整数的时候，可以直接进行积分</p>
+<ul>
+<li><script type="math/tex; mode=display">
+\Gamma(\frac{1}{2})=\sqrt\pi</script></li>
+<li><script type="math/tex; mode=display">
+\Gamma(n)=(n-1)!</script></li>
+</ul>
+<h1 id="随机变量的分布函数"><a href="#随机变量的分布函数" class="headerlink" title="随机变量的分布函数"></a>随机变量的分布函数</h1><p><strong>定义</strong>：$X$为一随机变量,对任意实数$x$,函数$F(x)=P(X\leq x)$为随机变量$X$的概率分布函数，简称分布函数，任何随机变量都有相应的分布函数</p>
+<h4 id="离散型随机变量及其分布函数"><a href="#离散型随机变量及其分布函数" class="headerlink" title="离散型随机变量及其分布函数"></a>离散型随机变量及其分布函数</h4><p>一般地，离散型随机变量的分布律为$P\{X=x_k\}=p_k$,由此可得$X$的分布函数为$F(x)=\sum_{x_k\leq x}p_k$,分布函数再$x=x_k$处有跳跃，跳跃值为$p_k=P\{X=x_k\}$</p>
+<h4 id="连续型随机变量及其分布函数"><a href="#连续型随机变量及其分布函数" class="headerlink" title="连续型随机变量及其分布函数"></a>连续型随机变量及其分布函数</h4><p>定义：对于随机变量$X$的分布函数$F(x)$，若存在非负函数$f(x)$，使得对于任意实数$x$，有：</p>
+<script type="math/tex; mode=display">
+F(x)=\int_{-\infty}^xf(t)dt</script><p>则称$X$为连续型随机变量，$f(x)$称为$X$的概率密度函数。</p>
+<h2 id="二元随机变量"><a href="#二元随机变量" class="headerlink" title="二元随机变量"></a>二元随机变量</h2><h4 id="离散型二元随机变量"><a href="#离散型二元随机变量" class="headerlink" title="离散型二元随机变量"></a>离散型二元随机变量</h4><p><strong>定义</strong>：若二元随机变量$(X,Y)$全部可能取到的不同值是有限对或可列无限对，则称$(X,Y)$是离散型二元随机变量。二元随机变量的分布律如下：</p>
+<script type="math/tex; mode=display">
+P(X=x_i,Y=y_i)=p_{ij}</script><h4 id="边际分布"><a href="#边际分布" class="headerlink" title="边际分布"></a>边际分布</h4><p>对于上述的离散型随机变量，$X,Y$的边际分布律为：</p>
+<script type="math/tex; mode=display">
+P(Y=y_i)=P(X<+\infty,Y=y_i)=\sum_{i=1}^\infty p_{ij}\\
+P(X=x_i)=P(X=x_i,Y<+\infty)=\sum_{j=1}^\infty p_{ij}\\</script><h4 id="条件分布"><a href="#条件分布" class="headerlink" title="条件分布"></a>条件分布</h4><p>对于二元离散型随机变量$X,Y$，若$P(Y=y_j)=p_{·j}&gt;0$，那么条件概率</p>
+<script type="math/tex; mode=display">
+P(X=x_i|Y=y_j)=\frac{P(X=x_i,Y=y_j)}{P(Y=y_j)}=\frac{P_{ij}}{P_{·j}}</script><p>为在 $Y=y_j$条件下，随机变量$X$的条件分布律。</p>
+<h3 id="二元随机变量的分布函数"><a href="#二元随机变量的分布函数" class="headerlink" title="二元随机变量的分布函数"></a>二元随机变量的分布函数</h3><p><strong>定义</strong>：设$(X,Y)$是二元随机变量，对于任意实数$x,y$，二元函数</p>
+<script type="math/tex; mode=display">
+F(x,y)=p\{(X\leq x)\cap (Y\leq y)\}=P(X\leq x,Y\leq y)</script><p>称为二元随机变量$(X,Y)$的分布函数</p>
+<p><strong>边际分布函数</strong></p>
+<p>对二元分布函数进行积分，对$x$进行积分得到的是$y$的边际分布函数，反之亦然</p>
+<script type="math/tex; mode=display">
+F_X(x)=F(x,\infty)\\
+F_Y(y)=F(\infty,y)</script><p><strong>条件分布函数</strong></p>
+<p>若$P(Y=y)&gt;0$，那么在$Y=y$的条件下，$X$的分布函数为：</p>
+<script type="math/tex; mode=display">
+F_(X|Y)(x|y)=P(X\leq x|Y=y)=\frac{P(X\leq x,Y=y)}{P(Y=y)}</script><p>若$P(Y=y)=0$，但对任意给定的$\epsilon &gt;0$，都有$P(y<Y\leq y+\epsilon)>0$，则在$Y=y$的条件下，$X$的分布函数为：</p>
+<script type="math/tex; mode=display">
+F_{X|Y}(x|y)=\lim_{\epsilon\rightarrow 0^+}{P(X\leq x|y<Y\leq y+\epsilon})\\
+=\lim_{\epsilon\rightarrow 0^+}\frac{P(X=x,y<Y\leq \epsilon+y)}{P(y<Y\leq\epsilon+y)}</script><p>也还是记作</p>
+<script type="math/tex; mode=display">
+P(X\leq x|Y=y)</script><p><strong>联合概率密度</strong></p>
+<p>对于二元随机变量$(X,Y)$的分布函数  $F(x,y)$，如果存在非负函数$f(x,y)$，使对于任意$x,y$有</p>
+<script type="math/tex; mode=display">
+F(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)dvdu</script><p>称$(X,Y)$为二元连续型随机变量，称$f(x,y)$为二元随机变量$(X,Y)$的联合概率密度</p>
+<p>在$f(x,y)$的连续点$(x,y)$，有</p>
+<script type="math/tex; mode=display">
+\frac{\partial^2F(x,y)}{\partial x\partial y}=f(x,y)</script><p><strong>边际概率密度</strong></p>
+<p>对于连续型随机变量$(X,Y)$，联合概率密度为$f(x,y)$，边际概率密度为</p>
+<script type="math/tex; mode=display">
+f_X(x)=\int_{-\infty}^{+\infty}f(x,y)dy\\
+f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)dx</script><p><strong>条件概率密度</strong></p>
+<p>对于连续型随机变量$(X,Y)$，联合概率密度为$f(x,y)$，$(X,Y)$关于$Y$的边际概率密度为$f_Y(y)$，若对于固定的$y$，$f_Y(y)&gt;0$，则</p>
+<script type="math/tex; mode=display">
+\frac{f(x,y)}{f_Y(y)}</script><p>为在$Y=y$的条件下，$X$ 的条件概率密度，记为</p>
+<script type="math/tex; mode=display">
+f_{X|Y}(x,y)=\frac{f(x,y)}{f_Y(y)}</script><p>对$X=x$的条件下，$Y$的条件概率密度，记为</p>
+<script type="math/tex; mode=display">
+f_{Y|X}(x,y)=\frac{f(x,y)}{f_X(x)}</script><h3 id="随机变量的独立性"><a href="#随机变量的独立性" class="headerlink" title="随机变量的独立性"></a>随机变量的独立性</h3><p>设$F(x,y),F_X(),F_Y(y)$分别是二元随机变量 $(X,Y)$的分布函数和边际分布函数，若对所有的$(x,y)$都有$P(X\leq x,Y\leq y)=P(X\leq x)P(Y\leq y)$即</p>
+<script type="math/tex; mode=display">
+F(x,y)=F_X(x)F_Y(y)</script><p>称随机变量$X,Y$相互独立</p>
+<ul>
+<li>若随机变量$X,Y$是离散型的，那么$p_{ij}=p_ip_j$对一切$i,j$都成立</li>
+<li>若随机变量$X,Y$是连续型的，那么$f(x,y)=f_X(x)f_Y(y)$处处成立</li>
+</ul>
+<h3 id="随机变量函数的分布"><a href="#随机变量函数的分布" class="headerlink" title="随机变量函数的分布"></a>随机变量函数的分布</h3><p>问题：已知随机变量$X$的分布，且已知$Y=g(x)$，求$Y$的概率分布。</p>
+<p>一般，上述问题的求解方法为：等价变换法</p>
+<ul>
+<li>对于离散型随随机变量$X$，只需找到 $Y$的等价事件即可，即先写出$Y$的可能取值，再找出$(Y=y_j)$的等价事件$X_i$，然后进行概率对应</li>
+<li>若为离散型的随机变量$X$，那么先写出$Y$的概率分布函数$F_Y(y)=P(Y\leq y)$，找到$Y\leq y$的等价时间$X\in D$,得到$F_Y(y)=P(X\in D)$，再求出$Y$的概率密度函数$f_Y(y)$</li>
+</ul>
+<p><strong>定理 反函数法</strong></p>
+<p>设$X\sim f_X(x),-\infty&lt;x&lt;+\infty,g^{‘}(x)&gt;0\text{或}(g^{‘}(x)&lt;0),Y=g(X)$,则 $Y$具有概率密度函数为</p>
+<script type="math/tex; mode=display">
+f_Y(y)=
+\begin{cases}
+f_X(h(y)) ·|h^{'}(y)|,\alpha<y<\beta\\
+0,\text{else}
+\end{cases}</script><p>这里 $\alpha,\beta$是$Y$的取值范围，$h$是$g$的反函数$h(y)=x$.</p>
+<h3 id="二元随机变量函数的分布"><a href="#二元随机变量函数的分布" class="headerlink" title="二元随机变量函数的分布"></a>二元随机变量函数的分布</h3><p>问题：设二元离散型随机变量$(X,Y)$具有概率分布$P(X=x_i,Y=y_j)=p_{ij}$，设$U=u(X,Y),V=v(X,Y)$，则 $(U,V)$的分布律是什么，$Z=g(X,Y)$的分布律是什么？</p>
+<ul>
+<li>对于 $U,V,Z$为离散型的情况，只要找到对应的等价事件就可以了</li>
+</ul>
+<h4 id="Z-X-Y-的分布"><a href="#Z-X-Y-的分布" class="headerlink" title="$Z=X+Y$的分布"></a>$Z=X+Y$的分布</h4><ul>
+<li><p>设$(X,Y)$为离散型随机变量，分布律为：</p>
+<script type="math/tex; mode=display">
+P(X=x_i,Y=y_j)=p_{ij}</script><p> 设$Z$的可能取值为$z_1,z_2,…,z_k,…$，则$Z=X+Y$的分布律为</p>
+<script type="math/tex; mode=display">
+P(Z=z_k)=P(X+Y=z_k)\\
+=\sum_{i=1}^{+\infty}P(X=x_i,Y=z_k-x_i)</script><p>当$X,Y$相互独立时</p>
+<script type="math/tex; mode=display">
+P(Z=z_k)=\sum_{i=1}^{+\infty}p(X=x_i)P(Y=z_k-x_i)</script></li>
+<li><p>设$(X,Y)$为连续型随机变量，概率密度为 $f(x,y)$，$F_Z(z)=P(Z\leq z)=\iint_{x+y\leq z}dxdy$.可以得到$Z$ 的概率密度为</p>
+<script type="math/tex; mode=display">
+f_Z(z)=\int_{-\infty}^{+\infty}f(z-y,y)dy</script><p>由$X,Y$的对称性，也可以写为</p>
+<script type="math/tex; mode=display">
+f_Z(z)=\int_{-\infty}^{\infty}f(x,z-x),dx</script><p>当$X,Y$相互独立时， $Z=X+Y$的密度函数公式称为卷积公式</p>
+<script type="math/tex; mode=display">
+f_Z(z)=\int_{-\infty}^{+\infty}f_X(z-y)f_Y(y)dy=\int_{-\infty}^{+\infty}f_X(x)f_Y(z-x)dx</script></li>
+</ul>
+<h3 id="M-text-max-X-Y-N-text-min-X-Y-的分布"><a href="#M-text-max-X-Y-N-text-min-X-Y-的分布" class="headerlink" title="$M=\text{max}(X,Y),N=\text{min}(X,Y)$的分布"></a>$M=\text{max}(X,Y),N=\text{min}(X,Y)$的分布</h3><p>设$X,Y$是两个相互独立的随机变量，它们的分布函数分别为$F_X(x),F_Y(y)$，现在求$M,N$的分布函数$F_{\text{max}}(z),F_{\text{min}}(z)$.</p>
+<script type="math/tex; mode=display">
+F_{\text{max}}(z)=F_X(z)F_Y(z)\\
+F_{\text{min}}(z)=1-P(N>z)=1-P(X>z,Y>z)=1-(1-F_X(z))(1-F_Y(z))</script><p>可以推广到$n$个相互独立的随机变量的情况</p>
+<p>计算$\max(X_1,X_2,…,X_n)$的分布函数：</p>
+<ol>
+<li><p>算出一个随机变量$X$的分布函数</p>
+</li>
+<li><p>用一个随机变量的分布函数$F(x)$计算整体的分布函数</p>
+<ul>
+<li><script type="math/tex; mode=display">
+F_{\max(X_1,X_2,...,X_n)}(x)=(F(x))^N</script></li>
+<li><script type="math/tex; mode=display">
+F_{\min(X_1,X_2,...,X_n)}(x)=1-(1-F(x))^n</script></li>
+</ul>
+</li>
+</ol>
+<h1 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h1><h3 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h3><p>对离散型随机变量$X$，若级数</p>
+<script type="math/tex; mode=display">
+\sum_{k=1}^\infty x_kp_k</script><p>绝对收敛，那么该级数的值就是随机变量$X$的数学期望，记为$E(X)$</p>
+<script type="math/tex; mode=display">
+E(X)=\sum_{k=1}^\infty x_kp_k</script><p>对于连续型随机变量，若积分</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{+\infty}xf(x)dx</script><p>绝对收敛，则该积分的值就是随机变量$X$的数学期望，记为$E(X)$</p>
+<script type="math/tex; mode=display">
+E(X)=\int_{-\infty}^{+\infty}xf(x)dx</script><p>对于随机变量$Y=g(X)$，有定理(该定理也可推广到两个或两个以上的随机变量的函数的情况)</p>
+<script type="math/tex; mode=display">
+E(Y) = \int_{-\infty}^{+\infty}g(x)f(x)dx</script><p>设 $Z=h(X,Y)$，$X,Y$为连续型随机变量（离散型同理累加即可）， $Z$的数学期望为</p>
+<script type="math/tex; mode=display">
+E(Z)=\int_{-\infty}^{+\infty}h(x,y)f(x,y)dxdy</script><p>同时还有</p>
+<script type="math/tex; mode=display">
+E(X)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}xf(x,y)dxdy\\
+E(Y)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}yf(x,y)dxdy</script><h4 id="数学期望的性质"><a href="#数学期望的性质" class="headerlink" title="数学期望的性质"></a>数学期望的性质</h4><ul>
+<li><script type="math/tex; mode=display">
+E(C)=C,C为常数</script></li>
+<li><script type="math/tex; mode=display">
+E(CX)=CE(X),X为随机变量，C为常数</script></li>
+<li><script type="math/tex; mode=display">
+E(X+Y)=E(X)+E(Y),X,Y是两个随机变量（不一定相互独立）</script></li>
+<li><script type="math/tex; mode=display">
+E(XY)=E(X)E(Y),X,Y是相互独立的随机变量</script></li>
+</ul>
+<p>上述第三和第四两个定理都可以推广到任意有限个的情况</p>
+<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>$X$是一个随机变量，若 $E\{[X-E(X)]^2\}$存在，则称其为$X$的方差，记为$D(X)$或$Var(X)$，即</p>
+<script type="math/tex; mode=display">
+D(X)=Var(X)=E\{[X-E(X)]^2\}</script><p>对于离散型随机变量</p>
+<script type="math/tex; mode=display">
+D(X)=\sum_{i=1}^\infty[x_i-E(X)]^2*p_i</script><p>对于连续型随机变量</p>
+<script type="math/tex; mode=display">
+D(X)=\int_{-\infty}^{+\infty}[x-E(X)]^2f(x)dx</script><p>方差计算公式</p>
+<script type="math/tex; mode=display">
+D(X)=E(X^2)-[E(X)]^2</script><p><strong>方差的性质</strong></p>
+<ul>
+<li><script type="math/tex; mode=display">
+D(C)=0,C为常数</script></li>
+<li><script type="math/tex; mode=display">
+D(CX)=C^2D(X),X为随机变量，C为常数</script></li>
+<li><script type="math/tex; mode=display">
+D(X+Y)=D(X)+D(Y)+2E{[X-E(X)][Y-E(Y)]}\\若X,Y相互独立，则有D(X+Y)=D(X)+D(Y)</script></li>
+</ul>
+<h3 id="协方差与相关系数"><a href="#协方差与相关系数" class="headerlink" title="协方差与相关系数"></a>协方差与相关系数</h3><p>两个随机变量的和的方差计算公式中的</p>
+<script type="math/tex; mode=display">
+E\{[X-E(X)][Y-E(Y)]\}</script><p>称为随机变量$X,Y$的协方差。记为</p>
+<script type="math/tex; mode=display">
+\text{Cov(X,Y)}</script><p>即</p>
+<script type="math/tex; mode=display">
+\text{Cov}(X,Y)=E\{[X-E(X)][Y-E(Y)]\}</script><p>定义随机变量$X$与$Y$的相关系数$\rho_{XY}$为</p>
+<script type="math/tex; mode=display">
+\rho_{XY}=\frac{\text{Cov}(X,Y)}{\sqrt{D(X)D(Y)}}</script><p>协方差的计算公式</p>
+<script type="math/tex; mode=display">
+\text{Cov}(X,Y)=E(XY)-E(X)E(Y)</script><p>方差计算公式的重写</p>
+<script type="math/tex; mode=display">
+D(X+Y)=D(X)+D(Y)+2\text{Cov}(X,Y)</script><p>推广到任意有限个随机变量的和的情况</p>
+<script type="math/tex; mode=display">
+D(\sum_{i=1}^{n}X_i)=\sum_{i=1}^{n}D(X_i)+2\sum_{1\leq i\leq j\leq n}\text{Cov}(X_i,X_j)</script><p><strong>协方差的性质</strong></p>
+<ul>
+<li><script type="math/tex; mode=display">
+\text{Cov}(X,Y)=\text{Cov}(Y,X)</script></li>
+<li><script type="math/tex; mode=display">
+\text{Cov}(X,X)=D(X)</script></li>
+<li><script type="math/tex; mode=display">
+\text{Cov}(aX,bY)=ab·\text{Cov}(X,Y),其中a，b为实数</script></li>
+<li><script type="math/tex; mode=display">
+\text{Cov}(X_1+X_2,Y)=\text{Cov}(X_1,Y)+\text{Cov}(X_2,Y)</script></li>
+</ul>
+<p><strong>相关系数的性质</strong></p>
+<ul>
+<li><script type="math/tex; mode=display">
+|\rho_{XY}|\leq1</script></li>
+<li><p>$|\rho_{XY}|$等价于存在常数$a,b$使得$P(Y=a+bX)=1$,特别的，$\rho_{XY}=1,b&gt;0$,$\rho_{XY}=-1,b&lt;0$</p>
+</li>
+<li><p>当$D(X)D(Y)\neq0$时，有</p>
+<script type="math/tex; mode=display">
+(\text{Cov}(X,Y))^2\leq D(X)D(Y)</script><p>其中等号当且仅当$X$与$Y$之间有严格的线性关系，即存在常数$a,b$使得$p(Y=a+bX)=1$</p>
+</li>
+</ul>
+<p><strong>标准化随机变量</strong></p>
+<p>对于任意随机变量$X$,作</p>
+<script type="math/tex; mode=display">
+ X^*=\frac{X-E(X)}{\sqrt{D(X)}}</script><p>则</p>
+<script type="math/tex; mode=display">
+E(X^*)=0,D(X^*)=1</script><p>$X^*$称为标准化随机变量</p>
+<script type="math/tex; mode=display">
+\rho_{XY}=\text{Cov}(\frac{X-E(X)}{\sqrt{D(X)}},\frac{Y-E(Y)}{\sqrt{D(Y)}})</script><p><strong>不相关</strong></p>
+<p>$\rho_{XY}=0$，称 $X$与$Y$不相关，等价条件有</p>
+<ol>
+<li><script type="math/tex; mode=display">
+\text{Cov}（X，Y)=0</script></li>
+<li><script type="math/tex; mode=display">
+E(XY)=E(X)E(Y)</script></li>
+<li><script type="math/tex; mode=display">
+D(X+Y)=D(X)D(Y)</script></li>
+</ol>
+<p>$X,Y$相互独立，那么$X,Y$一定不相关，反之，若$X,Y$不相关，$X,Y$却不一定相互独立</p>
+<h3 id="二元正态变量"><a href="#二元正态变量" class="headerlink" title="二元正态变量"></a>二元正态变量</h3><p>若二元随机变量$X(X,Y)$服从二元正态分布，则$X,Y$的任意线性组合$aX+bY$服从一元正态分布，其中$a,b$为不全为0的常数。且</p>
+<script type="math/tex; mode=display">
+aX+bY\sim N(E(aX+bY),D(aX+bY))</script><p><strong>正态变量的线性变换不变性</strong></p>
+<p>若$(X,Y)$服从二元正态分布，设$Z_1,Z_2$是$X,Y$的线性函数，则$(Z_1,Z_2)$也服从二元正态分布，这一性质称为正态变量的线性变换不变性</p>
+<script type="math/tex; mode=display">
+(Z_1,Z_2)\sim N(E(Z_1),D(Z_1),E(Z_2),D(Z_2),\rho_{Z_1Z_2})</script><h1 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h1><h2 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h2><p>设$X_1,…X_n$是一系列随机变量，对于任意一个$X_i$都有$E(X_i)=\mu$,则在一定条件下，随机变量序列</p>
+<script type="math/tex; mode=display">
+Y_n=\frac{X_1+...+X_n}{n}</script><p>收敛到$\mu$。</p>
+<p><strong>随机变量序列依概率收敛的定义</strong></p>
+<p>对于随机变量序列$Y_1,Y_2,…$，若存在某常数$a$,使得$\forall \epsilon &gt;0$都有$\lim_{n\rightarrow\infty}P\{|Y_n-a|\geq\epsilon\}=0$,则称$Y_n$依概率收敛到常数a。</p>
+<p><strong>性质</strong></p>
+<p>若随机变量序列$X_n,Y_n$分别依概率收敛到$a,b$，那么对于一个连续函数映射$g$，就会满足</p>
+<script type="math/tex; mode=display">
+g(X_n,Y_n)\xrightarrow{P}g(a,b)</script><h3 id="切比雪夫不等式"><a href="#切比雪夫不等式" class="headerlink" title="切比雪夫不等式"></a>切比雪夫不等式</h3><p>设随机变量$X$具有数学期望$E(X)=\mu$,方差$D(X)=\sigma^2$，则对于任意的$\epsilon&gt;0$,都有</p>
+<script type="math/tex; mode=display">
+P\{|X-E(X)|\geq\epsilon\}\leq\frac{\sigma^2}{\epsilon^2}</script><p>等价形式为</p>
+<script type="math/tex; mode=display">
+P\{|X-E(X)|<\epsilon\}\geq1-\frac{\sigma^2}{\epsilon^2}</script><h3 id="切比雪夫大数定律"><a href="#切比雪夫大数定律" class="headerlink" title="切比雪夫大数定律"></a>切比雪夫大数定律</h3><p>设随机变量$X_1,X_2,…X_n$相互独立，并且有相同的数学期望 $\mu$和相同的方差$\sigma^2$,当$n\rightarrow +\infty$时</p>
+<script type="math/tex; mode=display">
+\frac{1}{n}\sum_{k=1}^{n}X_k\xrightarrow{P}\mu</script><h3 id="辛钦大数定律"><a href="#辛钦大数定律" class="headerlink" title="辛钦大数定律"></a>辛钦大数定律</h3><p>设$X_1,X_2,…X_n$独立同分布，$E(X_i)=\mu$,则当$n\rightarrow+\infty$</p>
+<script type="math/tex; mode=display">
+\frac{1}{n}\sum_{k=1}^{n}X_k\xrightarrow{P}\mu</script><h3 id="伯努利大数定律"><a href="#伯努利大数定律" class="headerlink" title="伯努利大数定律"></a>伯努利大数定律</h3><p>设$n_A$为$n$重伯努利实验中$A$发生的次数，并记事件$A$在每次试验中发生的概率为$p$,则有</p>
+<script type="math/tex; mode=display">
+\frac{n_A}{n}\xrightarrow{P}p,n\rightarrow+\infty</script><h2 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h2><p><strong>独立同分布的中心极限定理</strong></p>
+<p>设$X_1,X_2,…,X_n$独立同分布，$E(X_i)=\mu,D(X_i)=\sigma^2$,则当$n$足够大时</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{n}\sim N(n\mu,n\sigma^2)\\\frac{1}{n}\sum_{i=1}^n\sim N(\mu,\frac{\sigma^2}{n})</script><h1 id="数理统计"><a href="#数理统计" class="headerlink" title="数理统计"></a>数理统计</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><p>总体：研究对象的全体</p>
 <p>个体：总体中的成员</p>
 <p>数理统计的主要任务是从总体中抽取一部分个体，然后根据这部分个体的数据对总体分布进行判断，被抽取的部分个体叫做总体的一个样本</p>
 <p>随机样本：从总体中随机地取n个个体，称为一个随机样本。</p>
@@ -149,7 +444,7 @@ F\sim F(n_1,n_2)</script><p>对于给定的$\alpha$,$0&lt;\alpha&lt;1$,称满足
 \overline{X}\sim N(\mu,\frac{\sigma^2}{n})</script><p><strong>定理</strong>：在上述条件下，有</p>
 <ol>
 <li><script type="math/tex; mode=display">
-\frac{(n-1)*S^2}{\sigma ^2}\sim\chi^2(n-1)</script></li>
+\frac{(n-1)S^2}{\sigma ^2}\sim\chi^2(n-1)</script></li>
 <li><p>$\overline{X}$与$S^2$相互独立</p>
 </li>
 </ol>
@@ -174,7 +469,110 @@ F\sim F(n_1,n_2)</script><p>对于给定的$\alpha$,$0&lt;\alpha&lt;1$,称满足
 <script type="math/tex; mode=display">
 S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}</script></li>
 </ol>
-
+<h1 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h1><p>当总体的参数未知时，需要利用样本对其给出估计，这就是<strong>参数估计</strong>，参数估计有两类方法：<strong>点估计</strong>和<strong>区间估计</strong></p>
+<h2 id="参数的点估计"><a href="#参数的点估计" class="headerlink" title="参数的点估计"></a>参数的点估计</h2><p>设总体有未知参数$\theta$, $X_1,…X_n$是$X$的简单随机样本。</p>
+<p>点估计：构造合适的统计量$\hat{\theta}=\hat{\theta}(X_1,…,X_n)$来估计未知参数$\theta$,$\hat{\theta}$为$\theta$的<strong>点估计量</strong>，当给定样本观察值$x_1,…,x_n$的时候，称$\hat{\theta}(x_1,…,x_n)$为参数$\theta$的<strong>点估计值</strong></p>
+<p>常用的点估计方法：矩法，极大似然法</p>
+<h3 id="矩估计法"><a href="#矩估计法" class="headerlink" title="矩估计法"></a>矩估计法</h3><p><strong>统计思想</strong>：以样本矩估计总体矩，以样本矩的函数估计总体矩的函数</p>
+<p><strong>理论根据</strong>：辛钦大数定律和依概率收敛的性质</p>
+<p>总体$X$的$k$阶矩</p>
+<script type="math/tex; mode=display">
+\mu_k=E(X^k)</script><p>样本$X_1,X_2,…,X_n$的$k$阶矩：</p>
+<script type="math/tex; mode=display">
+A_k=\frac{1}{n}\sum_{i=1}^{n}X_i^k</script><p>由大数定理：</p>
+<script type="math/tex; mode=display">
+A_k\xrightarrow{P}\mu_k=E(X^k)</script><p>解方程$A_k=\mu_k$</p>
+<p><strong>解题步骤</strong>：</p>
+<ol>
+<li>先用参数表示均值，或k阶中心距，然后反解参数，用均值或k阶中心距表示参数</li>
+<li>将样本的k阶中心距带入上面求得的参数表达式，求得估计参数的值</li>
+<li>如果一阶中心距积分为0，那么就求二阶中心距</li>
+</ol>
+<h3 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h3><p>一般地，设离散型总体 $X\sim p(x;\theta),\theta\in\Theta$, $\theta$未知，从总体$X$取得样本$X_1,X_2,…,X_n$，其观察值为 $x_1,x_2,…x_n$，则事件$\{X_1=x_1,X_2=x_2,…X_n=x_n\}$发生的概率为</p>
+<script type="math/tex; mode=display">
+L(\theta)=P\{X_1=x_1,..X_n=x_n\}=p(x_1;\theta)...p(x_n;\theta)=\prod_{i=1^n}p(x_i;\theta)</script><p>极大似然原理</p>
+<script type="math/tex; mode=display">
+L(\hat{\theta}(x_1,x_2,...,x_n))=\max_{\theta\in\Theta}L(\theta)</script><p>取使得似然函数取得最大值的$\theta$.</p>
+<p>对于总体$X$是连续型的情况，似然函数定义为</p>
+<script type="math/tex; mode=display">
+L(\theta)=\prod_{i=1}^nf(x_i,\theta)</script><p>tips:</p>
+<ol>
+<li>未知参数可能不止一个，一般设为$\theta=(\theta_1,\theta_2,…,\theta_3)$</li>
+<li>求解$L(\theta)$的最大值时，通常取对数运算</li>
+<li>如果$L(\theta)$是关于某一个$\theta_i$单调的，此时$\theta_i$的极大似然估计在其边界处取得</li>
+<li>若$\hat{\theta}$是$\theta$的极大似然估计，那么$g(\theta)$的极大似然估计为$g(\hat\theta)$</li>
+</ol>
+<h2 id="估计量的评选准则"><a href="#估计量的评选准则" class="headerlink" title="估计量的评选准则"></a>估计量的评选准则</h2><p>对于总体参数的估计，采用不同的估计方法可以求得不同的估计量，对于估计量，有四条评价准则</p>
+<ol>
+<li>无偏性准则</li>
+<li>有效性准则</li>
+<li>均方误差准则</li>
+<li>相和型准则</li>
+</ol>
+<h3 id="无偏性准则"><a href="#无偏性准则" class="headerlink" title="无偏性准则"></a>无偏性准则</h3><p>定义：若参数$\theta$的估计量$\hat\theta(X_1,X_2,…,X_n)$满足$E(\hat\theta)=\theta$,则称$\hat\theta$是$\theta$的一个无偏估计量。若$\hat\theta\neq \theta$，那么，$|E(\hat\theta)-\theta|$称为估计量$\hat\theta$的偏差。若$\lim_{n\rightarrow\infty}E(\hat\theta)=\theta$,则称$\hat\theta$是$\theta$的渐进无偏估计量</p>
+<h3 id="有效性准则"><a href="#有效性准则" class="headerlink" title="有效性准则"></a>有效性准则</h3><p>定义：设$\hat\theta_1,\hat\theta_2$是$\theta$的两个无偏估计，如果$D(\hat\theta_1)\leq D(\hat\theta_2)$，对一切$\theta\in \Theta$成立，且不等号至少对某一$\theta\in\Theta$成立，则称$\hat\theta_1$比$\hat\theta_2$有效。</p>
+<h3 id="均方误差准则"><a href="#均方误差准则" class="headerlink" title="均方误差准则"></a>均方误差准则</h3><p>定义：设$\hat\theta$是参数$\theta$的点估计，方差存在，则称 $E(\hat\theta-\theta)^2$是估计量的均方误差，记为$\text{Mse}(\hat\theta)$.</p>
+<script type="math/tex; mode=display">
+\text{Mse}({\hat\theta})=D(\hat\theta)+(E(\hat\theta)-\theta)^2</script><p>若$\hat\theta$是$\theta$的无偏估计，则有</p>
+<script type="math/tex; mode=display">
+\text{Mse}(\hat\theta)=D(\hat\theta)</script><h3 id="相合性准则"><a href="#相合性准则" class="headerlink" title="相合性准则"></a>相合性准则</h3><p>设$\hat{\theta}(X_1,X_2,..,X_n)$为参数$\theta$的估计量，若对于任意的$\theta\in \Theta$,当$n\rightarrow+\infty$时，$\hat{\theta_n}$依概率收敛为 $\theta$,即$\forall \epsilon&gt;0$,有$\lim_{n\rightarrow+\infty}P\{|\hat{\theta_n}-\theta|\geq \epsilon\}=0$,称$\hat{\theta_n}$为$\theta$的相合估计量或一致估计量。</p>
+<p><strong>例题</strong></p>
+<p>设总体$X\sim U[0,\theta]$,$X_1,…,X_n$是取自$X$的样本，证明$\hat{\theta_1}=2\overline{X}$和$\hat{\theta_2}=\frac{n+1}{n}X_{(n)}$是  $\theta$的相合估计</p>
+<p><strong>证明</strong></p>
+<script type="math/tex; mode=display">
+E(\hat{\theta_1})=E(\hat{\theta_2})=\theta,D(\hat{\theta_1})=\frac{\theta^2}{3n},D(\hat{\theta_2})=\frac{\theta^2}{n(n+2)}\\
+由切比雪夫不等式，\forall\epsilon>0, 当n\rightarrow+\infty时，\\
+有：P\{|\hat{\theta_1}-\theta| \geq \epsilon \}\leq \frac{D(\hat{\theta_1})}{\epsilon^2}\rightarrow 0\\
+同理:P\{|\hat{\theta_2}-\theta|\geq \epsilon\}\leq\frac{D(\hat{\theta_2})}{\epsilon^2\rightarrow0}\\
+所以\hat{\theta_1}和\hat{\theta_2}都是\theta的相合估计</script><h2 id="区间估计"><a href="#区间估计" class="headerlink" title="区间估计"></a>区间估计</h2><p>假设$(X_1,..X_n)$时总体$X$的一个样本，区间估计的方法是给出两个统计量，$\hat{\theta_1}=\hat{\theta_1}(X_1,…,X_n),\hat{\theta_2}=\hat{\theta_2}(X_1,…,X_n)$使区间$[\hat{\theta_1},\hat{\theta_2}]$以一定的可靠程度覆盖住$\theta$</p>
+<h4 id="置信区间的定义"><a href="#置信区间的定义" class="headerlink" title="置信区间的定义"></a>置信区间的定义</h4><p>设总体$X$的分布函数$F(x;\theta)$含有一个未知参数$\theta$,$(X_1,..,X_n)$是总体$X$的一个样本，对给定的值$\alpha(0&lt;\alpha&lt;1)$，如果有两个统计量$\hat{\theta_L}=\hat{\theta_L}(X_1,…,X_n),\hat{\theta_U}=\hat{\theta_U}(X_1,…,X_n)$使得</p>
+<script type="math/tex; mode=display">
+P\{\hat{\theta_L}(X_1,...,X_n)<\theta < \hat{\theta_U}(X_1,...,X_n)\}\geq 1-\alpha,\forall \theta \in \Theta</script><p>则称随机区间$\hat{\theta_L},\hat{\theta_U}$是 $\theta$的双侧置信区间，称$1-\alpha$为置信度，$\hat{\theta_L},\hat{\theta_U}$分别为双侧置信下限和双侧置信上限</p>
+<h3 id="枢轴量法"><a href="#枢轴量法" class="headerlink" title="枢轴量法"></a>枢轴量法</h3><p>设总体$X$有概率密度$f(x;\theta)$其中$\theta$是待估计的未知参数，并设$X_1,…,X_n$是来自该总体的样本，称样本和未知参数的函数$G(X_1,…,X_n;\theta)$为枢轴量。</p>
+<p>枢轴量和统计量的区别</p>
+<ul>
+<li>枢轴量是样本和待估参数的函数，其分布不依赖于任何未知参数</li>
+<li>统计量只是样本的函数，其分布常常依赖于未知参数</li>
+</ul>
+<h5 id="构造置信区间的具体步骤"><a href="#构造置信区间的具体步骤" class="headerlink" title="构造置信区间的具体步骤"></a>构造置信区间的具体步骤</h5><ol>
+<li><p>构造一个分布一致的枢轴量$G(X_1,…,X_n;\theta)$</p>
+</li>
+<li><p>对连续性总体和给定的置信度$1-\alpha$，设常数$a&lt;b$满足</p>
+<script type="math/tex; mode=display">
+P\{a<G(X_1,...,X_n;\theta)<b\}=1-\alpha</script></li>
+<li><p>若能从$a&lt;G(X_1,…,X_n;\theta)&lt;b$得到等价的不等式</p>
+<script type="math/tex; mode=display">
+\hat{\theta_L}(X_1,...,X_n)<\theta < \hat{\theta_U}(X_1,...,X_n)</script><p>那么$(\hat{\theta_L},\hat{\theta_U})$就是$\theta$的置信度为$1-\alpha$的置信区间</p>
+</li>
+</ol>
+<p>枢轴量的构造，通常从参数的点估计$\hat\theta$出发，根据$\hat\theta$ 的分布进行改造而得</p>
+<h5 id="正态总体下常见的枢轴量"><a href="#正态总体下常见的枢轴量" class="headerlink" title="正态总体下常见的枢轴量"></a>正态总体下常见的枢轴量</h5><p>单个正态总体$N(\mu,\sigma^2)$情形</p>
+<p>$\mu$的枢轴量</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\frac{\sqrt{n}(\overline{X}-\mu)}{\sigma}\sim N(0,1),\sigma^2已知\\
+\frac{\sqrt{n}(\overline{X}-\mu)}{S}\sim t(n-1),\sigma^2未知
+\end{cases}</script><p>置信区间分别为</p>
+<script type="math/tex; mode=display">
+(\overline{X}-\frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}},\overline{X}+\frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}})\\
+(\overline{X}-\frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1),\overline{X}+\frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1))</script><p>$\sigma^2$的枢轴量</p>
+<script type="math/tex; mode=display">
+\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)</script><p>置信区间为</p>
+<script type="math/tex; mode=display">
+(\frac{(n-1)S^2}{\chi^2_{\frac{\alpha}{2}}(n-1)},\frac{(n-1)S^2}{\chi^2_{1-\frac{\alpha}{2}}(n-1)})</script><p>两个正态总体$N(\mu_1,\sigma_1^2),N(\mu-2,\sigma_2^2)$</p>
+<p>$\mu_1-\mu_2$的枢轴量：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1),\sigma_1^2,\sigma_2^2已知\\
+\frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1+n_2-2),\sigma_1^2=\sigma_2^2未知
+\end{cases}</script><p>置信区间分别为</p>
+<script type="math/tex; mode=display">
+((\overline{X}-\overline{Y})\pm z_{\frac{\alpha}{2}}\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}})\\
+((\overline{X}-\overline{Y})\pm t_{\frac{\alpha}{2}}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}})</script><p>$\frac{\sigma_1^2}{\sigma_2^2}$的枢轴量</p>
+<script type="math/tex; mode=display">
+\frac{S_1^2}{S_2^2}/\frac{\sigma_1^2}{\sigma_2^2}\sim F(n_1-1,n_2-1),\mu_1,\mu_2未知</script><p>置信区间为</p>
+<script type="math/tex; mode=display">
+(\frac{S_1^2}{S_2^2}\frac{1}{F_{\frac{\alpha}{2}}(n_1-1,n_2-2)},\frac{S_1^2}{S_2^2}\frac{1}{F_{1-\frac{\alpha}{2}}(n_1-1,n_2-2)})</script>
 <div class="article-footer fs14">
     <section id="license">
       <div class="header"><span>许可协议</span></div>
@@ -183,7 +581,7 @@ S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}</script></li>
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/11/30/C-%E7%9A%84%E4%B8%80%E4%BA%9Btrick/">C++的一些trick</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/">量子光学&量子力学</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/11/30/C++%E7%9A%84%E4%B8%80%E4%BA%9Btrick/">C++的一些trick</a></div></section></div>
 
 
 
@@ -197,7 +595,7 @@ S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}</script></li>
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">常见的分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#chi-2-%E5%88%86%E5%B8%83"><span class="toc-text">$\chi^2$分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t-%E5%88%86%E5%B8%83"><span class="toc-text">$t$分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F-%E5%88%86%E5%B8%83"><span class="toc-text">$F$分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%B8%8B%E7%9A%84%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83"><span class="toc-text">正态分布下的抽样分布</span></a></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83-Poisson-Distribution"><span class="toc-text">泊松分布(Poisson Distribution)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83-Uniform-Distribution"><span class="toc-text">均匀分布(Uniform Distribution)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83-Exponential-Distribution"><span class="toc-text">指数分布(Exponential Distribution)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-text">正态分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83-Geometric-Distribution"><span class="toc-text">几何分布(Geometric Distribution)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="toc-text">离散型随机变量及其分布函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="toc-text">连续型随机变量及其分布函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-text">二元随机变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%9E%8B%E4%BA%8C%E5%85%83%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-text">离散型二元随机变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83"><span class="toc-text">边际分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="toc-text">条件分布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="toc-text">二元随机变量的分布函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">随机变量的独立性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">随机变量函数的分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">二元随机变量函数的分布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Z-X-Y-%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">$Z&#x3D;X+Y$的分布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#M-text-max-X-Y-N-text-min-X-Y-%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">$M&#x3D;\text{max}(X,Y),N&#x3D;\text{min}(X,Y)$的分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B"><span class="toc-text">数学期望</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">数学期望的性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE"><span class="toc-text">方差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E6%96%B9%E5%B7%AE%E4%B8%8E%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="toc-text">协方差与相关系数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E6%AD%A3%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-text">二元正态变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">大数定律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-text">切比雪夫不等式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">切比雪夫大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%9B%E9%92%A6%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">辛钦大数定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-text">伯努利大数定律</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">中心极限定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">常见的分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#chi-2-%E5%88%86%E5%B8%83"><span class="toc-text">$\chi^2$分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#t-%E5%88%86%E5%B8%83"><span class="toc-text">$t$分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F-%E5%88%86%E5%B8%83"><span class="toc-text">$F$分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%B8%8B%E7%9A%84%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83"><span class="toc-text">正态分布下的抽样分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9A%84%E7%82%B9%E4%BC%B0%E8%AE%A1"><span class="toc-text">参数的点估计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E4%BC%B0%E8%AE%A1%E6%B3%95"><span class="toc-text">矩估计法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1"><span class="toc-text">极大似然估计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E8%AF%84%E9%80%89%E5%87%86%E5%88%99"><span class="toc-text">估计量的评选准则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%81%8F%E6%80%A7%E5%87%86%E5%88%99"><span class="toc-text">无偏性准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%80%A7%E5%87%86%E5%88%99"><span class="toc-text">有效性准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%87%E6%96%B9%E8%AF%AF%E5%B7%AE%E5%87%86%E5%88%99"><span class="toc-text">均方误差准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%90%88%E6%80%A7%E5%87%86%E5%88%99"><span class="toc-text">相合性准则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="toc-text">区间估计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">置信区间的定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%A2%E8%BD%B4%E9%87%8F%E6%B3%95"><span class="toc-text">枢轴量法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4%E7%9A%84%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-text">构造置信区间的具体步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E4%B8%8B%E5%B8%B8%E8%A7%81%E7%9A%84%E6%9E%A2%E8%BD%B4%E9%87%8F"><span class="toc-text">正态总体下常见的枢轴量</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
 </div></aside><div class='float-panel blur'>

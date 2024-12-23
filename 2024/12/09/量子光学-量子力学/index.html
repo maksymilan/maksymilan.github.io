@@ -1,0 +1,730 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0" theme-name="Stellar" theme-version="1.28.0">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>量子光学&量子力学 - Maksymilan's Notebook</title>
+
+  
+    <meta name="description" content="前言：大物翘了好几周了，明天一定要去认真听课！今天复习上周的PPT，要开始准备期末考试了，还是不要考得太难看 量子光学基础黑体辐射 普朗克的量子假说热辐射：物体内的带电粒子由于热运动在任何温度下都会辐射电磁波，辐射的强度，波长和温度有关，这种与温度有关的辐射称为热辐射 平衡热辐射：物体向外辐射能量等于从外界吸收的能量，则物体达到热平衡，用一温度$T$描述 单色辐射出射度：单位时间内，物体从单位表面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="量子光学&amp;量子力学">
+<meta property="og:url" content="https://maksymilan.github.io/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Maksymilan&#39;s Notebook">
+<meta property="og:description" content="前言：大物翘了好几周了，明天一定要去认真听课！今天复习上周的PPT，要开始准备期末考试了，还是不要考得太难看 量子光学基础黑体辐射 普朗克的量子假说热辐射：物体内的带电粒子由于热运动在任何温度下都会辐射电磁波，辐射的强度，波长和温度有关，这种与温度有关的辐射称为热辐射 平衡热辐射：物体向外辐射能量等于从外界吸收的能量，则物体达到热平衡，用一温度$T$描述 单色辐射出射度：单位时间内，物体从单位表面">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-09T11:12:15.000Z">
+<meta property="article:modified_time" content="2024-12-23T12:23:42.528Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Maksymilan's Notebook" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.0">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Maksymilan's Notebook</div><div class="sub cap">Hi!</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/"><span class="title">量子光学&量子力学</span></a><a class="item title" href="/2024/11/30/C++%E7%9A%84%E4%B8%80%E4%BA%9Btrick/"><span class="title">C++的一些trick</span></a><a class="item title" href="/2024/12/04/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"><span class="title">概率论和数理统计</span></a><a class="item title" href="/2024/10/12/ads%E9%94%99%E9%A2%98%E9%9B%86/"><span class="title">ads错题集</span></a><a class="item title" href="/2024/09/13/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="title">高级数据结构</span></a><a class="item title" href="/2024/05/10/Typora%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"><span class="title">Typora数学公式</span></a><a class="item title" href="/2024/12/10/Pytorch%E7%9A%84%E5%B0%8Ftrick/"><span class="title">Pytorch的小trick</span></a><a class="item title" href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6&%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/"><span class="title">量子光学&量子力学</span></a><a class="item title" href="/2024/07/03/CS106L/"><span class="title">CS106L</span></a><a class="item title" href="/2024/09/22/C++%E7%89%B9%E6%80%A7/"><span class="title">C++特性</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-09T11:12:15.000Z">2024-12-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-23T12:23:42.528Z">2024-12-23</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>量子光学&量子力学</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p><strong>前言</strong>：大物翘了好几周了，明天一定要去认真听课！今天复习上周的PPT，要开始准备期末考试了，还是不要考得太难看</p>
+<h1 id="量子光学基础"><a href="#量子光学基础" class="headerlink" title="量子光学基础"></a>量子光学基础</h1><h2 id="黑体辐射-普朗克的量子假说"><a href="#黑体辐射-普朗克的量子假说" class="headerlink" title="黑体辐射 普朗克的量子假说"></a>黑体辐射 普朗克的量子假说</h2><p><strong>热辐射</strong>：物体内的带电粒子由于热运动在任何温度下都会辐射电磁波，辐射的强度，波长和温度有关，<strong>这种与温度有关的辐射称为热辐射</strong></p>
+<p><strong>平衡热辐射</strong>：物体向外辐射能量等于从外界吸收的能量，则物体达到热平衡，用一温度$T$描述</p>
+<p><strong>单色辐射出射度</strong>：单位时间内，物体从单位表面积上发射的波长在$\lambda$ 到$\lambda + d\lambda$范围的辐射能$dW_{\lambda}$</p>
+<script type="math/tex; mode=display">
+M_{\lambda}(T)=\frac{dW_{\lambda}}{d\lambda}</script><p>$M_{\lambda}(T)$与温度$T$,波长$\lambda$有关。</p>
+<p><strong>吸收系数和反射系数</strong>：</p>
+<p>单色吸收系数$a(\lambda,T)$：在温度为$T$时,物体吸收波长在 $\lambda$到$\lambda +d\lambda$范围的辐射能与相应波长的投射于物体的总辐射能的比值</p>
+<p>单色反射系数$r(\lambda,T)$：在温度为$T$时,物体反射波长在$\lambda$到$\lambda + d\lambda$范围的辐射能与相应波长的投射到物体的总辐射能的比值</p>
+<p>对于不透明物体有：</p>
+<script type="math/tex; mode=display">
+a(\lambda ,T)+r(\lambda,T)=1</script><h3 id="基尔霍夫定律"><a href="#基尔霍夫定律" class="headerlink" title="基尔霍夫定律"></a>基尔霍夫定律</h3><p>设将温度不同的物体$A_1,A_2,A_3$及绝对黑体$B$放置于一绝热的真空容器中。达到平衡后，不管系统内的物体是什么物质组成的，也不管其形状如何，每一物体的辐射能量必定恒等于它所吸收的能量：辐射本领大的，吸收本领也一定大。</p>
+<p><strong>Kirchhoff定律</strong>：物体辐射本领和吸收本领的比值，与物体的性质无关，对于任何物体，这个比值是波长和温度的普适函数。</p>
+<script type="math/tex; mode=display">
+\frac{M_{1\lambda(T)}}{a_{1}(\lambda,T)}=\frac{M_{2\lambda(T)}}{a_{2}(\lambda,T)}=...\frac{M_{B\lambda(T)}}{a_{B}(\lambda,T)}</script><p>对于绝对黑体，由于$a_B(\lambda,T)=1$,所以：</p>
+<script type="math/tex; mode=display">
+\frac{M_{\lambda(T)}}{a(\lambda,T)}=M_{B\lambda}(T)</script><h3 id="绝对黑体的热辐射定律"><a href="#绝对黑体的热辐射定律" class="headerlink" title="绝对黑体的热辐射定律"></a>绝对黑体的热辐射定律</h3><p>绝对黑体的模型——空腔小孔</p>
+<p>19世纪末对$M_{B\lambda}(T)$在温度为$T$的情况下关于波长$\lambda$的曲线的研究得到两个实验定律</p>
+<ol>
+<li><p><strong>斯忒藩-玻尔兹曼定律</strong></p>
+<p>单位面积发射功率</p>
+<script type="math/tex; mode=display">
+M_{B}(T)=\int_0^{\infty}M_{B\lambda}(T)d\lambda=\sigma T^4,\sigma=5.67\times10^{-8}J·s^{-1}·m^{-2}·K^{-4}</script></li>
+<li><p><strong>维恩位移定律</strong></p>
+<p>$\lambda_m$是峰值波长</p>
+<script type="math/tex; mode=display">
+\lambda_{m}=\frac{b}{T},b=2.898\times 10^{-3}m·K</script><p>该定律是光测高温等技术的物理基础</p>
+</li>
+</ol>
+<h3 id="普朗克能量子假设"><a href="#普朗克能量子假设" class="headerlink" title="普朗克能量子假设"></a>普朗克能量子假设</h3><p>19世纪末，为了从理论上推导黑体辐射公式许多科学家从经典物理学的角度出发，提出研究结果</p>
+<p>瑞利和琼斯——在波长为趋于0的时候很快发散，称为“紫外灾难”</p>
+<script type="math/tex; mode=display">
+M_{B\lambda}(T)=\frac{2\pi ckT}{\lambda^4}</script><p>维恩从自己的位移定律出发并做出一些假设后得到</p>
+<script type="math/tex; mode=display">
+M_{B\lambda}(T)=\frac{c_2e^{-c_3/\lambda T}}{\lambda^5}</script><p>这个公式在短波长处与实验曲线符合较好，但在长波长区偏差较大</p>
+<p>普朗克提出和实验完全相符的公式</p>
+<script type="math/tex; mode=display">
+M_{B\lambda}=\frac{2\pi hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda kT}-1}</script><p>$c$是光速，$h$是普朗克常数，$k$是玻尔兹曼常量。</p>
+<p>导出上述公式时，普朗克提出了<strong>普朗克能量子假设</strong>：</p>
+<ol>
+<li>辐射体由带电谐振子组成，振动时向外辐射电磁波并于周围电磁场交换能量</li>
+<li>谐振子的能量只位于某些特殊状态，即它们的能量都是某一最小能量的整数倍</li>
+<li>$\epsilon$称为能量子，与振子频率$\nu$成正比，$\epsilon = h\nu$</li>
+</ol>
+<p>普朗克假设结合玻尔兹曼统计分布得到振子的平均能量，进而导出普朗克公式。</p>
+<p>当波长很大时，普朗克公式变成瑞利-琼斯公式，当波长很小时，普朗克公式变为维恩公式</p>
+<p>对普朗克公式关于波长积分得到斯忒藩-玻尔兹曼公式</p>
+<p>对普朗克公式关于波长求导得到维恩位移定律</p>
+<h3 id="光电效应"><a href="#光电效应" class="headerlink" title="光电效应"></a>光电效应</h3><p>光电流随电压升高而增大，当电压增大哦一定数值时达到饱和，饱和光电流与入射光强成正比，说明单位时间内极板释放的光电子数与光强成正比</p>
+<p>阴极产生的光电子的最大出动能等于遏制电场力对光电子所做的功：</p>
+<script type="math/tex; mode=display">
+E_{km}=\frac{1}{2}mv^2=e|U_a|</script><p>光电效应伏安特性显示光电子最大初动能与入射光强度无关，与频率呈线性关系</p>
+<script type="math/tex; mode=display">
+|U_a|=k\nu -U_0</script><p>其中$U_0&gt;0,k&gt;0$，不同金属有不同的$U_0$，而$k$为常数</p>
+<script type="math/tex; mode=display">
+E_{km}=\frac{1}{2}mv^2=e|U_a|=ek\nu - eU_0</script><p><strong>爱因斯坦光子学说</strong></p>
+<p>单个光子能量为</p>
+<script type="math/tex; mode=display">
+E=h\nu</script><p>光电效应方程</p>
+<script type="math/tex; mode=display">
+h\nu=E_km+A=\frac{1}{2}mv^2+A</script><p>$A$为电子需要克服的金属逸出功</p>
+<p>光子作为粒子具有动量</p>
+<script type="math/tex; mode=display">
+p=\frac{h\nu}{c}=\frac{h}{\lambda}</script><h3 id="康普顿效应"><a href="#康普顿效应" class="headerlink" title="康普顿效应"></a>康普顿效应</h3><p>X射线管产生波长为$\lambda_0$的X射线，经石墨散射后发现，不仅有波长为$\lambda_0$的射线，还有$\lambda&gt;\lambda_0$的射线。这种波长改变的散射称为<strong>康普顿散射</strong></p>
+<script type="math/tex; mode=display">
+\Delta \lambda=\frac{2h}{m_0c}\sin^2{\frac{\phi}{2}}</script><p>光子理论能对康普顿散射做较好的解释</p>
+<h1 id="量子力学基础"><a href="#量子力学基础" class="headerlink" title="量子力学基础"></a>量子力学基础</h1><p>1913年玻尔在普朗克和爱因斯坦的量子概念的基础上创造性的将量子概念应用到卢瑟福的原子模型，成功地解释了氢原子光谱，以波尔理论为基础的量子理论称为旧量子理论，1924年德布罗意提出物质的“波粒二象性”为薛定谔1926年建立波动方程打下基础，1926年玻恩提出波函数的统计解释，1927年海森堡提出不确定性原理，新量子理论逐渐建立</p>
+<h2 id="实物粒子的波动性"><a href="#实物粒子的波动性" class="headerlink" title="实物粒子的波动性"></a>实物粒子的波动性</h2><h3 id="德布罗意假设"><a href="#德布罗意假设" class="headerlink" title="德布罗意假设"></a>德布罗意假设</h3><p>1924年德布罗意在光的波粒二象性的启示下，提出实物粒子也具有波动性的假设，能量为$E$,动量为$p$的实物粒子具有波动性相应的频率和波长（$\nu \&amp;\lambda$）</p>
+<script type="math/tex; mode=display">
+E=mc^2=h\nu\\p=mv=\frac{h}{\lambda}\\ \lambda=\frac{h}{p}=\frac{h}{mv},m=\frac{m_0}{\sqrt{1-v^2/c^2}}</script><p>实物粒子关联的波称为德布罗意波，相应的波长公式称为德布罗意关系，当$v&lt;&lt;c$时，有</p>
+<script type="math/tex; mode=display">
+\lambda=\frac{h}{m_0v}</script><h2 id="德布罗意波的实验验证"><a href="#德布罗意波的实验验证" class="headerlink" title="德布罗意波的实验验证"></a>德布罗意波的实验验证</h2><p>1926年，戴维孙、革末将电子枪射出的电 子束投射到镍单晶体表面，得到电子衍射的实 验现象，经计算证明德布罗意公式的正确性。</p>
+<p>与$X$射线相仿，只有当入射波的波长$\lambda$满足布拉格公式</p>
+<script type="math/tex; mode=display">
+2d\sin{\theta}=k\lambda,k=1,2,3...</script><p>电子射线才能在反射方向出现强度的极大经计算可以得到</p>
+<script type="math/tex; mode=display">
+2d\sin{\theta} = k\frac{h}{\sqrt{2em_0}}\frac{1}{\sqrt{U}}</script><h2 id="不确定性关系"><a href="#不确定性关系" class="headerlink" title="不确定性关系"></a>不确定性关系</h2><p>经典物理学中，运动的物体具有完全确定的位置，动量，能量和角动量。对于微观粒子，虽然分别确定其位置或动量在精确度上并不存在限制，但在实验中同时确定其位置和动量时，它们的精度是有限的。</p>
+<p>1927年海森堡提出微观粒子位置和动量两者不确定量之间的关系满足</p>
+<script type="math/tex; mode=display">
+\Delta x\Delta p_x\geq\frac{\hbar}{2},\Delta y\Delta p_y\geq \frac{\hbar}{2},\Delta z\Delta p_z\geq \frac{\hbar}{2}</script><p>以电子的单缝衍射为例，当平行电子束穿过宽度为$\Delta x$的狭缝时，产生衍射，那么中间衍射主极大区域的电子满足$\sin{\theta_1}=\frac{\lambda}{d}$,电子通过狭缝时的$p_x$在$0\sim p\sin{\theta_1}$,即$\Delta p_x=p\sin{\theta_1}$</p>
+<p>应用德布罗意波的关系$\lambda=\frac{h}{p},d=\Delta x$得到：</p>
+<script type="math/tex; mode=display">
+\Delta p_x=p\sin{\theta_1}=p\frac{\lambda}{\Delta x}=\frac{\hbar}{\Delta x}</script><p>$\hbar$是约化普朗克常数，满足</p>
+<script type="math/tex; mode=display">
+\hbar = \frac{h}{2\pi}</script><p>如果考虑次级衍射，那么$\Delta p_x$将更大，所以得到$\Delta x\Delta p_x\geq h$(这是不严格的推导)</p>
+<h2 id="能量和时间的不确定关系"><a href="#能量和时间的不确定关系" class="headerlink" title="能量和时间的不确定关系"></a>能量和时间的不确定关系</h2><p>海森堡不确定关系的另一个表达形式是能量和时间这对物理量的测量，两者的不确定关系</p>
+<script type="math/tex; mode=display">
+\Delta E\Delta t\geq\frac{\hbar}{2}</script><p>用上述关系可以解释各原子激发态的能级宽度$\Delta E$与它在激发态的平均寿命$\Delta t$的关系，原子在激发态的典型的平均寿命为$\Delta t=10^{-8}s$,则原子激发态的能级宽度：</p>
+<script type="math/tex; mode=display">
+\Delta E\geq\frac{\hbar}{2\Delta t}\approx10^{-8}eV</script><p>除基态外，原子在激发态平均寿命越长，能级宽度就越小。</p>
+<h2 id="波函数及其统计解释"><a href="#波函数及其统计解释" class="headerlink" title="波函数及其统计解释"></a>波函数及其统计解释</h2><h3 id="波函数的引入"><a href="#波函数的引入" class="headerlink" title="波函数的引入"></a>波函数的引入</h3><p>由于物质具有波动性，为描述微观粒子的运动状态，薛定谔提出用一个函数$\Psi(r,t)$来描述物质波，称之为物质波的波函数。</p>
+<p>电磁波或机械波的表达式</p>
+<script type="math/tex; mode=display">
+Y(x,t)=A\cos{2\pi(vt-\frac{x}{\lambda})}</script><p>写成复数形式</p>
+<script type="math/tex; mode=display">
+Y(x,t)=Ae^{-i*2\pi(\nu t-\frac{x}{\lambda}))}</script><p>对于沿$x$轴方向运动的自由微观粒子，如果其动量$p$和能量$E$都恒定。由德布罗意关系：$\lambda=\frac{h}{p},\nu=\frac{E}{h}$,微观粒子波函数可写为：</p>
+<script type="math/tex; mode=display">
+\Phi(x,t)=\Phi_0e^{-i2\pi(\nu t-\frac{x}{\lambda})}=\Phi_0e^{-i2\pi(Et-px)/h}</script><p>这个式子就是描述一维自由粒子物质波的波函数。</p>
+<h3 id="波函数的统计解释"><a href="#波函数的统计解释" class="headerlink" title="波函数的统计解释"></a>波函数的统计解释</h3><p>用光波与物质波比较来阐明波函数的物理意义：从波动学的观点，光衍射图样亮处的振幅平方大，暗处振幅平方小。从微观粒子的观点，衍射图样亮处，单位时间内到达该处的光子数量多，相当于光子到达该处的概率大，说明光子在某处出现的概率与广播振幅的平方成反比。电子的衍射和光的衍射类似，对电子来说，在某一时刻，空间内的某一地点，粒子出现的概率正比于该时刻，该地点的波函数振幅的平方。这就是玻恩提出的波函数的统计解释。</p>
+<p>波函数振幅的平方可以用波函数$\Phi(x,t)$与它的共轭复数$\Phi^*(x,t)$的乘积或其模的平方$|\Phi(x,t)|^2$表示。</p>
+<p>$t$时刻，在空间某处$(x,y,z)$附近的无限小提及元$dV$内例子出现的概率为：</p>
+<script type="math/tex; mode=display">
+dW(x,y,z,t)=|\Psi(x,y,z,t|^2dV=\Psi(x,y,z,t)\Psi^*(x,y,z,t)</script><p>$|\Psi(x,y,z,t)|^2$称为在$(x,y,z)$处的概率密度。</p>
+<p>$\Psi(x,y,z,t)$作为概率波的波函数需满足以下要求：</p>
+<ol>
+<li><p>$\Psi(x,y,z,t)$是单值函数，即例子在空间某点出现的概率不能是多值</p>
+</li>
+<li><p>$\Psi(x,y,z,t)$是连续函数，波函数在空间的一阶偏导也连续</p>
+</li>
+<li><p>$\Psi(x,y,z,t)$是优先函数</p>
+</li>
+<li><p>归一化条件</p>
+<script type="math/tex; mode=display">
+\iiint\Psi\Psi^*dxdydz=1</script></li>
+</ol>
+<h2 id="薛定谔方程"><a href="#薛定谔方程" class="headerlink" title="薛定谔方程"></a>薛定谔方程</h2><p>薛定谔方程是用来描述低速运动的微观粒子的方程。</p>
+<h4 id="定态薛定谔方程"><a href="#定态薛定谔方程" class="headerlink" title="定态薛定谔方程"></a>定态薛定谔方程</h4><p>一般来说只要知道粒子质量和它在势场中的势能函数的具体形式，就可以写出薛定谔方程。只有当方程中的总能量为某些特定值时方程才有解，这些总能量的特定值称为能量的本征值，相应的波函数称为本征解或本征函数。当势能与时间无关，而只是坐标的函数时，可以将波函数分离变量</p>
+<script type="math/tex; mode=display">
+\Psi(x,t)=\Psi(x)e^{-\frac{i}{h}Et}</script><p>对上式分别关于x和t求偏导，再将得到的偏导结果带入薛定谔方程可以得到</p>
+<script type="math/tex; mode=display">
+\frac{d^2\Psi(x)}{dx^2}+\frac{2m}{h^2}[E-U(x)]\Psi(x)=0</script><p> 此式称为一维定态薛定谔方程，推广到三位为：</p>
+<script type="math/tex; mode=display">
+\frac{\partial ^2\Psi(x)}{\partial x^2}+\frac{\partial ^2\Psi(y)}{\partial y^2}+\frac{\partial ^2\Psi(z)}{\partial z^2}+\frac{2m}{h^2}[E-U(r)]\Psi(r)=0</script><p>粒子处在定态时的一个重要特征是，它在各处出现的概率不随时间变化。</p>
+<h2 id="一维无限深势阱中的粒子"><a href="#一维无限深势阱中的粒子" class="headerlink" title="一维无限深势阱中的粒子"></a>一维无限深势阱中的粒子</h2><p>势阱：金属中的电子，原子中的电子，原子核中的质子和种子等粒子，其运动有以共同特点，它们都在保守力场的作用下，被限制在一定的范围，即处于束缚态。</p>
+<p>为使计算简化，提出一个立项的势阱模型：无限深势阱</p>
+<p>一维无限深势阱的势能分布为</p>
+<script type="math/tex; mode=display">
+U(x)=
+\begin{cases}
+0 &,0<x<a\\\infty & ,x\leq 0或 x\geq a
+\end{cases}</script><p> 在阱外，定态薛定谔方程为</p>
+<script type="math/tex; mode=display">
+\frac{d^2\Psi(x)}{dx^2}+\frac{2m}{h^2}[E-\infty]\Psi(x)=0</script><p>对于$E$有限的粒子，要是方程成立，只有$\Psi(x)=0$</p>
+<p>在阱内，定态薛定谔方程为</p>
+<script type="math/tex; mode=display">
+\frac{d^2\Psi(x)}{dx^2}+\frac{2mE}{h^2}\Psi(x)=0</script><p>令</p>
+<script type="math/tex; mode=display">
+k^2=\frac{2mE}{h^2}</script><p>得到定态薛定谔方程的通解为</p>
+<script type="math/tex; mode=display">
+\Psi(x)=A\sin{k}+B\cos{kx}</script><p>由于粒子只能在势阱中，且必须满足连续条件，则在势阱壁上由：$\Psi(0)=0,\Psi(a)$=0</p>
+<p>带入通解，得薛定谔方程的解为</p>
+<script type="math/tex; mode=display">
+\Psi(x)=A\sin{\frac{n\pi x}{a}}</script><p>由归一化条件：</p>
+<script type="math/tex; mode=display">
+\int_0^a|\Psi(x)|^2dx=\int_0^a[A\sin{\frac{n\pi x}{a}}]^2dx=1</script><p>解得</p>
+<script type="math/tex; mode=display">
+A=\sqrt{\frac{2}{a}}</script><p>定态波函数为</p>
+<script type="math/tex; mode=display">
+\Psi_n(x)=\sqrt{\frac{2}{a}}\sin{\frac{n\pi x}{a}}</script><h4 id="一维无限深势阱中粒子的运动特征"><a href="#一维无限深势阱中粒子的运动特征" class="headerlink" title="一维无限深势阱中粒子的运动特征"></a>一维无限深势阱中粒子的运动特征</h4><ol>
+<li><p>能量量子化</p>
+<p>由$k^2=\frac{2mE}{h^2}$和$k=\frac{n\pi}{a}$可解得</p>
+<script type="math/tex; mode=display">
+E_n=n^2\frac{\pi^2h^2}{2ma^2},n=1,2....</script><p>$n$称为量子数，势阱重粒子的能量只能区一系列分立的值，在量子力学中，能量的量子化时薛定谔方程的必然结果</p>
+</li>
+<li><p>粒子的最小能量</p>
+<script type="math/tex; mode=display">
+E_1=\frac{\pi^2h^2}{2ma^2}</script><p>此能量称为零点能，零点能时一切量子系统特有的现象，即使绝对零度，运动也依然存在</p>
+</li>
+<li><p>粒子在势阱的不同位置中出现的概率</p>
+<p>对无限深势阱，定态薛定谔方程的解由驻波形式，驻波的波长</p>
+<script type="math/tex; mode=display">
+ \lambda_n=\frac{2a}{n}</script><p>粒子的概率密度</p>
+<script type="math/tex; mode=display">
+P(x)=|\Psi(x)|^2</script></li>
+</ol>
+<h1 id="氢原子及原子结构初步"><a href="#氢原子及原子结构初步" class="headerlink" title="氢原子及原子结构初步"></a>氢原子及原子结构初步</h1><h2 id="玻尔氢原子理论"><a href="#玻尔氢原子理论" class="headerlink" title="玻尔氢原子理论"></a>玻尔氢原子理论</h2><p>玻尔的氢原子模型的主要思想如下：</p>
+<ol>
+<li><p><strong>定态假设</strong></p>
+<p>电子存在着一系列具有确定能量的稳定状态（定态），即电子在稳定的圆形轨道上运动。处于定态的电子不辐射能量。</p>
+</li>
+<li><p><strong>频率假设</strong></p>
+<p>电子从一个高能量（定态）状态跳到一个低能量状态时，会发射一个光子，其频率满足</p>
+<script type="math/tex; mode=display">
+h\nu_{nk}=E_n-E_k</script></li>
+</ol>
+<ol>
+<li>定态要求电子的角动量满足玻尔-索末菲尔量子化条件<script type="math/tex; mode=display">
+L=mvr=n\frac{h}{2\pi}=nh,n=1,2,3,...</script></li>
+</ol>
+<p>德布罗意对玻尔的轨道定态理论做出了更好的物理解释：<br>电子绕核运动时，只有在德布罗意波在轨道上形成驻波的情况下，才具有稳定的状态，此时，圆周长度时波长的整数倍</p>
+<script type="math/tex; mode=display">
+2\pi r = n\lambda,n=1,2,3,...\\
+\lambda = \frac{h}{p}=\frac{h}{mv}</script><p>上式联立可得玻尔-索末菲尔量子化条件</p>
+<p>电子在轨道绕核运动时，库仑力提供向心力：</p>
+<script type="math/tex; mode=display">
+\frac{1}{4\pi\epsilon_0}\frac{e^2}{r^2}=m\frac{v^2}{r}</script><p>由玻尔-索末菲尔量子化条件可得</p>
+<script type="math/tex; mode=display">
+r_n=n^2\frac{\epsilon_0h^2}{\pi me^2},n=1,2,3,...\\
+v_n=\frac{1}{n}\frac{e^2}{\pi me^2},n=1,2,3,...</script><p>上式中$n=1$的情况取得的半径称为玻尔半径</p>
+<script type="math/tex; mode=display">
+r_1=\frac{\epsilon_0h^2}{\pi me^2}=0.529\times 10^{-10}m</script><p>原子总能量为电子的动能和势能之和</p>
+<script type="math/tex; mode=display">
+E_n=\frac{1}{2}mv_n^2-\frac{1}{4\pi\epsilon_0}\frac{e^2}{r_n}</script><p>将上面求得的轨道半径和速度表达式代入可得</p>
+<script type="math/tex; mode=display">
+E_n=-\frac{1}{n^2}(\frac{me^4}{8\epsilon_0^2h^2}),n=1,2,3,...</script><p>上式$n=1$时的情况称为基态能级</p>
+<script type="math/tex; mode=display">
+E_1=-(\frac{me^4}{8\epsilon_0^2h^2}=13.6\text{eV})</script><p>$n&gt;1$时为激发态，各轨道半径和能级与基态的关系</p>
+<script type="math/tex; mode=display">
+r_n=0.529\times 10^{-10}n^2\text{m}\\
+E_n=-\frac{13.6}{n^2}\text{eV}</script><p>当$n\rightarrow\infty$时，$E_n\rightarrow 0,r_n\rightarrow \infty$,此时电子脱离原子核的束缚，原子电离，使原子电离所需的能量称为电离能，基态氢原子的电离能为$13.6\text{eV}$。</p>
+<h2 id="氢原子光谱的解释"><a href="#氢原子光谱的解释" class="headerlink" title="氢原子光谱的解释"></a>氢原子光谱的解释</h2><p>按玻尔的频率假设，原子从较高能态$n$跃迁到较低能态$k$时，发射光子的频率：</p>
+<script type="math/tex; mode=display">
+\nu_{nk}=\frac{\Delta{E}}{h}=\frac{E_n-E_k}{h}=\frac{me^4}{8\epsilon_0^2h^3}(\frac{1}{k^2}-\frac{1}{n^2})=\frac{|E_1|}{h}(\frac{1}{k^2}-\frac{1}{n^2})</script><p>则有</p>
+<script type="math/tex; mode=display">
+\frac{1}{\lambda_{nk}}=\frac{\nu_{nk}}{c}=\frac{me^4}{8\epsilon_0^2h^3c}(\frac{1}{k^2}-\frac{1}{n^2})</script>
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/12/09/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6&%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/">量子光学&量子力学</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/12/04/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%92%8C%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论和数理统计</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">John Doe</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.0">Stellar 1.28.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84-%E6%99%AE%E6%9C%97%E5%85%8B%E7%9A%84%E9%87%8F%E5%AD%90%E5%81%87%E8%AF%B4"><span class="toc-text">黑体辐射 普朗克的量子假说</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B"><span class="toc-text">基尔霍夫定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E9%BB%91%E4%BD%93%E7%9A%84%E7%83%AD%E8%BE%90%E5%B0%84%E5%AE%9A%E5%BE%8B"><span class="toc-text">绝对黑体的热辐射定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E6%9C%97%E5%85%8B%E8%83%BD%E9%87%8F%E5%AD%90%E5%81%87%E8%AE%BE"><span class="toc-text">普朗克能量子假设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%94%B5%E6%95%88%E5%BA%94"><span class="toc-text">光电效应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%B7%E6%99%AE%E9%A1%BF%E6%95%88%E5%BA%94"><span class="toc-text">康普顿效应</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%89%A9%E7%B2%92%E5%AD%90%E7%9A%84%E6%B3%A2%E5%8A%A8%E6%80%A7"><span class="toc-text">实物粒子的波动性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%B7%E5%B8%83%E7%BD%97%E6%84%8F%E5%81%87%E8%AE%BE"><span class="toc-text">德布罗意假设</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%B7%E5%B8%83%E7%BD%97%E6%84%8F%E6%B3%A2%E7%9A%84%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81"><span class="toc-text">德布罗意波的实验验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E5%85%B3%E7%B3%BB"><span class="toc-text">不确定性关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E5%92%8C%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%85%B3%E7%B3%BB"><span class="toc-text">能量和时间的不确定关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%BB%9F%E8%AE%A1%E8%A7%A3%E9%87%8A"><span class="toc-text">波函数及其统计解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">波函数的引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%A7%A3%E9%87%8A"><span class="toc-text">波函数的统计解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">薛定谔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E6%80%81%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">定态薛定谔方程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%97%A0%E9%99%90%E6%B7%B1%E5%8A%BF%E9%98%B1%E4%B8%AD%E7%9A%84%E7%B2%92%E5%AD%90"><span class="toc-text">一维无限深势阱中的粒子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%97%A0%E9%99%90%E6%B7%B1%E5%8A%BF%E9%98%B1%E4%B8%AD%E7%B2%92%E5%AD%90%E7%9A%84%E8%BF%90%E5%8A%A8%E7%89%B9%E5%BE%81"><span class="toc-text">一维无限深势阱中粒子的运动特征</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%BB%E5%B0%94%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%90%86%E8%AE%BA"><span class="toc-text">玻尔氢原子理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%A2%E5%8E%9F%E5%AD%90%E5%85%89%E8%B0%B1%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="toc-text">氢原子光谱的解释</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }
+});
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\(","\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body></html>
