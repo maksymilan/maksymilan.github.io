@@ -1,4 +1,4 @@
----
+<!-- ---
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
@@ -35,5 +35,59 @@ const meta = {
 			> if you like me!
 		</p>
 	</div>
+
+</PageLayout> -->
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+  description: "你好！我是 Maksymilan，浙江大学的一名工业设计系大二学生，目前在学习 Web 开发、深度学习算法和深度生成模型相关的知识。",
+  title: "关于我",
+};
+---
+
+<PageLayout meta={meta}>
+  <div class="flex items-center justify-between">
+    <h1 class="title mb-6">
+      Hello World!
+    </h1>
+    <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28" alt="Waving hand" class="inline-block ml-2 mb-6"/>
+  </div>
+
+  <div class="prose prose-citrus max-w-none">
+    <p>
+      👋 你好，我是 <strong>Maksymilan</strong>！
+    </p>
+    <p>
+      我目前是<strong>浙江大学 (ZJU)</strong> 工业设计系的一名学生，对技术如何塑造我们的世界充满好奇。我的主要精力集中在 <strong>Web 开发</strong>（致力于创造迷人的用户体验和稳健的后端）和<strong>网络编程</strong>（深入理解系统之间的通信原理）。
+    </p>
+    <p>
+      同时，我也对人工智能的飞速发展，特别是<strong>大语言模型 (LLM)</strong> 的探索和基础<strong>机器学习算法</strong>的实践深感兴趣。
+    </p>
+
+    <h2>🚀 我的技术栈与工具</h2>
+    <p>
+        Go | TypeScript | Python | C++ | C | React | Linux | LaTeX | Vim | CMake | Git | VS Code
+    </p>
+
+    <h2>🌱 Connection</h2>
+    <ul class="list-inside list-disc" role="list">
+        <li>目前，我正深入学习<strong>全栈 Web 开发</strong>以及 <strong>AI (大语言模型 & 机器学习)</strong> 的实际应用。</li>
+        <li>我非常乐意就有趣的项目进行合作！</li>
+    </ul>
+    <p>
+        欢迎随时与我讨论技术、分享想法，或只是简单地交个朋友。你可以在
+        <a
+            aria-label="我的 GitHub 主页"
+            class="citrus-link inline-block"
+            href="https://github.com/maksymilan"
+            rel="noreferrer"
+            target="_blank"
+        >
+            我的 GitHub
+        </a>
+         上找到我！ 📫
+    </p>
+  </div>
 
 </PageLayout>
