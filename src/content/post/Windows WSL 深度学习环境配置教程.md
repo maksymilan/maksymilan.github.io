@@ -14,19 +14,19 @@ tags: ["Windows", "WSL", "深度学习", "Python", "PyTorch", "Jupyter"]
 
 Windows 10 (2004及以上) 或 Windows 11 用户可以直接使用**WSL 2**。WSL2 提供完整 Linux 内核、良好的性能和对GPU的支持，是推荐版本 。安装步骤如下：
 
-- **启用 WSL 子系统**：在 **管理员模式** 下打开 PowerShell (开始菜单搜索“PowerShell”，右键选择“以管理员身份运行”)。然后输入以下命令启用 WSL 和虚拟机平台，并自动安装默认的 Ubuntu 发行版 ([安装 WSL | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/install#:~:text=必须运行 Windows 10 版本 2004,及更高版本）或 Windows 11 才能使用以下命令。 如果使用的是更早的版本，请参阅手动安装页。)) ：
+- **启用 WSL 子系统**：在 **管理员模式** 下打开 PowerShell (开始菜单搜索“PowerShell”，右键选择“以管理员身份运行”)。然后输入以下命令启用 WSL 和虚拟机平台，并自动安装默认的 Ubuntu 发行版 ([安装 WSL | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/install)) ：
 
   ```powershell
   wsl --install
   ```
 
-  运行上述命令后，系统会安装所需的组件和 Ubuntu 子系统 ([安装 WSL | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/install#:~:text=现在，可以使用单个命令安装运行 WSL 所需的一切内容。 在管理员模式下打开 PowerShell,install 命令，然后重启计算机。))。第一次启动 Ubuntu 子系统时会弹出控制台进行初始化，你需要设置一个新的 Linux 用户名和密码（与 Windows 无关） 。请牢记这个用户名和密码。
+  运行上述命令后，系统会安装所需的组件和 Ubuntu 子系统。第一次启动 Ubuntu 子系统时会弹出控制台进行初始化，你需要设置一个新的 Linux 用户名和密码（与 Windows 无关） 。请牢记这个用户名和密码。
 
   详细内容请查看[官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password)
 
-- **基础 Linux 配置**：Ubuntu 子系统安装后，每次打开都会进入你创建的普通用户主目录 (`/home/用户名`)。可以使用 Windows Terminal 来打开 WSL，这样能够在标签页中使用Ubuntu终端（需安装**Windows Terminal**应用，可从 Microsoft Store 获取） ([安装 WSL | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/install#:~:text=建议遵循设置 WSL 开发环境的最佳做法这一指南，逐步了解以下操作：为已安装的 Linux 发行版设置用户名和密码、使用基本的,VS Code 远程服务器进行代码编辑和调试、文件存储的最佳做法、设置数据库、装载外部驱动器、设置 GPU 加速等。))。初次进入Ubuntu后，可以尝试运行 `uname -a` 或 `lsb_release -a` 来查看Linux版本，并运行基本命令如 `pwd`、`ls` 等体验Linux命令行。
+- **基础 Linux 配置**：Ubuntu 子系统安装后，每次打开都会进入你创建的普通用户主目录 (`/home/用户名`)。可以使用 Windows Terminal 来打开 WSL，这样能够在标签页中使用Ubuntu终端（需安装**Windows Terminal**应用，可从 Microsoft Store 获取）。初次进入Ubuntu后，可以尝试运行 `uname -a` 或 `lsb_release -a` 来查看Linux版本，并运行基本命令如 `pwd`、`ls` 等体验Linux命令行。
 
-> 💡 **提示**：WSL 中的 Linux 文件系统与 Windows 是隔离的，但可以互相访问文件。Windows 磁盘在 WSL 中挂载于 `/mnt/盘符` 路径，比如C盘对应 `/mnt/c `。你可以在 WSL 中通过 `cd /mnt/c/Users/<你的Windows用户名>`访问Windows用户目录。同样地，可以在 Windows 的资源管理器地址栏输入`\wsl$\Ubuntu` 来访问 Linux 文件系 ([跨文件系统工作 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/filesystems#:~:text=另外，还可以使用 ,命令。请确保在命令的末尾添加句点以打开当前目录。))】。建议在Linux环境下处理位于Linux文件系统中的项目文件，在Windows下处理Windows文件系统的文件，以获得最佳性 ([跨文件系统工作 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/filesystems#:~:text=跨文件系统的文件存储和性能))】。
+> 💡 **提示**：WSL 中的 Linux 文件系统与 Windows 是隔离的，但可以互相访问文件。Windows 磁盘在 WSL 中挂载于 `/mnt/盘符` 路径，比如C盘对应 `/mnt/c `。你可以在 WSL 中通过 `cd /mnt/c/Users/<你的Windows用户名>`访问Windows用户目录。同样地，可以在 Windows 的资源管理器地址栏输入`\wsl$\Ubuntu` 来访问 Linux 文件系 ([跨文件系统工作 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/filesystems))】。建议在Linux环境下处理位于Linux文件系统中的项目文件，在Windows下处理Windows文件系统的文件，以获得最佳性 ([跨文件系统工作 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/filesystems))】。
 
 ## 2. 安装 Miniconda (Python)
 

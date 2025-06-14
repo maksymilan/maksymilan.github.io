@@ -12,11 +12,12 @@ import { siteConfig } from "./src/site.config";
 import remarkDirective from "remark-directive"; /* handle ::: directives as nodes */
 import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* add admonitions */
 import { remarkReadingTime } from "./src/plugins/remark-reading-time";
+import remarkMath from "remark-math"; /* support for math expressions */
 
 // Rehype plugins
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeUnwrapImages from "rehype-unwrap-images";
-
+import rehypeKatex from "rehype-katex"; /* support for math expressions */
 import rehypePrettyCode from "rehype-pretty-code";
 import {
   transformerMetaHighlight,
@@ -81,7 +82,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
 
-    remarkPlugins: [remarkReadingTime, remarkDirective, remarkAdmonitions],
+    remarkPlugins: [remarkReadingTime, remarkDirective, remarkAdmonitions,remarkMath],
     remarkRehype: {
       footnoteLabelProperties: {
         className: [""],
@@ -97,7 +98,14 @@ export default defineConfig({
           target: "_blank",
         },
       ],
-
+      rehypeKatex, // support for math expressions
+      [
+        rehypeExternalLinks,
+        {
+          rel: ["nofollow", "noreferrer"],
+          target: "_blank",
+        },
+      ],
       [
         rehypePrettyCode,
         {

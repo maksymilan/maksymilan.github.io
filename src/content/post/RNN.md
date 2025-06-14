@@ -12,7 +12,7 @@ tags: ["RNN", "deep learning", "neural networks", "NLP"]
 
 使用条件概率展开
 $$
-p(a,b)=p(a)p(a|b)
+p(a,b)=p(a)p(b|a)
 $$
 可以得到
 
@@ -100,7 +100,7 @@ $$
 
 **对输入数据进行独热编码**
 
-在训练过程中，我们假设有batch_size个文本，每个文本的长度为t，同时vocab中所有的词数为vocab_size，我们要先将文本转换为可以计算的向量，这个过程是独热编码（one-hot）,由$\text{batch_size*t}$的文本输入可以得到$\text{batch_size*t*vocab_size}$的向量，这是因为每一个长度为t的文本的每一个词都是一个长度为$\text{vocab_size}$的向量，为了在后续的遍历每一个时间步的计算过程中更方便，我们先对$\text{batch_size*t}$进行转置，然后进行独热编码（这样得到的就是 $\text{t*batch_size*vocal_size}$能直接进行运算）。
+在训练过程中，我们假设有batch_size个文本，每个文本的长度为t，同时vocab中所有的词数为vocab_size，我们要先将文本转换为可以计算的向量，这个过程是独热编码（one-hot）,由 $\text{batch_size*t}$ 的文本输入可以得到$\text{batch_size*t*vocab_size}$的向量，这是因为每一个长度为t的文本的每一个词都是一个长度为$\text{vocab_size}$的向量，为了在后续的遍历每一个时间步的计算过程中更方便，我们先对$\text{batch_size*t}$进行转置，然后进行独热编码（这样得到的就是 $\text{t*batch_size*vocal_size}$能直接进行运算）。
 
 ```python
 X.shape()
@@ -184,7 +184,7 @@ def train_epoch_ch8(net,train_iter,loss,updater,device,use_random_iter):
 
 1. 首先进行累加器的初始化，用于计算损失
 2. 第一个`for`循环是对`state`进行初始化
-   - 如果是在`state`没有初始化或者每一次的批量都是随机从样本中抽取的，我们就将state初始化为形状为$\text{batch_size*hidden_size}$，$0$填充的张量。如果每一个批次都是随机的，那么每一次的state都应该和上一个批次的state无关，所以初始化为0。
+   - 如果是在`state`没有初始化或者每一次的批量都是随机从样本中抽取的，我们就将state初始化为形状为 $\text{batch_size*hidden_size}$ ，$0$填充的张量。如果每一个批次都是随机的，那么每一次的state都应该和上一个批次的state无关，所以初始化为0。
    - 如果是在`state`已经初始化了，并且是采用的顺序的迭代器，每一个批次在原文本中都是紧挨着上一个批次，那么我们就需要对`state`进行保留，但是需要对其进行`detach`操作，这样是为了避免长序列导致的梯度爆炸问题。
      - `detach`：我们举例说明detach的作用，令$x=2$,$y=x^2$,那么对$y$求梯度就等于$4$,我们令,$\text{y_detach=y.detach()}$$f=y*x$,$\text{g = y_detach*x}$,分别对$f$和$g$进行求梯度，结果分别是$\text{grad_f = 12,grad_g=4}$。从这个例子我们可以得到， $\text{detach}$操作实际上就是断开两个函数间的梯度关系。
 3. 初始化完成后就是计算过程，`Y`是返回的标签序列，形状为$\text{batch_size*t}$,`X`的形状是一样的，将`Y`转置后按序列长度拼接为一个列向量。这么做是为了与`X`计算得到的$\hat{Y}$的形状对应，然后进行平均损失计算。

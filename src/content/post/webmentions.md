@@ -4,10 +4,10 @@ description: "This post describes the detailed process of adding webmentions to 
 publishDate: "11 Oct 2023"
 tags: ["webmentions", "astro", "social"]
 updatedDate: 6 December 2024
+draft: true
 ---
 
 ## TLDR
-
 1. Add a link on your homepage to either your GitHub profile and/or email address as per [IndieLogin's](https://indielogin.com/setup) instructions. You _could_ do this via `src/components/SocialList.astro`, just be sure to include `isWebmention` to the relevant link if doing so.
 2. Create an account @ [Webmention.io](https://webmention.io/) by entering your website's address.
 3. Add the link feed and api key to a `.env` file with the key `WEBMENTION_URL` and `WEBMENTION_API_KEY` respectively, you could rename `.env.example` found in this template. You can also add the optional `WEBMENTION_PINGBACK` link here too.
