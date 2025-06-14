@@ -1,0 +1,21 @@
+---
+export interface Props {
+  src: string;
+  alt?: string;
+  size?: string; // 如 'w-24', 'w-32', 'w-40' 等 Tailwind 宽高类
+  link?: string; // 可选点击跳转链接
+}
+---
+
+<div class="flex justify-center">
+  <div class={`rounded-full overflow-hidden border-2 border-blue-500 shadow-md ${Astro.props.size ?? 'w-32'} aspect-square`}>
+    <a href={Astro.props.link ?? '#'} target={Astro.props.link ? '_blank' : undefined} rel="noopener noreferrer">
+      <img
+        src={Astro.props.src}
+        alt={Astro.props.alt ?? 'avatar'}
+        class="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+    </a>
+  </div>
+</div>
