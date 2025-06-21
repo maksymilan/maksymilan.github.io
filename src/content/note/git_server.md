@@ -1,7 +1,5 @@
 ---
-id: git-server
 title: "Git 在服务器上的使用"
-description: "讲解各种我在服务器上使用 git 的技巧“
 publishDate: "2025-06-020T00:00:00Z"
 ---
 
@@ -59,3 +57,46 @@ ssh -T git@ProjectName
 Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
+# 使用 git 提交大文件
+在服务器上使用 git 提交大文件时，可能会遇到一些问题，比如文件大小超过了 GitHub 的限制。为了解决这个问题，可以使用 Git LFS（Large File Storage）来管理大文件。
+## 1. 安装 Git LFS
+在服务器上安装 Git LFS，可以使用以下命令：
+
+```bash
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+```
+ macOS 用户可以使用 Homebrew 安装：
+```bash
+brew install git-lfs
+```
+## 2. 初始化 Git LFS
+在项目目录下初始化 Git LFS：
+
+```bash
+git lfs install
+```
+## 3. 跟踪大文件
+使用 Git LFS 跟踪大文件，可以使用以下命令：
+
+```bash
+git lfs track "*.psd"
+```
+这将会跟踪所有的 `.psd` 文件。你可以根据需要修改文件类型。
+
+跟踪一个文件夹下的所有文件
+```bash
+git lfs track "folder/**"
+```
+
+指令执行后会自动在项目根目录下创建一个 `.gitattributes` 文件，里面包含了跟踪的文件类型。
+
+## 4. 提交更改
+提交更改时，Git LFS 会自动处理大文件。你可以像平常一样使用 `git add`、`git commit` 和 `git push` 命令：
+
+```bash
+git add .gitattributes
+git add path/to/large/file
+git commit -m "Add large file"
+git push origin main
+```
