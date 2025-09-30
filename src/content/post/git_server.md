@@ -1,9 +1,8 @@
 ---
 id: git-server
 title: "Git 在服务器上的使用"
-description: "讲解各种我在服务器上使用 git 的技巧“
+description: "讲解各种我在服务器上使用 git 的技巧"
 publishDate: "20 Jun 2025"
-updatedDate: "20 Jun 2025"
 tags: ["git", "github", "ssh", "config"]
 ---
 
