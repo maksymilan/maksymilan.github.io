@@ -7,6 +7,7 @@ import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 import Avator from "@/components/Avator.astro";
+import Experience from "@/components/Experience.astro";
 
 // Posts
 const MAX_POSTS = 10;
@@ -36,32 +37,183 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 		<Avator src="/avatar.jpg" alt="avator" size="w-48" link="" />
 	</div>
 	<!-- </section> -->
-	<section class="max-w-xl mx-auto relative flex items-center justify-center  -mt-24">
-		<div class="w-full text-center">
-			<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
-				Hi, 我是 Maksymilan！
-			</span>
-			<p class="mt-4 mb-4 text-lg font-medium">
-				我现在是浙江大学计算机学院工业设计系一名大二的学生。现在在学习Web开发、深度学习算法和深度生成模型。
-			</p>
-			<div class="flex justify-center mb-4">
-				<SocialList />
+	<section class="max-w-3xl mx-auto relative flex items-center justify-center -mt-24">
+		<div class="w-full text-center relative">
+			<!-- Language Toggle -->
+			<div class="absolute right-0 top-0 md:-right-12 md:top-0 z-10">
+				<button id="lang-toggle" class="px-3 py-1 text-sm font-semibold rounded-full bg-accent-one/10 hover:bg-accent-one/20 text-accent-two transition-colors border border-accent-two/20 backdrop-blur-sm">
+					中 / En
+				</button>
 			</div>
-			<div class="flex justify-center space-x-4 mt-4">
-				<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
-					<span class="text-bgColor font-semibold">
-						往期博客
-					</span>
-				</a>
 
-				<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						碎碎念
-					</span>
-				</a>
+			<!-- English Content -->
+			<div id="content-en">
+				<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
+					👋 Hi, I'm Maksymilan!
+				</span>
+				<div class="flex justify-center mt-4 mb-4">
+					<SocialList />
+				</div>
+				<div class="mt-4 mb-4 text-lg font-medium text-left space-y-4">
+					<p>
+						I'm a third-year undergraduate student at Zhejiang University (ZJU) with a passion for computer systems and artificial intelligence.
+					</p>
+					<p>
+						🔬 My primary research interests are in Machine Learning Systems (MLSys) and AI Infrastructure.
+					</p>
+					<p>
+						👨‍💻 I am currently diving deep into AI Infra and LLM training/inference frameworks. My primary programming languages are C++ and Python.
+					</p>
+					<p>
+						💼 I'm currently interning at ByteDance (Volcengine), working on the Storage Infrastructure team, participating in the KV cache acceleration project for model inference (Elastic Instant Cache).
+					</p>
+					<p>
+						🤝 If you are interested in my work or have a suitable opportunity, please feel free to connect with me via the links above. Let's build something amazing together!
+					</p>
+				</div>
+				<div class="flex justify-center space-x-4 mt-4">
+					<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
+						<span class="text-bgColor font-semibold">
+							Posts
+						</span>
+					</a>
+
+					<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+						<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
+							Notes
+						</span>
+					</a>
+				</div>
+
+				<div class="mt-12 text-left">
+					<h2 class="text-2xl font-bold mb-6 flex items-center">
+						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">Experience</span>
+						<span class="ml-2 text-2xl">💼</span>
+					</h2>
+					<div class="space-y-4">
+						<Experience
+							type="internship"
+							logo="/images/bytedance.png"
+							title="ByteDance (Volcengine)"
+							role="Storage Infrastructure Intern"
+							time="2025.10 - Present"
+						/>
+					</div>
+
+					<h2 class="text-2xl font-bold mb-6 mt-12 flex items-center">
+						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">Education</span>
+						<span class="ml-2 text-2xl">🎓</span>
+					</h2>
+					<div class="space-y-4">
+						<Experience
+							type="education"
+							logo="/images/zju.png"
+							title="Zhejiang University"
+							role="B.Eng. in Industrial Design"
+							time="2023 - 2027 (Expected)"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<!-- Chinese Content -->
+			<div id="content-zh" class="hidden">
+				<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
+					👋 嗨，我是 Maksymilan！
+				</span>
+				<div class="flex justify-center mt-4 mb-4">
+					<SocialList />
+				</div>
+				<div class="mt-4 mb-4 text-lg font-medium text-left space-y-4">
+					<p>
+						我是浙江大学（ZJU）的一名大三本科生，对计算机系统和人工智能感兴趣。
+					</p>
+					<p>
+						🔬 我的主要学习和研究方向是机器学习系统（MLSys）和 AI Infra。
+					</p>
+					<p>
+						👨‍💻 我目前正在深入对Ai infra和大模型训练推理框架学习。我最常用的的工作语言是 C++ 和 Python。
+					</p>
+					<p>
+						💼 我目前在字节跳动（火山引擎）实习，在存储基础设施团队工作，参与到模型推理时的kv cache加速项目（Elastic Instant Cache）。
+					</p>
+					<p>
+						🤝 如果你对我感兴趣或有合适的机会，可以随时通过上方的链接与我联系。让我们一起做一些有意思的东西！
+					</p>
+				</div>
+				<div class="flex justify-center space-x-4 mt-4">
+					<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
+						<span class="text-bgColor font-semibold">
+							往期博客
+						</span>
+					</a>
+
+					<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+						<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
+							碎碎念
+						</span>
+					</a>
+				</div>
+
+				<div class="mt-12 text-left">
+					<h2 class="text-2xl font-bold mb-6 flex items-center">
+						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">实习经历</span>
+						<span class="ml-2 text-2xl">💼</span>
+					</h2>
+					<div class="space-y-4">
+						<Experience
+							type="internship"
+							logo="/images/bytedance.png"
+							title="字节跳动 (火山引擎)"
+							role="存储基础设施实习生"
+							time="2025.10 - 至今"
+						/>
+					</div>
+
+					<h2 class="text-2xl font-bold mb-6 mt-12 flex items-center">
+						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">教育经历</span>
+						<span class="ml-2 text-2xl">🎓</span>
+					</h2>
+					<div class="space-y-4">
+						<Experience
+							type="education"
+							logo="/images/zju.png"
+							title="浙江大学"
+							role="工业设计 本科"
+							time="2022 - 2026 (预计)"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
+
+	<script>
+		const toggleBtn = document.getElementById('lang-toggle');
+		const contentEn = document.getElementById('content-en');
+		const contentZh = document.getElementById('content-zh');
+
+		// Check local storage
+		const currentLang = localStorage.getItem('lang') || 'en';
+		if (currentLang === 'zh') {
+			contentEn?.classList.add('hidden');
+			contentZh?.classList.remove('hidden');
+		}
+
+		toggleBtn?.addEventListener('click', () => {
+			if (contentEn?.classList.contains('hidden')) {
+				// Switch to EN
+				contentEn.classList.remove('hidden');
+				contentZh?.classList.add('hidden');
+				localStorage.setItem('lang', 'en');
+			} else {
+				// Switch to ZH
+				contentEn?.classList.add('hidden');
+				contentZh?.classList.remove('hidden');
+				localStorage.setItem('lang', 'zh');
+			}
+		});
+	</script>
 
 	<!-- Posts Section -->
 	<section aria-label="Blog post list" class="'mt-[-100vh] pt-[100vh]'">

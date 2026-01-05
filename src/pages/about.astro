@@ -39,55 +39,214 @@ const meta = {
 </PageLayout> -->
 ---
 import PageLayout from "@/layouts/Base.astro";
+import Experience from "@/components/Experience.astro";
 
 const meta = {
-  description: "你好！我是 Maksymilan，浙江大学的一名工业设计系大二学生，目前在学习 Web 开发、深度学习算法和深度生成模型相关的知识。",
+  description: "Maksymilan - 浙江大学本科生，专注于 MLSys 和 AI Infra",
   title: "关于我",
 };
 ---
 
 <PageLayout meta={meta}>
-  <div class="flex items-center justify-between">
-    <h1 class="title mb-6">
-      Hello World!
-    </h1>
-    <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28" alt="Waving hand" class="inline-block ml-2 mb-6"/>
+  <div class="relative">
+    <!-- Language Toggle -->
+    <div class="absolute right-0 top-0 z-10">
+      <button id="lang-toggle" class="px-3 py-1 text-sm font-semibold rounded-full bg-accent-one/10 hover:bg-accent-one/20 text-accent-two transition-colors border border-accent-two/20 backdrop-blur-sm">
+        中 / En
+      </button>
+    </div>
+
+    <div class="flex items-center gap-3 mb-6">
+      <h1 class="title mb-0">
+        Hello World!
+      </h1>
+      <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28" alt="Waving hand" class="inline-block"/>
+    </div>
+
+    <!-- English Content -->
+    <div id="content-en" class="prose prose-citrus max-w-none">
+      <p>
+        👋 Hi, I'm <strong>Maksymilan</strong>!
+      </p>
+      <p>
+        I'm a third-year undergraduate student at <strong>Zhejiang University (ZJU)</strong>, majoring in Industrial Design. Although my major is Industrial Design, I have a great passion for <strong>Computer Systems</strong> and <strong>Artificial Intelligence</strong>, and I am dedicated to exploring this field deeply.
+      </p>
+
+      <h2>🔬 Research Interests</h2>
+      <p>
+        My primary research interests focus on <strong>Machine Learning Systems (MLSys)</strong> and <strong>AI Infrastructure (AI Infra)</strong>. I am fascinated by exploring the intersection of systems optimization and AI/ML workloads, striving to build more efficient and scalable AI systems.
+      </p>
+      <p>
+        Currently, I am diving deep into:
+      </p>
+      <ul class="list-inside list-disc" role="list">
+          <li><strong>AI Infra</strong>: Underlying principles and optimization of LLM training and inference frameworks.</li>
+          <li><strong>Core Systems Knowledge</strong>: Operating Systems and Computer Architecture.</li>
+      </ul>
+
+      <h2>💼 Experience</h2>
+      <div class="not-prose space-y-4 my-6">
+          <Experience
+              type="internship"
+              logo="/images/bytedance.png"
+              title="ByteDance (Volcengine)"
+              role="Storage Infrastructure Intern"
+              time="2025.10 - Present"
+          />
+          <p class="text-sm text-gray-600 dark:text-gray-400 ml-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
+              Working in the Storage Infrastructure team, participating in the <strong>Elastic Instant Cache</strong> project, focusing on KV cache acceleration during model inference.
+          </p>
+          
+          <Experience
+              type="education"
+              logo="/images/zju.png"
+              title="Zhejiang University"
+              role="B.Eng. in Industrial Design"
+              time="2023 - 2027 (Expected)"
+          />
+      </div>
+
+      <h2>🛠️ Tech Stack</h2>
+      <p>
+          My primary working languages are <strong>C++</strong> and <strong>Python</strong>. Additionally, I am familiar with the following tools and technologies:
+      </p>
+      <p>
+          Linux | Git | CMake | PyTorch | CUDA (Learning)
+      </p>
+
+      <h2>🤝 Connect</h2>
+      <p>
+          If you are interested in my work, or have any thoughts to exchange regarding MLSys/AI Infra, feel free to contact me!
+      </p>
+      <p>
+          You can find me on
+          <a
+              aria-label="My GitHub Profile"
+              class="citrus-link inline-block"
+              href="https://github.com/maksymilan"
+              rel="noreferrer"
+              target="_blank"
+          >
+              GitHub
+          </a>
+          or
+          <a
+              aria-label="My Google Scholar Profile"
+              class="citrus-link inline-block"
+              href="https://scholar.google.co.uk/citations?user=Komsf1YAAAAJ&hl=en"
+              rel="noreferrer"
+              target="_blank"
+          >
+              Google Scholar
+          </a>.
+      </p>
+    </div>
+
+    <!-- Chinese Content -->
+    <div id="content-zh" class="hidden prose prose-citrus max-w-none">
+      <p>
+        👋 嗨，我是 <strong>Maksymilan</strong>！
+      </p>
+      <p>
+        我是<strong>浙江大学 (ZJU)</strong> 工业设计系的一名大三本科生。虽然我的主修专业是工业设计，但我对<strong>计算机系统</strong>和<strong>人工智能</strong>有着极大的热情，并致力于在这一领域深入探索。
+      </p>
+
+      <h2>🔬 研究兴趣</h2>
+      <p>
+        我的主要学习兴趣集中在 <strong>机器学习系统 (MLSys)</strong> 和 <strong>AI 基础设施 (AI Infra)</strong>。
+      </p>
+      <p>
+        目前，我正在深入学习和研究：
+      </p>
+      <ul class="list-inside list-disc" role="list">
+          <li><strong>AI Infra</strong>: 大模型训练与推理框架的底层原理与优化。</li>
+          <li><strong>核心系统知识</strong>: 操作系统 (Operating Systems) 和计算机体系结构 (Computer Architecture)。</li>
+      </ul>
+
+      <h2>💼 经历</h2>
+      <div class="not-prose space-y-4 my-6">
+          <Experience
+              type="internship"
+              logo="/images/bytedance.png"
+              title="字节跳动 (火山引擎)"
+              role="存储基础设施实习生"
+              time="2025.10 - 至今"
+          />
+          <p class="text-sm text-gray-600 dark:text-gray-400 ml-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
+              在存储基础设施团队工作，参与 <strong>Elastic Instant Cache</strong> 项目，专注于模型推理时的 KV cache 加速。
+          </p>
+          
+          <Experience
+              type="education"
+              logo="/images/zju.png"
+              title="浙江大学"
+              role="工业设计 本科"
+              time="2023 - 2027 (预计)"
+          />
+      </div>
+
+      <h2>🛠️ 技术栈</h2>
+      <p>
+          我最常用的工作语言是 <strong>C++</strong> 和 <strong>Python</strong>。此外，我也熟悉以下工具和技术：
+      </p>
+      <p>
+          Linux | Git | CMake | PyTorch | CUDA (Learning)
+      </p>
+
+      <h2>🤝 Connect</h2>
+      <p>
+          如果你对我的工作感兴趣，或者有任何关于 MLSys/AI Infra 的想法想交流，欢迎随时联系我！
+      </p>
+      <p>
+          你可以在
+          <a
+              aria-label="我的 GitHub 主页"
+              class="citrus-link inline-block"
+              href="https://github.com/maksymilan"
+              rel="noreferrer"
+              target="_blank"
+          >
+              GitHub
+          </a>
+          或
+          <a
+              aria-label="我的 Google Scholar 主页"
+              class="citrus-link inline-block"
+              href="https://scholar.google.co.uk/citations?user=Komsf1YAAAAJ&hl=en"
+              rel="noreferrer"
+              target="_blank"
+          >
+              Google Scholar
+          </a>
+           上找到我。
+      </p>
+    </div>
   </div>
 
-  <div class="prose prose-citrus max-w-none">
-    <p>
-      👋 你好，我是 <strong>Maksymilan</strong>！
-    </p>
-    <p>
-      我目前是<strong>浙江大学 (ZJU)</strong> 工业设计系的一名学生，对技术如何塑造我们的世界充满好奇。我的主要精力集中在 <strong>Web 开发</strong>（致力于创造迷人的用户体验和稳健的后端）和<strong>网络编程</strong>（深入理解系统之间的通信原理）。
-    </p>
-    <p>
-      同时，我也对人工智能的飞速发展，特别是<strong>大语言模型 (LLM)</strong> 的探索和基础<strong>机器学习算法</strong>的实践深感兴趣。
-    </p>
+  <script>
+    const toggleBtn = document.getElementById('lang-toggle');
+    const contentEn = document.getElementById('content-en');
+    const contentZh = document.getElementById('content-zh');
 
-    <h2>🚀 我的技术栈与工具</h2>
-    <p>
-        Go | TypeScript | Python | C++ | C | React | Linux | LaTeX | Vim | CMake | Git | VS Code
-    </p>
+    // Check local storage
+    const currentLang = localStorage.getItem('lang') || 'en';
+    if (currentLang === 'zh') {
+      contentEn?.classList.add('hidden');
+      contentZh?.classList.remove('hidden');
+    }
 
-    <h2>🌱 Connection</h2>
-    <ul class="list-inside list-disc" role="list">
-        <li>目前，我正深入学习<strong>全栈 Web 开发</strong>以及 <strong>AI (大语言模型 & 机器学习)</strong> 的实际应用。</li>
-        <li>我非常乐意就有趣的项目进行合作！</li>
-    </ul>
-    <p>
-        欢迎随时与我讨论技术、分享想法，或只是简单地交个朋友。你可以在
-        <a
-            aria-label="我的 GitHub 主页"
-            class="citrus-link inline-block"
-            href="https://github.com/maksymilan"
-            rel="noreferrer"
-            target="_blank"
-        >
-            我的 GitHub
-        </a>
-         上找到我！ 📫
-    </p>
-  </div>
-
+    toggleBtn?.addEventListener('click', () => {
+      if (contentEn?.classList.contains('hidden')) {
+        // Switch to EN
+        contentEn.classList.remove('hidden');
+        contentZh?.classList.add('hidden');
+        localStorage.setItem('lang', 'en');
+      } else {
+        // Switch to ZH
+        contentEn?.classList.add('hidden');
+        contentZh?.classList.remove('hidden');
+        localStorage.setItem('lang', 'zh');
+      }
+    });
+  </script>
 </PageLayout>
