@@ -10,6 +10,12 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<h1 class="title mb-6">友情链接</h1>
+	<div class="prose prose-citrus max-w-none mb-10">
+		<p>
+        欢迎交换友链～
+		</p>
+	</div>
+	
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 		{friends.map((friend) => (
 			<a 
@@ -36,4 +42,62 @@ const meta = {
 	{friends.length === 0 && (
 		<p class="text-gray-500 italic">暂无友情链接，欢迎互换！</p>
 	)}
+
+	<div class="prose prose-citrus max-w-none mt-10 mb-10">
+		<h3>本站信息</h3>
+		<p>本站信息如下（点击快速复制）：</p>
+		<pre class="relative"><code>Name:
+Maksymilan's
+Desc: Connecting the dots.
+Link: https://maksymilan.github.io/
+Avatar: https://github.com/maksymilan.png</code></pre>
+
+		<h3>申请说明</h3>
+		<ul class="list-inside list-disc">
+			<li>在你的友链上添加了本站；</li>
+			<li>请确保你的站点活着；</li>
+			<li>博客内容不违反国家法律。</li>
+		</ul>
+	</div>
 </PageLayout>
+
+<!-- Copy code button -->
+<script>
+	// Wait for the content to fully load
+	document.addEventListener("DOMContentLoaded", () => {
+		// Find all pre blocks
+		document.querySelectorAll("pre").forEach((pre) => {
+			// Check if the button already exists
+			if (!pre.querySelector(".copy-code")) {
+				// Create the button
+				const copyButton = document.createElement("button");
+				copyButton.className =
+				"absolute flex items-center justify-center bg-bgColor h-6 font-medium overflow-hidden rounded-md text-light hover:text-accent-two font-sans text-sm font-medium top-2 right-2";
+
+				// Create the span element that will hold the button text
+				const buttonText = document.createElement("span");
+				buttonText.innerText = "Copy"; // Initial text
+				buttonText.className = "flex items-center block w-full h-full px-2 bg-[var(--code-title-bg)]"; // Set the span to take up full width with background color
+
+				copyButton.appendChild(buttonText); // Append span to the button
+
+				// Add the button inside pre
+				pre.appendChild(copyButton);
+
+				// Event handler for copying text
+				copyButton.addEventListener("click", async () => {
+					const code = pre.querySelector("code")?.textContent;
+					if (code) {
+						await navigator.clipboard.writeText(code);
+						buttonText.innerText = "Copied!"; // Change text to "Copied!"
+
+						// After 1.5 seconds, change the text back to "Copy"
+						setTimeout(() => {
+							buttonText.innerText = "Copy";
+						}, 1500);
+					}
+				});
+			}
+		});
+	});
+</script>
