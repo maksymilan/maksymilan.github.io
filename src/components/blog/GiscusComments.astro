@@ -1,0 +1,38 @@
+<section class="giscus mx-auto mt-10 w-full"></section>
+
+<script is:inline>
+	function getGiscusTheme() {
+		const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+		return isDark ? "transparent_dark" : "noborder_light";
+	}
+
+	function setGiscusTheme() {
+		const iframe = document.querySelector("iframe.giscus-frame");
+		if (!iframe) return;
+		const theme = getGiscusTheme();
+		iframe.contentWindow.postMessage(
+			{ giscus: { setConfig: { theme } } },
+			"https://giscus.app"
+		);
+	}
+
+	const script = document.createElement("script");
+	script.src = "https://giscus.app/client.js";
+	script.setAttribute("data-repo", "maksymilan/maksymilan.github.io"); // 替换为你的仓库: 用户名/仓库名
+	script.setAttribute("data-repo-id", "R_kgDOO7dn3g"); // 替换为你的仓库 ID (在 giscus.app 上获取)
+	script.setAttribute("data-category", "Announcements"); // 替换为你的分类名
+	script.setAttribute("data-category-id", "DIC_kwDOO7dn3s4C02bq"); // 替换为你的分类 ID (在 giscus.app 上获取)
+	script.setAttribute("data-mapping", "pathname");
+	script.setAttribute("data-strict", "0");
+	script.setAttribute("data-reactions-enabled", "1");
+	script.setAttribute("data-emit-metadata", "0");
+	script.setAttribute("data-input-position", "bottom");
+	script.setAttribute("data-theme", getGiscusTheme());
+	script.setAttribute("data-lang", "zh-CN");
+	script.setAttribute("data-loading", "lazy");
+	script.crossOrigin = "anonymous";
+	script.async = true;
+	document.querySelector(".giscus").appendChild(script);
+
+	document.addEventListener("theme-change", setGiscusTheme);
+</script>
