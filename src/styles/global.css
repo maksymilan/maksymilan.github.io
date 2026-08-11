@@ -8,7 +8,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Regular.latin.base.ttf") format("truetype");
 	font-weight: 400;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -16,7 +16,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Medium.latin.base.ttf") format("truetype");
 	font-weight: 500;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -24,7 +24,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Semibold.latin.base.ttf") format("truetype");
 	font-weight: 600;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -32,7 +32,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Bold.latin.base.ttf") format("truetype");
 	font-weight: 700;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -40,7 +40,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Regular.latin.extend.ttf") format("truetype");
 	font-weight: 400;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -48,7 +48,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Medium.latin.extend.ttf") format("truetype");
 	font-weight: 500;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -56,7 +56,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Semibold.latin.extend.ttf") format("truetype");
 	font-weight: 600;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -64,7 +64,7 @@
 	src: url("../assets/fonts/SF-Pro-Rounded-Bold.latin.extend.ttf") format("truetype");
 	font-weight: 700;
 	font-style: normal;
-	/* font-display: swap; */
+	font-display: swap;
 }
 
 @font-face {
@@ -85,29 +85,27 @@
 		
 		/*** ОСНОВНЫЕ ЦВЕТА (Базовый, фон, акценты, текст) ***/
 		/* Базовый цвет-оттенок темы */
-		--hue: 0deg; /* Общий базовый цвет-оттенок элементов темы */
-		--saturation: 0%; /* Общая базовая насыщенность элементов темы, 0% - нет оттенка цвета */
+		--hue: 0deg;
+		--saturation: 0%;
 		
 		/* Фон (background) */
-		--bg-hue: var(--hue); /* Цвет-оттенок фона */
-		--bg-saturation: var(--saturation); /* Насыщенность оттенка фона и некоторых др. элементов, 0% - нет оттенка */
-		--bg-brightness: 96%; /* Ярксть фона, 100% - абсолюнто белый */
+		--bg-hue: 0deg;
+		--bg-saturation: 0%;
+		--bg-brightness: 97%;
 
 		/* Акценты */
-		--theme-accent-base: 0deg 0% 0%; /* Основной акцентный цвет */
-		--theme-accent-one: 0deg 0% 30%; /* Первый дополнительный акцентный цвет */
-		/* --theme-accent-two: 351deg 66% 48%; Второй дополнительный акцентный цвет */
-		
-		/* Вариант */ --theme-accent-two: 0deg 0% 50%;
+		--theme-accent-base: 0deg 0% 10%;
+		--theme-accent-one: 0deg 0% 34%;
+		--theme-accent-two: 211deg 100% 50%;
 		
 		/* Текст (foreground, цвет-яркость текста рассчитывается ниже на базе --theme-fg) */
-		--fg-hue: var(--hue); /* Общий цвет-оттенок для рассчета градаций цвета */
-		--fg-saturation: var(--saturation); /* Общая насыщенность для рассчета градаций цвета с оттенком, 0% - нет оттенка */
-		--fg-brightness: 9%; /* Яркость для рассчета градаций цвета с оттенком, 0% - начиная от абсолютно черного */
+		--fg-hue: 0deg;
+		--fg-saturation: 0%;
+		--fg-brightness: 10%;
 		--theme-text: var(--theme-color-500); /* Цвет-яркость текста уже с адаптацией под цвет фона */ 
 
 		/*** ВТОРОСТЕПЕННЫЕ ЦВЕТА (Внешние ссылки, нейтральный акцент, цитаты) ***/
-		--theme-link: 0deg 0% 0%; /* Цвет внешних ссылок */
+		--theme-link: 211deg 100% 44%;
 		--theme-accent: var(--theme-color-600); /* Нейтральный акцент, рассчитывается ниже на базе --theme-fg */
 		--theme-quote: var(--theme-text); /* Цвет цитат */
 		
@@ -145,31 +143,31 @@
 
 		/*** ОСНОВНЫЕ ЦВЕТА (Базовый, фон, акценты, текст) ***/
 		/* Базовый цвет-оттенок темы */
-		--hue: 0deg; /* Общий базовый цвет-оттенок элементов темы */
-		--saturation: 0%; /* Общая базовая насыщенность элементов темы, 0% - нет оттенка цвета */
+		--hue: 0deg;
+		--saturation: 0%;
 
 		/* Фон (background) */
-		--bg-hue: var(--hue); /* Цвет-оттенок фона */
-		--bg-saturation: var(--saturation); /* Насыщенность оттенка фона и некоторых др. элементов, 0% - нет оттенка */
-		--bg-brightness: 15%; /* Ярксть фона, 0% - черный */
+		--bg-hue: 0deg;
+		--bg-saturation: 0%;
+		--bg-brightness: 8%;
 		/* Вариант 204deg 51% 14% */
 		/* Вариант 210deg 25% 15% */
 
 		/* Акценты */
-		--theme-accent-base: 0deg 0% 100%; 
-		--theme-accent-one: 0deg 0% 80%; /* Первый дополнительный акцентный цвет */
-		--theme-accent-two: 0deg 0% 60%; /* 50deg 72% 63% */ /* Второй дополнительный акцентный цвет (был 45deg 80% 50%) */
+		--theme-accent-base: 0deg 0% 96%;
+		--theme-accent-one: 0deg 0% 72%;
+		--theme-accent-two: 211deg 100% 65%;
 		/* --theme-accent-two: 0deg 75% 89%; */
 		/* --theme-accent-base: var(--hue) 97% 71%; */
 
 		/* Текст (foreground, цвет-яркость текста рассчитывается ниже на базе --theme-fg) */
-		--fg-hue: var(--hue); /* Общий цвет-оттенок для рассчета градаций цвета */
-		--fg-saturation: var(--saturation); /* Общая насыщенность для рассчета градаций цвета с оттенком, 0% - нет оттенка */
-		--fg-brightness: 98%; /* Яркость для рассчета градаций цвета с оттенком, 100% - начиная от абсолютно белого */
+		--fg-hue: 0deg;
+		--fg-saturation: 0%;
+		--fg-brightness: 96%;
 		--theme-text: var(--theme-color-500); /* Цвет-яркость текста адаптированного под цвет фона */ 
 
 		/*** ВТОРОСТЕПЕННЫЕ ЦВЕТА (Внкшние ссылки, нейтральный акцент, цитаты) ***/
-		--theme-link: 0deg 0% 90%; /* Цвет внешних ссылок */
+		--theme-link: 211deg 100% 70%;
 		--theme-accent: var(--theme-color-600); /* Нейтральный акцент относительно текста */
 		--theme-quote: var(--theme-text); /* Цвет цитат */
 
@@ -229,30 +227,7 @@
 	}
 
 	html {
-		letter-spacing: 0.025em;
-	}
-
-	h1 {
-		@apply text-2xl md:pt-[0.0rem] !important;
-	}
-	h2 {
-		@apply text-xl md:pt-[0.215rem] !important;
-	}
-	h3 {
-		@apply text-lg md:pt-[0.250rem] !important; /* было 0.260 проверить!!! */
-	}
-	h4 {
-		@apply text-base md:pt-[0.425rem] !important;
-	}
-	h5 {
-		@apply text-base md:pt-[0.425rem] !important;
-	}
-	h6 {
-		@apply text-base md:pt-[0.425rem] !important;
-	}
-	
-	h1, h2, h3, h4, h5, h6 {
-		@apply min-h-8 h-auto !important;
+		letter-spacing: 0.01em;
 	}
 
 	/* Нужно для кнопки копирования кода при отключенном rehype-pretty-code */
@@ -261,6 +236,29 @@
 		@apply relative;
 	}
 	*/
+}
+
+body {
+	line-height: 1.6;
+}
+
+::selection {
+	background: hsl(var(--theme-accent-two) / 0.2);
+}
+
+.site-ambient {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(circle at 12% 4%, hsl(0deg 0% 55% / 0.07), transparent 31rem),
+		radial-gradient(circle at 88% 18%, hsl(var(--theme-accent-two) / 0.045), transparent 24rem);
+}
+
+:focus-visible {
+	outline: 2px solid hsl(var(--theme-accent-two));
+	outline-offset: 3px;
 }
 
 :root {

@@ -1,253 +1,250 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import SocialList from "@/components/SocialList.astro";
-import PostPreview from "@/components/blog/PostPreview.astro";
-import Note from "@/components/note/Note.astro";
-import { getAllPosts } from "@/data/post";
-import PageLayout from "@/layouts/Base.astro";
-import { collectionDateSort } from "@/utils/date";
 import Avator from "@/components/Avator.astro";
 import Experience from "@/components/Experience.astro";
+import SocialList from "@/components/SocialList.astro";
+import PageLayout from "@/layouts/Base.astro";
 
-// Posts
-const MAX_POSTS = 10;
-const allPosts = await getAllPosts();
-const allPostsByDate = allPosts
-	.sort(collectionDateSort)
-	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
-
-// Notes
-const MAX_NOTES = 2;
-const allNotes = await getCollection("note");
-const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
+const meta = {
+	title: "Maksymilan",
+	description: "Maksymilan 的个人主页：关注计算机系统、机器学习系统和人工智能，记录科研、技术与学习。",
+};
 ---
 
-<PageLayout meta={{ title: "Maksymilan's" }}>
-	<!-- Hero section -->
-	<!-- Background blur -->
-	<div class="absolute top-0 left-1/2 md:top-[-15%] -ml-[50vw] min-h-screen w-screen pointer-events-none blur-3xl opacity-50 overflow-x-hidden">
-		<div class="absolute top-[10%] right-[-40%] w-[65%] h-full bg-gradient-to-b from-white-300 via-blue-300 to-white-300 rounded-full opacity-30 dark:opacity-10"></div>
-		<div class="absolute top-[10%] left-[-40%] w-[65%] h-full bg-gradient-to-b from-white-300 via-blue-300 to-white-300 rounded-full opacity-30 dark:opacity-10"></div>
-		<!-- <div class="absolute top-[-20%] left-[-50%] w-[85%] h-full bg-gradient-to-b from-black-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div> -->
-		<!-- <div class="absolute top-[-20%] right-[-50%] w-[85%] h-full bg-gradient-to-b from-blue-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div> -->
-	</div>
-	
-	<!-- <section> -->
-	<div class="flex justify-center py-16 transform -translate-y-20">
-		<Avator src="/avatar.jpg" alt="avator" size="w-48" link="" />
-	</div>
-	<!-- </section> -->
-	<section class="max-w-3xl mx-auto relative flex items-center justify-center -mt-24">
-		<div class="w-full text-center relative">
-			<!-- Language Toggle -->
-			<div class="absolute right-0 top-0 md:-right-12 md:top-0 z-10">
-				<button id="lang-toggle" class="px-3 py-1 text-sm font-semibold rounded-full bg-accent-one/10 hover:bg-accent-one/20 text-accent-two transition-colors border border-accent-two/20 backdrop-blur-sm">
-					中 / En
-				</button>
-			</div>
+<PageLayout meta={meta}>
+	<section class="mx-auto max-w-4xl" aria-label="Personal introduction">
+		<div class="mb-8 flex justify-end sm:mb-4">
+			<button
+				aria-label="切换到中文"
+				class="inline-flex h-9 items-center rounded-xl border border-color-100 bg-special-light px-3 text-sm font-semibold text-lighter transition-colors hover:border-accent-two/30 hover:text-accent-two"
+				id="lang-toggle"
+				type="button"
+			>
+				中
+			</button>
+		</div>
 
-			<!-- English Content -->
-			<div id="content-en">
-				<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
-					👋 Hi, I'm Maksymilan!
-				</span>
-				<div class="flex justify-center mt-4 mb-4">
-					<SocialList />
-				</div>
-				<div class="mt-4 mb-4 text-lg font-medium text-left space-y-4">
-					<p>
-						I'm a third-year undergraduate student at Zhejiang University (ZJU) with a passion for computer systems and artificial intelligence.
-					</p>
-					<p>
-						🔬 My primary research interests are in Machine Learning Systems (MLSys) and AI Infrastructure.
-					</p>
-					<p>
-						👨‍💻 I am currently diving deep into AI Infra and LLM training/inference frameworks. My primary programming languages are C++ and Python.
-					</p>
-					<p>
-						💼 I'm currently interning at ByteDance (Volcengine), working on the Storage Infrastructure team, participating in the KV cache acceleration project for model inference (Elastic Instant Cache).
-					</p>
-					<p>
-						🤝 If you are interested in my work or have a suitable opportunity, please feel free to connect with me via the links above. Let's build something amazing together!
-					</p>
-				</div>
-				<div class="flex justify-center space-x-4 mt-4">
-					<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
-						<span class="text-bgColor font-semibold">
-							Posts
-						</span>
-					</a>
+		<div class="grid items-center gap-10 lg:grid-cols-[1fr_15rem] lg:gap-16">
+			<div class="order-2 lg:order-1">
+				<p class="mb-4 font-serif text-xs font-bold uppercase tracking-[0.2em] text-lighter">Personal homepage</p>
 
-					<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-						<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-							Notes
-						</span>
-					</a>
-				</div>
-
-				<div class="mt-12 text-left">
-					<h2 class="text-2xl font-bold mb-6 flex items-center">
-						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">Experience</span>
-						<span class="ml-2 text-2xl">💼</span>
-					</h2>
-					<div class="space-y-4">
-						<Experience
-							type="internship"
-							logo="/images/bytedance.png"
-							title="ByteDance (Volcengine)"
-							role="Storage Infrastructure Intern"
-							time="2025.10 - Present"
-						/>
+				<div data-lang-panel="zh" hidden>
+					<h1 class="text-4xl font-bold leading-tight tracking-tight text-accent-base sm:text-5xl">
+						你好，我是 Maksymilan。
+					</h1>
+					<div class="mt-6 max-w-2xl space-y-4 text-lg leading-8 text-textColor">
+						<p>浙江大学本科生，对计算机系统、机器学习系统和人工智能感兴趣。</p>
+						<p>我喜欢把问题落实为可实现、可验证的系统与实验，也会在这里记录学习与思考。</p>
 					</div>
+					<div class="mt-7 flex flex-wrap items-center gap-3">
+						<a class="inline-flex h-10 items-center rounded-xl bg-accent-base px-4 text-sm font-semibold text-bgColor transition-transform hover:-translate-y-0.5" href="/posts/">
+							浏览文档 <span aria-hidden="true" class="ml-2">→</span>
+						</a>
+						<SocialList />
+					</div>
+				</div>
 
-					<h2 class="text-2xl font-bold mb-6 mt-12 flex items-center">
-						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">Education</span>
-						<span class="ml-2 text-2xl">🎓</span>
-					</h2>
-					<div class="space-y-4">
-						<Experience
-							type="education"
-							logo="/images/zju.png"
-							title="Zhejiang University"
-							role="B.Eng. in Industrial Design"
-							time="2023 - 2027 (Expected)"
-						/>
+				<div data-lang-panel="en">
+					<h1 class="text-4xl font-bold leading-tight tracking-tight text-accent-base sm:text-5xl">
+						Hi, I’m Maksymilan.
+					</h1>
+					<div class="mt-6 max-w-2xl space-y-4 text-lg leading-8 text-textColor">
+						<p>I’m an undergraduate at Zhejiang University, interested in computer systems, machine learning systems, and artificial intelligence.</p>
+						<p>I enjoy turning ideas into systems and experiments that can be built and verified, while documenting what I learn along the way.</p>
+					</div>
+					<div class="mt-7 flex flex-wrap items-center gap-3">
+						<a class="inline-flex h-10 items-center rounded-xl bg-accent-base px-4 text-sm font-semibold text-bgColor transition-transform hover:-translate-y-0.5" href="/posts/">
+							Read my writing <span aria-hidden="true" class="ml-2">→</span>
+						</a>
+						<SocialList />
 					</div>
 				</div>
 			</div>
 
-			<!-- Chinese Content -->
-			<div id="content-zh" class="hidden">
-				<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
-					👋 嗨，我是 Maksymilan！
-				</span>
-				<div class="flex justify-center mt-4 mb-4">
-					<SocialList />
-				</div>
-				<div class="mt-4 mb-4 text-lg font-medium text-left space-y-4">
-					<p>
-						我是浙江大学（ZJU）的一名大三本科生，对计算机系统和人工智能感兴趣。
-					</p>
-					<p>
-						🔬 我的主要学习和研究方向是机器学习系统（MLSys）和 AI Infra。
-					</p>
-					<p>
-						👨‍💻 我目前正在深入对Ai infra和大模型训练推理框架学习。我最常用的的工作语言是 C++ 和 Python。
-					</p>
-					<p>
-						💼 我目前在字节跳动（火山引擎）实习，在存储基础设施团队工作，参与到模型推理时的kv cache加速项目（Elastic Instant Cache）。
-					</p>
-					<p>
-						🤝 如果你对我感兴趣或有合适的机会，可以随时通过上方的链接与我联系。让我们一起做一些有意思的东西！
-					</p>
-				</div>
-				<div class="flex justify-center space-x-4 mt-4">
-					<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
-						<span class="text-bgColor font-semibold">
-							往期博客
-						</span>
-					</a>
+			<div class="order-1 mx-auto lg:order-2">
+				<Avator class="h-48 w-48 sm:h-56 sm:w-56" src="/avatar.jpg" />
+			</div>
+		</div>
+	</section>
 
-					<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-						<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-							碎碎念
-						</span>
-					</a>
+	<section class="mx-auto mt-20 max-w-4xl sm:mt-24" aria-labelledby="focus-title">
+		<div data-lang-panel="zh" hidden>
+			<div class="mb-6 flex items-end justify-between gap-4">
+				<div>
+					<p class="font-serif text-xs font-bold uppercase tracking-[0.2em] text-lighter">Now</p>
+					<h2 class="mt-2 text-2xl font-bold text-accent-base" id="focus-title">当前方向</h2>
 				</div>
-
-				<div class="mt-12 text-left">
-					<h2 class="text-2xl font-bold mb-6 flex items-center">
-						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">实习经历</span>
-						<span class="ml-2 text-2xl">💼</span>
-					</h2>
-					<div class="space-y-4">
-						<Experience
-							type="internship"
-							logo="/images/bytedance.png"
-							title="字节跳动 (火山引擎)"
-							role="存储基础设施实习生"
-							time="2025.10 - 至今"
-						/>
+				<span class="hidden text-sm text-lighter sm:block">2026</span>
+			</div>
+			<div class="rounded-3xl border border-color-100 bg-special-light p-6 shadow-[0_18px_50px_rgba(0,0,0,0.04)] sm:p-8">
+				<div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+					<div class="max-w-2xl">
+						<p class="text-sm font-semibold text-accent-two">科研项目</p>
+						<h3 class="mt-2 text-2xl font-bold text-accent-base">Table Agent</h3>
+						<p class="mt-3 leading-7 text-textColor">聚焦强化学习后训练，围绕智能体处理表格与结构化数据任务的能力开展研究。</p>
 					</div>
+					<span class="inline-flex w-fit shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-color-100 px-3 py-1.5 text-xs font-medium text-lighter"><span class="h-1.5 w-1.5 rounded-full bg-accent-two"></span>RL Post-training</span>
+				</div>
+			</div>
+		</div>
 
-					<h2 class="text-2xl font-bold mb-6 mt-12 flex items-center">
-						<span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two">教育经历</span>
-						<span class="ml-2 text-2xl">🎓</span>
-					</h2>
-					<div class="space-y-4">
-						<Experience
-							type="education"
-							logo="/images/zju.png"
-							title="浙江大学"
-							role="工业设计 本科"
-							time="2022 - 2026 (预计)"
-						/>
+		<div data-lang-panel="en">
+			<div class="mb-6 flex items-end justify-between gap-4">
+				<div>
+					<p class="font-serif text-xs font-bold uppercase tracking-[0.2em] text-lighter">Now</p>
+					<h2 class="mt-2 text-2xl font-bold text-accent-base">Current focus</h2>
+				</div>
+				<span class="hidden text-sm text-lighter sm:block">2026</span>
+			</div>
+			<div class="rounded-3xl border border-color-100 bg-special-light p-6 shadow-[0_18px_50px_rgba(0,0,0,0.04)] sm:p-8">
+				<div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+					<div class="max-w-2xl">
+						<p class="text-sm font-semibold text-accent-two">Research project</p>
+						<h3 class="mt-2 text-2xl font-bold text-accent-base">Table Agent</h3>
+						<p class="mt-3 leading-7 text-textColor">Studying reinforcement-learning post-training for agents that work with tables and structured-data tasks.</p>
 					</div>
+					<span class="inline-flex w-fit shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-color-100 px-3 py-1.5 text-xs font-medium text-lighter"><span class="h-1.5 w-1.5 rounded-full bg-accent-two"></span>RL Post-training</span>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<script>
-		const toggleBtn = document.getElementById('lang-toggle');
-		const contentEn = document.getElementById('content-en');
-		const contentZh = document.getElementById('content-zh');
+	<section class="mx-auto mt-20 max-w-4xl sm:mt-24" aria-label="Publications">
+		<div data-lang-panel="zh" hidden>
+			<p class="font-serif text-xs font-bold uppercase tracking-[0.2em] text-lighter">Research</p>
+			<h2 class="mt-2 text-2xl font-bold text-accent-base">学术发表</h2>
+			<article class="mt-7 border-y border-color-100 py-7 sm:py-9">
+				<div class="grid gap-6 sm:grid-cols-[8.5rem_1fr] sm:gap-8">
+					<header>
+						<a class="text-sm font-bold text-accent-two hover:underline" href="https://2026.ijcai.org/accepted-papers/" rel="noopener noreferrer" target="_blank">IJCAI 2026 <span aria-hidden="true">↗</span></a>
+						<p class="mt-2 text-sm text-lighter">已录用</p>
+					</header>
+					<div>
+						<h3 class="text-xl font-bold leading-8 text-accent-base sm:text-2xl sm:leading-9">
+							<a class="transition-colors hover:text-accent-two" href="https://arxiv.org/abs/2607.14102" rel="noopener noreferrer" target="_blank">
+								UniSAGE: Unifying Static and Dynamic Attributes with Hyper-Structure <span aria-hidden="true" class="text-accent-two">↗</span>
+							</a>
+						</h3>
+						<p class="mt-4 text-sm leading-6 text-lighter">
+							Taoran Fang，<strong class="font-semibold text-accent-base">Yan Deng</strong>，Chunping Wang，Yang Wang，Lei Chen，Yang Yang
+						</p>
+						<div class="mt-6">
+							<p class="font-serif text-xs font-bold uppercase tracking-[0.16em] text-lighter">Abstract</p>
+							<p class="mt-2 leading-7 text-textColor">
+								UniSAGE unifies hierarchical static attributes and dynamic records in a global attribute graph, combining orthogonal parameter subspaces with a lightweight hyper-structure for joint aggregation and reasoning. Across public benchmarks and a real-world financial behavior dataset, it consistently outperforms existing methods, with gains above 10% on several tasks.
+							</p>
+						</div>
+						<div class="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold">
+							<a class="text-accent-two hover:underline" href="https://arxiv.org/abs/2607.14102" rel="noopener noreferrer" target="_blank">阅读论文 <span aria-hidden="true">↗</span></a>
+							<a class="text-lighter hover:text-accent-two hover:underline" href="https://arxiv.org/pdf/2607.14102" rel="noopener noreferrer" target="_blank">PDF <span aria-hidden="true">↗</span></a>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
 
-		// Check local storage
-		const currentLang = localStorage.getItem('lang') || 'en';
-		if (currentLang === 'zh') {
-			contentEn?.classList.add('hidden');
-			contentZh?.classList.remove('hidden');
-		}
-
-		toggleBtn?.addEventListener('click', () => {
-			if (contentEn?.classList.contains('hidden')) {
-				// Switch to EN
-				contentEn.classList.remove('hidden');
-				contentZh?.classList.add('hidden');
-				localStorage.setItem('lang', 'en');
-			} else {
-				// Switch to ZH
-				contentEn?.classList.add('hidden');
-				contentZh?.classList.remove('hidden');
-				localStorage.setItem('lang', 'zh');
-			}
-		});
-	</script>
-
-	<!-- Posts Section -->
-	<section aria-label="Blog post list" class="'mt-[-100vh] pt-[100vh]'">
-		<h2 class="title mb-6 text-xl text-accent-two">
-			<a href="/posts/">Posts</a>
-		</h2>
-		<ul class="space-y-4 md:space-y-2" role="list">
-			{
-				allPostsByDate.map((p) => (
-					<li class="gap-2 sm:grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
+		<div data-lang-panel="en">
+			<p class="font-serif text-xs font-bold uppercase tracking-[0.2em] text-lighter">Research</p>
+			<h2 class="mt-2 text-2xl font-bold text-accent-base">Publications</h2>
+			<article class="mt-7 border-y border-color-100 py-7 sm:py-9">
+				<div class="grid gap-6 sm:grid-cols-[8.5rem_1fr] sm:gap-8">
+					<header>
+						<a class="text-sm font-bold text-accent-two hover:underline" href="https://2026.ijcai.org/accepted-papers/" rel="noopener noreferrer" target="_blank">IJCAI 2026 <span aria-hidden="true">↗</span></a>
+						<p class="mt-2 text-sm text-lighter">Accepted</p>
+					</header>
+					<div>
+						<h3 class="text-xl font-bold leading-8 text-accent-base sm:text-2xl sm:leading-9">
+							<a class="transition-colors hover:text-accent-two" href="https://arxiv.org/abs/2607.14102" rel="noopener noreferrer" target="_blank">
+								UniSAGE: Unifying Static and Dynamic Attributes with Hyper-Structure <span aria-hidden="true" class="text-accent-two">↗</span>
+							</a>
+						</h3>
+						<p class="mt-4 text-sm leading-6 text-lighter">
+							Taoran Fang, <strong class="font-semibold text-accent-base">Yan Deng</strong>, Chunping Wang, Yang Wang, Lei Chen, and Yang Yang
+						</p>
+						<div class="mt-6">
+							<p class="font-serif text-xs font-bold uppercase tracking-[0.16em] text-lighter">Abstract</p>
+							<p class="mt-2 leading-7 text-textColor">
+								UniSAGE unifies hierarchical static attributes and dynamic records in a global attribute graph, combining orthogonal parameter subspaces with a lightweight hyper-structure for joint aggregation and reasoning. Across public benchmarks and a real-world financial behavior dataset, it consistently outperforms existing methods, with gains above 10% on several tasks.
+							</p>
+						</div>
+						<div class="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold">
+							<a class="text-accent-two hover:underline" href="https://arxiv.org/abs/2607.14102" rel="noopener noreferrer" target="_blank">Read paper <span aria-hidden="true">↗</span></a>
+							<a class="text-lighter hover:text-accent-two hover:underline" href="https://arxiv.org/pdf/2607.14102" rel="noopener noreferrer" target="_blank">PDF <span aria-hidden="true">↗</span></a>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
 	</section>
 
-	<!-- Notes Section -->
-	{
-		latestNotes.length > 0 && (
-			<section class="mt-12">
-				<h2 class="title mb-6 text-accent-two">
-					<a href="/notes/">Notes</a>
-				</h2>
-				<div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-					{
-						latestNotes.map((note) => (
-							<div>
-								<Note note={note} as="h4" isPreview />
-							</div>
-						))
-					}
-				</div>
-			</section>
-		)
-	}
+	<section class="mx-auto mt-20 max-w-4xl sm:mt-24" aria-labelledby="journey-title">
+		<div data-lang-panel="zh" hidden>
+			<p class="font-serif text-xs font-bold uppercase tracking-[0.2em] text-lighter">Journey</p>
+			<h2 class="mt-2 text-2xl font-bold text-accent-base" id="journey-title">经历</h2>
+			<div class="mt-6 grid gap-4 md:grid-cols-2">
+				<Experience
+					logo="/images/bytedance.png"
+					role="AI Infra 系统开发实习生"
+					time="2025-11 — 2026-05"
+					title="字节跳动 · EIC KV Cache"
+					type="internship"
+				/>
+				<Experience
+					logo="/images/zju.png"
+					role="工业设计"
+					time="ZJU"
+					title="浙江大学"
+					type="education"
+				/>
+			</div>
+		</div>
+
+		<div data-lang-panel="en">
+			<p class="font-serif text-xs font-bold uppercase tracking-[0.2em] text-lighter">Journey</p>
+			<h2 class="mt-2 text-2xl font-bold text-accent-base">Experience</h2>
+			<div class="mt-6 grid gap-4 md:grid-cols-2">
+				<Experience
+					logo="/images/bytedance.png"
+					role="AI Infra Systems Development Intern"
+					time="2025-11 — 2026-05"
+					title="ByteDance · EIC KV Cache"
+					type="internship"
+				/>
+				<Experience
+					logo="/images/zju.png"
+					role="Industrial Design"
+					time="ZJU"
+					title="Zhejiang University"
+					type="education"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		type Language = "zh" | "en";
+
+		const toggleButton = document.getElementById("lang-toggle");
+		const languagePanels = document.querySelectorAll<HTMLElement>("[data-lang-panel]");
+
+		const setLanguage = (language: Language) => {
+			languagePanels.forEach((panel) => {
+				panel.hidden = panel.dataset.langPanel !== language;
+			});
+
+			if (toggleButton) {
+				toggleButton.textContent = language === "zh" ? "EN" : "中";
+				toggleButton.setAttribute("aria-label", language === "zh" ? "Switch to English" : "切换到中文");
+			}
+
+			document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+		};
+
+		let currentLanguage: Language = "en";
+		setLanguage(currentLanguage);
+
+		toggleButton?.addEventListener("click", () => {
+			currentLanguage = currentLanguage === "zh" ? "en" : "zh";
+			setLanguage(currentLanguage);
+		});
+	</script>
 </PageLayout>

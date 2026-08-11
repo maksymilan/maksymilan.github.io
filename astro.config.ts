@@ -69,8 +69,8 @@ export default defineConfig({
         },
       ],
       start_url: "/",
-      background_color: "#1d1f21",
-      theme_color: "#2bbc8a",
+      background_color: "#f5f5f7",
+      theme_color: "#f5f5f7",
       display: "standalone",
       config: {
         insertFaviconLinks: false,
@@ -122,8 +122,7 @@ export default defineConfig({
   },
   // https://docs.astro.build/en/guides/prefetch/
   prefetch: true,
-  // ! Please remember to replace the following site property with your own domain
-  site: "http://astrocitrus.artemkutsan.pp.ua/",
+  site: "https://maksymilan.github.io/",
   vite: {
     build: {
       sourcemap: true, // Source maps generation

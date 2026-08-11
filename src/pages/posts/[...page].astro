@@ -1,123 +1,59 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Pagination from "@/components/Paginator.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
-import { getAllPosts, getUniqueTags, groupPostsByYear } from "@/data/post";
+import { getAllPosts, groupPostsByYear } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
-import type { GetStaticPaths, Page } from "astro";
-import { Icon } from "astro-icon/components";
-import Badge from "@/components/Badge.astro";
+import type { GetStaticPaths } from "astro";
 
-export const getStaticPaths = (async ({ paginate }) => {
-	const MAX_POSTS_PER_PAGE = 5;
-	const MAX_TAGS = 20;
-	const allPosts = await getAllPosts();
-	const uniqueTags = getUniqueTags(allPosts).slice(0, MAX_TAGS);
-	return paginate(allPosts.sort(collectionDateSort), {
-		pageSize: MAX_POSTS_PER_PAGE,
-		props: { uniqueTags },
-	});
+export const getStaticPaths = (async () => {
+	const posts = (await getAllPosts()).sort(collectionDateSort);
+	return [{ params: { page: undefined }, props: { posts } }];
 }) satisfies GetStaticPaths;
 
 interface Props {
-	page: Page<CollectionEntry<"post">>;
-	uniqueTags: string[];
+	posts: CollectionEntry<"post">[];
 }
 
-const { page, uniqueTags } = Astro.props;
+const { posts } = Astro.props;
+const groupedByYear = groupPostsByYear(posts);
+const years = Object.keys(groupedByYear).sort((a, b) => Number(b) - Number(a));
 
 const meta = {
-	description: "Read my collection of posts and the things that interest me",
-	title: "Posts",
+	title: "文档",
+	description: "Maksymilan 的技术文章、研究记录与学习笔记。",
 };
-
-const paginationProps = {
-	...(page.url.prev && {
-		prevUrl: {
-			text: "← Previous Page",
-			url: page.url.prev,
-		},
-	}),
-	...(page.url.next && {
-		nextUrl: {
-			text: "Next Page →",
-			url: page.url.next,
-		},
-	}),
-};
-
-const groupedByYear = groupPostsByYear(page.data);
-const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6 flex items-center gap-2">
-		Posts
-		<a class="text-accent-two" href="/rss.xml" target="_blank">
-			<span class="sr-only">RSS feed</span>
-			<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="mdi:rss" />
-		</a>
-	</h1>
-	<div class="grid gap-y-8 sm:grid-cols-[1fr_auto] sm:gap-x-8">
-		<section aria-label="Blog post list" class="grow">
+	<div class="mx-auto max-w-3xl">
+		<header class="border-b border-color-100 pb-8 sm:pb-10">
+			<p class="font-serif text-xs font-bold uppercase tracking-[0.2em] text-accent-two">Writing</p>
+			<h1 class="mt-3 text-4xl font-bold tracking-tight text-accent-base sm:text-5xl">文档与文章</h1>
+			<p class="mt-5 max-w-2xl text-lg leading-8 text-textColor">
+				这里收录我的技术文章、研究记录与学习笔记。内容会随着学习和项目进展持续更新。
+			</p>
+			<p class="mt-4 text-sm text-lighter">共 {posts.length} 篇</p>
+		</header>
+
+		<div class="mt-12 space-y-14">
 			{
-				descYearKeys.map((yearKey) => (
-					<>
-						<h4 class="title">{yearKey}</h4>
-						<ul class="mb-8 mt-4 space-y-8 text-start">
-							{groupedByYear[yearKey]?.map((p) => (
-								<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-									<PostPreview post={p} withDesc={true} />
+				years.map((year) => (
+					<section aria-labelledby={`year-${year}`}>
+						<div class="mb-5 flex items-baseline justify-between border-b border-color-100 pb-3">
+							<h2 class="text-lg font-bold text-accent-base" id={`year-${year}`}>{year}</h2>
+							<span class="text-xs text-lighter">{groupedByYear[year]?.length ?? 0} 篇</span>
+						</div>
+						<ul class="space-y-4" role="list">
+							{groupedByYear[year]?.map((post) => (
+								<li>
+									<PostPreview post={post} withDesc />
 								</li>
 							))}
 						</ul>
-					</>
+					</section>
 				))
 			}
-		</section>
-		{
-			!!uniqueTags.length && (
-				<aside class="md:min-w-[14rem] md:max-w-[14rem] md:basis-[14rem]">
-					<h4 class="title mb-4 flex gap-2">
-						Tags
-						{/*
-						<Icon aria-hidden="true" class="mb-1 h-6 w-6" focusable="false" name="hugeicons:tags" />
-						*/}
-					</h4>
-					<ul class="flex flex-wrap gap-2">
-						{uniqueTags.map((tag) => (
-							<li>
-								<a aria-label={`View all posts with the tag: ${tag}`} href={`/tags/${tag}`}>
-									<Badge variant="muted" title={tag} />
-								</a>
-							</li>
-						))}
-
-						<span class="text-base ms-auto inline-flex items-center h-6 sm:text-end">
-							<a
-								aria-label="View all blog categories"
-								class="font-medium text-accent sm:hover:text-accent-two"
-								href="/tags/"
-							>
-								View all →
-							</a>
-						</span>	
-					</ul>
-					{/*
-					<span class="mt-4 block sm:text-end">
-						<a
-							aria-label="View all blog categories"
-							class="font-medium text-accent sm:hover:text-accent-two"
-							href="/tags/"
-						>
-							View all →
-						</a>
-					</span>
-					*/}
-				</aside>
-			)
-		}
+		</div>
 	</div>
-	<Pagination {...paginationProps} />
 </PageLayout>

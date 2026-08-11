@@ -1,6 +1,6 @@
 # Personal Website - Maksymilan
 
-这是一个由 Astro 驱动的现代化个人网站项目，集成了个人简历、技术博客、学习笔记等功能。
+这是一个由 Astro 驱动的简洁个人网站，主要包含个人介绍与文档/文章两部分。
 本项目展示了如何利用 **AI Assisted Coding** 技术构建高效、优美的 Web 页面。
 
 ## ✨ 特性 (Features)
@@ -46,27 +46,16 @@ src/
 ## 📖 页面介绍
 
 ### 🏠 首页 (Home)
-网站的入口，采用极简主义设计。包含：
-- 动态背景效果
-- 个人头像与简介
-- 社交媒体链接聚合
-- 最新发布的文章与笔记摘要
-- 中英文内容切换（开发中）
+以个人介绍为中心，包含：
+- 个人头像与中英文简介
+- 当前科研项目与研究方向
+- 精简的教育、实习经历
+- GitHub 与 Google Scholar 入口
 
 ![首页预览图](public/images/homepage.png)
 
-### 👨‍💻 关于 (About)
-详细展示个人信息与职业生涯。
-- 教育背景 (ZJU)
-- 研究兴趣 (MLSys, AI Infra)
-- 实习与工作经历时间轴 (Experience Component)
-
-![关于页预览图](public/images/aboutpage.png)
-
-### 📝 博客 (Blog) & 笔记 (Notes)
-技术沉淀的核心区域。
-- **博客**: 深度技术文章，支持系列（Series）归档，包含目录（TOC）、阅读时间预估等元信息。
-- **笔记**: 碎片化的知识点记录，方便快速查阅。
+### 📝 文档与文章 (Writing)
+统一承载技术文章、研究记录与学习笔记。文章正文保留目录、代码高亮、数学公式和阅读时间等阅读功能；About、Notes、Links、Tags、Series 等旧入口不再出现在公开导航中。
 
 ![文章列表预览图](public/images/postpage.png)
 

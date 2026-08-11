@@ -1,76 +1,22 @@
-<!-- ---
-export interface Props {
-  src: string;
-  alt?: string;
-  size?: string; // 如 'w-24', 'w-32', 'w-40' 等 Tailwind 宽高类
-  link?: string; // 可选点击跳转链接
-}
 ---
-
-<div class="flex justify-center">
-  <div class={`rounded-full overflow-hidden border-2 border-white-500 shadow-md ${Astro.props.size ?? 'w-64'} aspect-square`}>
-    <a href={Astro.props.link ?? '#'} target={Astro.props.link ? '_blank' : undefined} rel="noopener noreferrer">
-      <img
-        src={Astro.props.src}
-        alt={Astro.props.alt ?? 'avatar'}
-        class="object-cover w-full h-full hover:scale-210 transition-transform duration-300"
-        loading="lazy"
-      />
-    </a>
-  </div>
-</div> -->
-
----
-// src/components/Avatar.astro
-
 interface Props {
-  src: string;
-  alt?: string;
-  // 可选：添加一个 class 属性，方便从外部传入额外的样式
-  class?: string; 
+	src: string;
+	alt?: string;
+	class?: string;
 }
 
-const { src, alt = '用户头像', class: extraClass } = Astro.props;
+const { src, alt = "Maksymilan 的头像", class: extraClass } = Astro.props;
 ---
 
 <img
-  id="scrolling-avatar"
-  src={src}
-  alt={alt}
-  class:list={[
-    // 基础样式：定义了大小、形状和过渡效果
-    "w-48 h-48 md:w-64 md:h-64 rounded-full shadow-lg transition-transform duration-300 ease-in-out",
-    extraClass // 允许外部传入额外的 class，如 margin 等
-  ]}
+	alt={alt}
+	class:list={[
+		"aspect-square rounded-[2rem] border border-color-100 object-cover shadow-[0_24px_70px_rgba(15,23,42,0.14)]",
+		extraClass,
+	]}
+	decoding="async"
+	fetchpriority="high"
+	height="256"
+	src={src}
+	width="256"
 />
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const avatar = document.getElementById('scrolling-avatar');
-    if (!avatar) return;
-
-    // 滚动超过此距离后，头像缩小到最终尺寸
-    const scrollThreshold = 300; 
-    // 最终缩小的比例
-    const scaleFactor = 0.5;
-
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      
-      // 计算缩放比例，和之前一样
-      const scale = Math.max(
-        scaleFactor,
-        1 - (scrollY / scrollThreshold) * (1 - scaleFactor)
-      );
-
-      // 只应用 scale 变换
-      avatar.style.transform = `scale(${scale})`;
-    };
-    
-    // 页面加载后立即设置初始状态
-    handleScroll();
-
-    // 监听滚动事件
-    window.addEventListener('scroll', handleScroll, { passive: true });
-  });
-</script>

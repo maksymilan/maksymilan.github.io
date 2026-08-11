@@ -8,49 +8,41 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	withDesc?: boolean;
 };
 
-const { as: Tag = "div", post, withDesc = false } = Astro.props;
+const { as: Tag = "h3", post, withDesc = false } = Astro.props;
 ---
 
-<div class={withDesc ? "flex flex-col" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between"}>
-	{!withDesc ? (
-		<>
-			<FormattedDate
-				class="shrink-0 text-lighter text-sm sm:order-2 sm:text-right"
-				date={post.data.publishDate}
-				dateTimeOptions={{
-					// hour: "2-digit",
-					// minute: "2-digit",
-					year: "numeric",
-					month: "long",
-					day: "2-digit",
-				}}
-			/>
-			<Tag class="citrus-link font-medium text-accent-base sm:order-1 sm:flex-gro md:line-clamp-1">
-				<a data-astro-prefetch href={`/posts/${post.id}/`}>
-					{post.data.draft && <span class="text-red-500">(Draft) </span>}
+{
+	withDesc ? (
+		<a
+			class="group block rounded-2xl border border-color-100 bg-special-light p-5 transition-all hover:-translate-y-0.5 hover:border-accent-two/30 hover:shadow-[0_16px_40px_rgba(15,23,42,0.07)]"
+			data-astro-prefetch
+			href={`/posts/${post.id}/`}
+		>
+			<div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-5">
+				<Tag class="text-lg font-semibold leading-snug text-accent-base transition-colors group-hover:text-accent-two">
+					{post.data.draft && <span class="mr-1 text-sm text-red-500">草稿</span>}
 					{post.data.title}
-				</a>
-			</Tag>
-		</>
+				</Tag>
+				<FormattedDate
+					class="shrink-0 text-xs text-lighter"
+					date={post.data.publishDate}
+					dateTimeOptions={{ year: "numeric", month: "2-digit", day: "2-digit" }}
+				/>
+			</div>
+			<p class="mt-2 line-clamp-2 text-sm leading-6 text-lighter">{post.data.description}</p>
+		</a>
 	) : (
-		<>
-			<FormattedDate 
-				class="text-sm shrink-0 text-lighter" 
-				date={post.data.publishDate}
-				dateTimeOptions={{
-					// hour: "2-digit",
-					// minute: "2-digit",
-					year: "numeric",
-					month: "long",
-					day: "2-digit",
-				}}
-			/>
-			<Tag class="citrus-link font-medium text-accent-base mt-2.5">
-				<a data-astro-prefetch href={`/posts/${post.id}/`}>
+		<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+			<Tag class="font-medium text-accent-base">
+				<a class="hover:text-accent-two" data-astro-prefetch href={`/posts/${post.id}/`}>
 					{post.data.title}
 				</a>
 			</Tag>
-			<p class="mt-0.5 line-clamp-2">{post.data.description}</p>
-		</>
-	)}
-</div>
+			<FormattedDate
+				class="shrink-0 text-xs text-lighter"
+				date={post.data.publishDate}
+				dateTimeOptions={{ year: "numeric", month: "2-digit", day: "2-digit" }}
+			/>
+		</div>
+	)
+}
